@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hidden Movers — Top 10 High-Growth Stocks Dashboard</title>
+<meta name="description" content="Deep-dive financial and operational intelligence on 10 high-growth publicly traded companies. Revenue, earnings, and niche KPIs for the market's best hidden movers.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800,900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<style>
+/* ===== DESIGN TOKENS ===== */
+:root {
+  --text-xs:   clamp(0.75rem,  0.7rem + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem + 1.25vw, 2.25rem);
+
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+  --space-4: 1rem;    --space-5: 1.25rem; --space-6: 1.5rem;
+  --space-8: 2rem;    --space-10: 2.5rem; --space-12: 3rem;
+  --space-16: 4rem;   --space-20: 5rem;
+
+  --radius-sm: 0.375rem; --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;  --radius-xl: 1rem;
+
+  --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  --font-display: 'Cabinet Grotesk', 'Inter', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  --content-wide: 1400px;
+
+  /* Sector colors */
+  --c-ai:       #4f98a3;
+  --c-defense:  #c17d3c;
+  --c-media:    #9b6fd4;
+  --c-saas:     #5b9e6f;
+  --c-space:    #4a7fbf;
+  --c-fintech:  #d4875a;
+}
+
+[data-theme="dark"] {
+  --color-bg:             #0e0f11;
+  --color-surface:        #141519;
+  --color-surface-2:      #1a1c22;
+  --color-surface-offset: #1e2028;
+  --color-border:         #2a2d36;
+  --color-divider:        #23262f;
+  --color-text:           #e2e4ea;
+  --color-text-muted:     #6b7285;
+  --color-text-faint:     #3d4152;
+  --color-primary:        #4f98a3;
+  --color-primary-glow:   rgba(79,152,163,0.15);
+  --color-success:        #4caf7a;
+  --color-error:          #e05c6b;
+  --color-warning:        #e0984c;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.6);
+}
+
+[data-theme="light"] {
+  --color-bg:             #f4f5f7;
+  --color-surface:        #ffffff;
+  --color-surface-2:      #f9fafb;
+  --color-surface-offset: #f0f1f4;
+  --color-border:         #e1e4ed;
+  --color-divider:        #eaecf2;
+  --color-text:           #111318;
+  --color-text-muted:     #5a6075;
+  --color-text-faint:     #b0b5c4;
+  --color-primary:        #01696f;
+  --color-primary-glow:   rgba(1,105,111,0.1);
+  --color-success:        #2e7d52;
+  --color-error:          #c0394a;
+  --color-warning:        #c07020;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.14);
+}
+
+/* ===== BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+  min-height: 100dvh;
+}
+button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+
+/* ===== LAYOUT ===== */
+.container { max-width: var(--content-wide); margin: 0 auto; padding: 0 var(--space-6); }
+
+/* ===== TOPBAR ===== */
+.topbar {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.topbar-inner {
+  display: flex; align-items: center; gap: var(--space-4);
+  height: 56px; padding: 0 var(--space-6);
+  max-width: var(--content-wide); margin: 0 auto;
+}
+.logo {
+  display: flex; align-items: center; gap: var(--space-2);
+  font-family: var(--font-display); font-size: 1.1rem; font-weight: 800;
+  letter-spacing: -0.02em; text-decoration: none; color: var(--color-text);
+  flex-shrink: 0;
+}
+.logo-icon { color: var(--color-primary); }
+.nav-pills {
+  display: flex; gap: var(--space-1);
+  overflow-x: auto; flex: 1; scrollbar-width: none;
+}
+.nav-pills::-webkit-scrollbar { display: none; }
+.nav-pill {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs); font-weight: 600;
+  white-space: nowrap; text-decoration: none;
+  color: var(--color-text-muted);
+  transition: background var(--transition), color var(--transition);
+  border: 1px solid transparent;
+}
+.nav-pill:hover { color: var(--color-text); background: var(--color-surface-offset); }
+.nav-pill.active { color: var(--color-primary); background: var(--color-primary-glow); border-color: var(--color-primary); }
+.topbar-actions { display: flex; gap: var(--space-2); align-items: center; margin-left: auto; flex-shrink: 0; }
+.theme-btn {
+  width: 36px; height: 36px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-text-muted); border: 1px solid var(--color-border);
+  transition: color var(--transition), background var(--transition);
+}
+.theme-btn:hover { color: var(--color-text); background: var(--color-surface-offset); }
+
+/* ===== HERO ===== */
+.hero {
+  padding: var(--space-12) 0 var(--space-8);
+  border-bottom: 1px solid var(--color-divider);
+}
+.hero-label {
+  font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+.hero-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900; letter-spacing: -0.04em; line-height: 1.05;
+  color: var(--color-text); margin-bottom: var(--space-4);
+}
+.hero-title span { color: var(--color-primary); }
+.hero-subtitle {
+  font-size: var(--text-base); color: var(--color-text-muted);
+  max-width: 600px; margin-bottom: var(--space-8);
+}
+.hero-stats {
+  display: flex; gap: var(--space-8); flex-wrap: wrap;
+}
+.hero-stat-value {
+  font-family: var(--font-mono); font-size: var(--text-lg);
+  font-weight: 600; color: var(--color-text);
+}
+.hero-stat-label {
+  font-size: var(--text-xs); color: var(--color-text-muted);
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+
+/* ===== COMPANY GRID (overview) ===== */
+.section { padding: var(--space-10) 0; }
+.section-header { margin-bottom: var(--space-6); }
+.section-title {
+  font-family: var(--font-display); font-size: var(--text-lg);
+  font-weight: 800; letter-spacing: -0.02em;
+}
+.section-desc { font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-1); }
+
+.company-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+.company-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  cursor: pointer;
+  transition: border-color var(--transition), box-shadow var(--transition), transform 120ms ease;
+  position: relative; overflow: hidden;
+}
+.company-card::before {
+  content: ''; position: absolute; inset: 0;
+  opacity: 0; transition: opacity var(--transition);
+  background: linear-gradient(135deg, var(--color-primary-glow) 0%, transparent 60%);
+  pointer-events: none;
+}
+.company-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.company-card:hover::before { opacity: 1; }
+.company-card.selected { border-color: var(--color-primary); background: var(--color-surface-2); }
+
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: var(--space-3); }
+.card-ticker {
+  font-family: var(--font-mono); font-size: var(--text-sm); font-weight: 600;
+  color: var(--color-primary); letter-spacing: 0.05em;
+}
+.sector-badge {
+  font-size: var(--text-xs); font-weight: 600; padding: 2px var(--space-2);
+  border-radius: var(--radius-full, 9999px); white-space: nowrap;
+}
+.card-name {
+  font-weight: 600; font-size: var(--text-sm);
+  margin-bottom: var(--space-2); line-height: 1.3;
+}
+.card-mcap { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-3); }
+.card-metrics { display: flex; gap: var(--space-3); }
+.card-metric { flex: 1; }
+.card-metric-val {
+  font-family: var(--font-mono); font-size: var(--text-sm); font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.card-metric-val.up { color: var(--color-success); }
+.card-metric-val.down { color: var(--color-error); }
+.card-metric-lbl { font-size: var(--text-xs); color: var(--color-text-muted); }
+.card-sparkline { height: 36px; margin-top: var(--space-3); }
+
+/* ===== DETAIL PANEL ===== */
+.detail-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  margin-top: var(--space-4);
+  overflow: hidden;
+  display: none;
+}
+.detail-panel.visible { display: block; }
+
+.detail-header {
+  display: flex; align-items: center; gap: var(--space-4);
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--color-divider);
+  flex-wrap: wrap; gap: var(--space-4);
+}
+.detail-ticker-block { display: flex; align-items: center; gap: var(--space-4); flex: 1; }
+.detail-ticker {
+  font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+  color: var(--color-primary); letter-spacing: 0.05em;
+}
+.detail-name { font-size: var(--text-sm); color: var(--color-text-muted); }
+.detail-kpis { display: flex; gap: var(--space-6); flex-wrap: wrap; }
+.detail-kpi { text-align: right; }
+.detail-kpi-val {
+  font-family: var(--font-mono); font-size: var(--text-base); font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.detail-kpi-lbl { font-size: var(--text-xs); color: var(--color-text-muted); }
+
+.detail-tabs {
+  display: flex; gap: 0; border-bottom: 1px solid var(--color-divider);
+  overflow-x: auto; scrollbar-width: none; padding: 0 var(--space-6);
+}
+.detail-tabs::-webkit-scrollbar { display: none; }
+.detail-tab {
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--text-sm); font-weight: 500; white-space: nowrap;
+  color: var(--color-text-muted); border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+.detail-tab:hover { color: var(--color-text); }
+.detail-tab.active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+
+.detail-body { padding: var(--space-6); }
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: var(--space-5);
+}
+.chart-card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+.chart-title {
+  font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-1);
+}
+.chart-subtitle { font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-4); }
+.chart-canvas-wrap { height: 200px; position: relative; }
+
+/* Operational metrics table */
+.op-metrics-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+.op-metric-card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+.op-metric-name { font-size: var(--text-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-2); }
+.op-metric-val {
+  font-family: var(--font-mono); font-size: var(--text-lg); font-weight: 700;
+  color: var(--color-text); line-height: 1.2;
+}
+.op-metric-period { font-size: var(--text-xs); color: var(--color-text-faint); margin-top: var(--space-1); }
+.op-metric-note { font-size: var(--text-xs); color: var(--color-warning); margin-top: var(--space-1); }
+
+/* ===== COMPARE SECTION ===== */
+.compare-section { padding: var(--space-10) 0; border-top: 1px solid var(--color-divider); }
+.compare-controls {
+  display: flex; gap: var(--space-4); flex-wrap: wrap;
+  align-items: flex-end; margin-bottom: var(--space-6);
+}
+.control-group { display: flex; flex-direction: column; gap: var(--space-2); }
+.control-label { font-size: var(--text-xs); font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.select-styled {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-body); font-size: var(--text-sm);
+  color: var(--color-text); outline: none; cursor: pointer;
+  min-width: 200px;
+}
+.select-styled:focus { border-color: var(--color-primary); }
+.checkbox-group { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.checkbox-label {
+  display: flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs); font-weight: 600; cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+.checkbox-label:hover { border-color: var(--color-primary); }
+.checkbox-label input { accent-color: var(--color-primary); }
+.checkbox-label.checked { border-color: var(--color-primary); background: var(--color-primary-glow); color: var(--color-primary); }
+
+.compare-chart-wrap {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+}
+.compare-chart-canvas { height: 360px; position: relative; }
+
+/* ===== FOOTER ===== */
+footer {
+  border-top: 1px solid var(--color-divider);
+  padding: var(--space-8) 0;
+  text-align: center;
+  font-size: var(--text-xs); color: var(--color-text-faint);
+}
+footer a { color: var(--color-text-muted); text-decoration: none; }
+footer a:hover { color: var(--color-primary); }
+
+
+/* ===== REFRESH BTN ===== */
+.refresh-btn {
+  display: flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-primary-glow); border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md); color: var(--color-primary);
+  font-size: var(--text-xs); font-weight: 600; cursor: pointer;
+  transition: background var(--transition), opacity var(--transition);
+  white-space: nowrap;
+}
+.refresh-btn:hover { background: var(--color-primary); color: white; }
+.refresh-btn.spinning svg { animation: spin 1s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.refresh-label { display: inline; }
+@media (max-width: 480px) { .refresh-label { display: none; } }
+
+/* ===== REFRESH STATUS ===== */
+.refresh-status {
+  font-size: var(--text-xs); color: var(--color-text-muted);
+  font-family: var(--font-mono);
+}
+.refresh-status.success { color: var(--color-success); }
+.refresh-status.error   { color: var(--color-error); }
+
+/* ===== NEWS SECTION ===== */
+.news-section { padding: var(--space-10) 0; border-top: 1px solid var(--color-divider); }
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-4);
+}
+.news-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  display: flex; flex-direction: column; gap: var(--space-4);
+}
+.news-card-top { display: flex; align-items: center; justify-content: space-between; }
+.news-ticker {
+  font-family: var(--font-mono); font-size: var(--text-sm); font-weight: 700;
+  color: var(--color-primary); letter-spacing: 0.05em;
+}
+.news-price-block { text-align: right; }
+.news-price { font-family: var(--font-mono); font-size: var(--text-base); font-weight: 600; }
+.news-change { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; }
+.news-headline {
+  font-size: var(--text-sm); font-weight: 600; line-height: 1.4;
+  color: var(--color-text);
+}
+.bull-bear-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+.bull-block, .bear-block {
+  border-radius: var(--radius-md); padding: var(--space-3);
+  font-size: var(--text-xs); line-height: 1.5;
+}
+.bull-block { background: rgba(76,175,122,0.08); border: 1px solid rgba(76,175,122,0.2); }
+.bear-block { background: rgba(224,92,107,0.08); border: 1px solid rgba(224,92,107,0.2); }
+.bull-label { font-weight: 700; color: var(--color-success); margin-bottom: 4px; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+.bear-label { font-weight: 700; color: var(--color-error); margin-bottom: 4px; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+.news-stories { display: flex; flex-direction: column; gap: var(--space-2); }
+.news-story {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-2);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface-2);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+}
+.news-story:hover { background: var(--color-surface-offset); }
+.news-story-title { font-size: var(--text-xs); color: var(--color-text); line-height: 1.4; flex: 1; }
+.news-story-date { font-size: 10px; color: var(--color-text-faint); white-space: nowrap; flex-shrink: 0; padding-top: 2px; }
+
+/* Live price badge on cards */
+.live-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 10px; font-weight: 600; padding: 2px 6px;
+  border-radius: var(--radius-full, 9999px);
+  background: rgba(76,175,122,0.12); color: var(--color-success);
+  border: 1px solid rgba(76,175,122,0.25);
+}
+.live-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--color-success);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+}
+
+/* ===== UTILITIES ===== */
+.tag { display: inline-flex; align-items: center; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.up { color: var(--color-success); }
+.down { color: var(--color-error); }
+.muted { color: var(--color-text-muted); }
+.divider { border: none; border-top: 1px solid var(--color-divider); margin: var(--space-6) 0; }
+
+/* Chart.js canvas always 100% width */
+canvas { max-width: 100% !important; }
+
+@media (max-width: 640px) {
+  .hero-stats { gap: var(--space-4); }
+  .detail-kpis { gap: var(--space-4); }
+  .charts-grid { grid-template-columns: 1fr; }
+  .detail-header { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar" role="banner">
+  <div class="topbar-inner">
+    <a href="#" class="logo">
+      <svg class="logo-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+      </svg>
+      Hidden Movers
+    </a>
+    <nav class="nav-pills" role="navigation" aria-label="Company navigation" id="companyNav"></nav>
+    <div class="topbar-actions">
+            <button class="refresh-btn" id="refreshBtn" onclick="triggerRefresh()" aria-label="Refresh live data">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        <span class="refresh-label">Refresh</span>
+      </button>
+      <button class="theme-btn" data-theme-toggle aria-label="Toggle theme">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-label">Non-Fortune 500 · Publicly Traded · High Conviction</div>
+    <h1 class="hero-title">The <span>Hidden Movers</span><br>Dashboard</h1>
+    <p class="hero-subtitle">Deep financial and operational intelligence on 10 high-growth stocks flying below mainstream radar — ideal for small-to-medium term trades.</p>
+    <div class="hero-stats" id="heroStats">
+      <div>
+        <div class="hero-stat-value mono" id="stat-companies">10</div>
+        <div class="hero-stat-label">Companies</div>
+      </div>
+      <div>
+        <div class="hero-stat-value mono" id="stat-total-mcap">—</div>
+        <div class="hero-stat-label">Combined Market Cap</div>
+      </div>
+      <div>
+        <div class="hero-stat-value mono up" id="stat-avg-growth">—</div>
+        <div class="hero-stat-label">Avg Revenue Growth (2025)</div>
+      </div>
+      <div>
+        <div class="hero-stat-value mono" id="stat-sectors">7</div>
+        <div class="hero-stat-label">Sectors</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW GRID -->
+<section class="section" id="overview">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">All Companies</h2>
+      <p class="section-desc">Click any card to expand financial and operational dashboards.</p>
+    </div>
+    <div class="company-grid" id="companyGrid"></div>
+    <div class="detail-panel" id="detailPanel"></div>
+  </div>
+</section>
+
+<!-- NEWS SECTION -->
+<section class="news-section" id="news">
+  <div class="container">
+    <div class="section-header" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4)">
+      <div>
+        <h2 class="section-title">Latest News & Sentiment</h2>
+        <p class="section-desc">Live bull/bear analysis from analyst coverage and news. Updated on refresh.</p>
+      </div>
+      <div class="refresh-status" id="refreshStatus"></div>
+    </div>
+    <div class="news-grid" id="newsGrid"></div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="compare-section" id="compare">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Cross-Company Compare</h2>
+      <p class="section-desc">Select a metric and companies to visualize side-by-side.</p>
+    </div>
+    <div class="compare-controls">
+      <div class="control-group">
+        <div class="control-label">Metric</div>
+        <select class="select-styled" id="compareMetric">
+          <option value="revenue_growth_pct">Revenue Growth % (2025 vs 2024)</option>
+          <option value="gross_margin_pct">Gross Margin %</option>
+          <option value="fcf_margin_pct">Free Cash Flow Margin %</option>
+          <option value="ev_revenue_ttm">EV / Revenue (TTM)</option>
+          <option value="market_cap_b">Market Cap ($B)</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <div class="control-label">Companies</div>
+        <div class="checkbox-group" id="compareCheckboxes"></div>
+      </div>
+    </div>
+    <div class="compare-chart-wrap">
+      <div class="compare-chart-canvas">
+        <canvas id="compareChart"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Data reflects SEC filings, earnings reports, and analyst coverage through early 2026. Estimated values are noted. Not financial advice.</p>
+    <p style="margin-top:var(--space-2)"><a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a></p>
+  </div>
+</footer>
+
+<script>
+// ===== LIVE DATA (pre-loaded from last refresh) =====
+let LIVE_DATA = {
+  "live_quotes": {
+    "PLTR": {
+      "price": 153.5,
+      "change": 1.9,
+      "changePct": 1.25,
+      "pe": 239.84,
+      "eps": 0.64,
+      "volume": 53976763,
+      "avgVolume": 48617233,
+      "yearLow": 66.12,
+      "yearHigh": 207.52,
+      "previousClose": 151.6,
+      "marketCap": 351740645000
+    },
+    "RKLB": {
+      "price": 68.37,
+      "change": -3.59,
+      "changePct": -4.99,
+      "pe": null,
+      "eps": -0.37,
+      "volume": 17599532,
+      "avgVolume": 23057979,
+      "yearLow": 14.71,
+      "yearHigh": 99.58,
+      "previousClose": 71.96,
+      "marketCap": 38796214650
+    },
+    "APP": {
+      "price": 449.33,
+      "change": -12.12,
+      "changePct": -2.63,
+      "pe": 44.67,
+      "eps": 10.06,
+      "volume": 4983196,
+      "avgVolume": 5953515,
+      "yearLow": 200.5,
+      "yearHigh": 745.61,
+      "previousClose": 461.45,
+      "marketCap": 151853317903
+    },
+    "VRT": {
+      "price": 265.38,
+      "change": -2.88,
+      "changePct": -1.07,
+      "pe": 77.82,
+      "eps": 3.41,
+      "volume": 7447890,
+      "avgVolume": 6340589,
+      "yearLow": 53.6,
+      "yearHigh": 276.78,
+      "previousClose": 268.26,
+      "marketCap": 101533857240
+    },
+    "AXON": {
+      "price": 499.4,
+      "change": -18.17,
+      "changePct": -3.51,
+      "pe": 337.43,
+      "eps": 1.48,
+      "volume": 1015851,
+      "avgVolume": 1005153,
+      "yearLow": 396.41,
+      "yearHigh": 885.92,
+      "previousClose": 517.57,
+      "marketCap": 40150598895
+    },
+    "CRWV": {
+      "price": 79.86,
+      "change": -2.1,
+      "changePct": -2.56,
+      "pe": null,
+      "eps": -2.81,
+      "volume": 15680428,
+      "avgVolume": 27512767,
+      "yearLow": 33.52,
+      "yearHigh": 187.0,
+      "previousClose": 81.96,
+      "marketCap": 41981452944
+    },
+    "SPOT": {
+      "price": 509.59,
+      "change": -4.78,
+      "changePct": -0.93,
+      "pe": 41.8,
+      "eps": 12.19,
+      "volume": 1865937,
+      "avgVolume": 2893211,
+      "yearLow": 405.0,
+      "yearHigh": 785.0,
+      "previousClose": 514.37,
+      "marketCap": 104921527027
+    },
+    "DDOG": {
+      "price": 127.16,
+      "change": -0.33,
+      "changePct": -0.26,
+      "pe": 397.38,
+      "eps": 0.32,
+      "volume": 3627373,
+      "avgVolume": 5677854,
+      "yearLow": 81.63,
+      "yearHigh": 201.69,
+      "previousClose": 127.49,
+      "marketCap": 44995733343
+    },
+    "KTOS": {
+      "price": 89.46,
+      "change": 0.54,
+      "changePct": 0.61,
+      "pe": 688.15,
+      "eps": 0.13,
+      "volume": 3903675,
+      "avgVolume": 4055705,
+      "yearLow": 25.78,
+      "yearHigh": 134.0,
+      "previousClose": 88.92,
+      "marketCap": 16707346436
+    },
+    "RDDT": {
+      "price": 132.24,
+      "change": -4.88,
+      "changePct": -3.56,
+      "pe": 50.47,
+      "eps": 2.62,
+      "volume": 3067342,
+      "avgVolume": 5436432,
+      "yearLow": 79.75,
+      "yearHigh": 282.95,
+      "previousClose": 137.12,
+      "marketCap": 25262572076
+    }
+  },
+  "news_data": {
+    "PLTR": {
+      "headline": "Geopolitical tailwinds + 56% revenue growth; Truist reiterates Buy at $223 target",
+      "bull": "US Army consolidated 75 contracts into a single Palantir deal \u2014 a model for future gov agreements driven by wartime urgency. Rosenblatt raised PT to $200.",
+      "bear": "Peter Thiel disclosed plan to sell 2M shares (~$280M). P/E of 240x leaves little room for error; some analysts have $50 targets.",
+      "stories": [
+        {
+          "title": "Truist reiterates Palantir Buy rating after investor meeting",
+          "url": "https://www.investing.com/news/analyst-ratings/truist-reiterates-palantir-stock-buy-rating-after-investor-meeting-93CH-4554651",
+          "date": "Mar 11, 2026"
+        },
+        {
+          "title": "Analyst revises PLTR target amid growing insider sale concerns",
+          "url": "https://finbold.com/analyst-revises-palantir-stock-price-target-amid-growing-insider-sale-concerns/",
+          "date": "Mar 3, 2026"
+        }
+      ]
+    },
+    "RKLB": {
+      "headline": "Neutron stage 1 tank rupture delays launch to Q4 2026; backlog doubles to $1.85B",
+      "bull": "Cantor Fitzgerald raised PT to $85 (Overweight) citing record revenue and doubling backlog. $816M SDA Tranche 3 contract cements national security role.",
+      "bear": "TD Cowen warns Neutron rupture raises execution risk. KeyBanc downgraded citing growth catalysts already priced in.",
+      "stories": [
+        {
+          "title": "Cantor Fitzgerald raises RKLB target on record revenue",
+          "url": "https://www.investing.com/news/analyst-ratings/cantor-fitzgerald-raises-rocket-lab-stock-price-target-on-record-revenue-93CH-4534683",
+          "date": "Mar 2, 2026"
+        },
+        {
+          "title": "Rocket Lab Stock Decline Analysis Post Earnings",
+          "url": "https://intellectia.ai/news/stock/rocket-lab-stock-decline-analysis-post-earnings",
+          "date": "Mar 7, 2026"
+        }
+      ]
+    },
+    "APP": {
+      "headline": "SEC probe disclosed Feb 2026; AXON 2.0 e-commerce expansion drives 70% YoY rev growth",
+      "bull": "Wedbush, BofA, and Benchmark all cite e-commerce TAM as 5-10x gaming \u2014 a massive expansion. 82% EBITDA margin for full-year 2025.",
+      "bear": "SEC probe adds regulatory overhang. Oppenheimer cut target from $740 to $660; stock fell from $672 to ~$380 in early 2026.",
+      "stories": [
+        {
+          "title": "Why Wedbush Analysts Love AppLovin Stock Right Now",
+          "url": "https://www.barchart.com/story/news/721533/why-wedbush-analysts-love-applovin-stock-right-now",
+          "date": "Mar 12, 2026"
+        },
+        {
+          "title": "BofA reiterates AppLovin Buy rating on e-commerce growth",
+          "url": "https://investing.com/news/analyst-ratings/bofa-reiterates-applovin-stock-buy-rating-on-ecommerce-growth-93CH-4549312",
+          "date": "Mar 9, 2026"
+        }
+      ]
+    },
+    "VRT": {
+      "headline": "Orders backlog surges to $15B (+252% YoY organic); Wolfe Research downgrades on valuation",
+      "bull": "Analyst consensus: 34% annualized revenue growth through 2026, 61% EPS surge to $5.62. GB200 NVL72 lead supplier status cements AI infra moat.",
+      "bear": "Wolfe Research downgraded from Outperform to Peer Perform. Insiders sold ~490K shares (~$104M) in past 3 months including EVP cutting stake 46%.",
+      "stories": [
+        {
+          "title": "Vertiv Share Prices Surge After Analysts Raise Price Targets",
+          "url": "https://stockstotrade.com/news/vertiv-holdings-llc-vrt-news-2026_03_09/",
+          "date": "Mar 10, 2026"
+        },
+        {
+          "title": "Vertiv (VRT) Stock Slides 3% Despite Analyst Price Target Upgrades",
+          "url": "https://www.mexc.com/news/875625",
+          "date": "Mar 7, 2026"
+        }
+      ]
+    },
+    "AXON": {
+      "headline": "AI software grew 40% in Q4; TD Cowen raises PT to $950; Q4 net income collapsed 98% YoY",
+      "bull": "125% net revenue retention + $7.4B bookings backlog. 27-30% revenue growth guided for 2026. RBC cites data moats as durable competitive advantage.",
+      "bear": "Q4 net income collapsed to $2.75M from $135M a year ago. UBS cut PT to $570 (Neutral) \u2014 expectations now 'extremely elevated'.",
+      "stories": [
+        {
+          "title": "Axon Stock Soared After Earnings \u2014 Analysts Think It Can Gain Another 30%",
+          "url": "https://www.barchart.com/story/news/513025/axon-stock-soared-after-earnings-analysts-think-it-can-gain-another-30-from-here",
+          "date": "Mar 2, 2026"
+        },
+        {
+          "title": "UBS Adjusts Price Target on Axon Enterprise to $570",
+          "url": "https://www.marketscreener.com/news/ubs-adjusts-price-target-on-axon-enterprise-to-570-from-610-maintains-neutral-rating-ce7e5cdbd08af720",
+          "date": "Feb 25, 2026"
+        }
+      ]
+    },
+    "CRWV": {
+      "headline": "Securities class-action lawsuits filed; $66.8B revenue backlog; Bernstein Underperform at $56",
+      "bull": "Oppenheimer Outperform with $140 PT \u2014 'distinct competitive advantages over hyperscalers.' 110% YoY revenue growth. $30-35B capex in 2026 signals hypergrowth confidence.",
+      "bear": "Multiple securities fraud lawsuits filed. Insiders sold $373M in shares. Bernstein Underperform at $56. HSBC Reduce citing rising interest costs and credit spread widening.",
+      "stories": [
+        {
+          "title": "Oppenheimer Issues Bullish Call on CRWV With $140 Target",
+          "url": "https://www.mexc.com/news/869211",
+          "date": "Mar 6, 2026"
+        },
+        {
+          "title": "Hagens Berman Analyzes CoreWeave $452M Q4 Loss & Securities Litigation",
+          "url": "https://www.barchart.com/story/news/721538/crwv-alert-hagens-berman-analyzes-coreweave-crwv-452m-q4-loss-and-soft-guidance-amid-ongoing-securities-fraud-litigation",
+          "date": "Mar 12, 2026"
+        }
+      ]
+    },
+    "SPOT": {
+      "headline": "Operating income swung from \u20ac446M loss in 2023 to \u20ac2.2B in 2025; Wolfe Research downgrades on saturation",
+      "bull": "751M MAUs \u2014 still only 3.5% of global population. Arete upgraded to Buy at $680. FCF reached \u20ac2.9B full-year. Q1 2026 guidance: 15% constant-currency rev growth.",
+      "bear": "JPMorgan cut PT 13% to $700 on royalty cost headwinds. Ad revenue fell 4% YoY in Q4. Wolfe Research downgraded citing 'full' revenue forecasts.",
+      "stories": [
+        {
+          "title": "Spotify Stock Is Down 28% This Year, But Analysts See 77% Upside Ahead",
+          "url": "https://www.tikr.com/blog/spotify-stock-is-down-28-this-year-but-analysts-see-77-upside-ahead",
+          "date": "Mar 8, 2026"
+        },
+        {
+          "title": "Arete Upgrades Spotify Technology to Buy, $680 Target",
+          "url": "https://www.marketscreener.com/news/arete-upgrades-spotify-technology-to-buy-from-neutral-680-price-target-ce7e5cd9d880f42c",
+          "date": "Feb 26, 2026"
+        }
+      ]
+    },
+    "DDOG": {
+      "headline": "FY2026 revenue guidance missed consensus; MCP server tool calls up 11x QoQ; Buy consensus holds",
+      "bull": "11x surge in MCP server tool calls QoQ. 2,000+ trial/paying customers for AI SRE agent in first month. Average analyst 12-month PT: $182-207 (43-60% upside).",
+      "bear": "FY2026 guidance of $4.06-4.10B missed consensus \u2014 multiple analysts cut targets. BTIG cut PT from $221 to $170. Forward P/S of 10x vs. 3.9x industry average.",
+      "stories": [
+        {
+          "title": "Baird Lowers Price Target on DDOG to $180, Maintains Outperform",
+          "url": "https://www.insidermonkey.com/blog/baird-lowers-its-price-target-on-datadog-inc-ddog-to-180-and-maintains-an-outperform-rating-1699906/",
+          "date": "Feb 21, 2026"
+        },
+        {
+          "title": "Will Datadog Stock Sustain Growth on Rising AI Cloud Monitoring Spend?",
+          "url": "https://www.nasdaq.com/articles/will-datadog-stock-sustain-growth-rising-ai-cloud-monitoring-spend",
+          "date": "Feb 19, 2026"
+        }
+      ]
+    },
+    "KTOS": {
+      "headline": "MACH-TB 2.0 hypersonics targeting $400M in 2026; book-to-bill 1.3x; stock up 7x in 3 years",
+      "bull": "MTCR rule changes + DoD jet drone demand. $400M 2026 DRSS target from MACH-TB 2.0. Book-to-bill 1.3x with $1.57B backlog.",
+      "bear": "Trades at 120x earnings. FCF deeply negative through 2026. Thin profitability raises self-funding concerns as multiple programs scale simultaneously.",
+      "stories": [
+        {
+          "title": "Kratos Defense Soars on Strong Q4 Earnings & Drone Programs",
+          "url": "https://stockstotrade.com/news/kratos-defense-security-solutions-inc-ktos-news-2026_03_09/",
+          "date": "Mar 10, 2026"
+        },
+        {
+          "title": "Is It Too Late to Consider KTOS After Its 7x Three-Year Surge?",
+          "url": "https://www.sahmcapital.com/news/content/is-it-too-late-to-consider-kratos-defense-security-solutions-ktos-after-7x-three-year-surge-2026-03-08",
+          "date": "Mar 8, 2026"
+        }
+      ]
+    },
+    "RDDT": {
+      "headline": "46% six-month stock decline; Q4 ad revenue +75% YoY; $1B buyback announced; CTO sells $1.29M",
+      "bull": "Jefferies: RDDT revenue-per-user at 70% discount to peers. Q4 revenue $725.6M (+70% YoY), adj. EBITDA +112%. $1B share buyback. Consensus PT ~$235-251.",
+      "bear": "US time-spent down 10.5% YoY in Jan. GAAP operating losses widened. Simply Wall St bear-case intrinsic value: $38. CTO just sold $1.29M in shares.",
+      "stories": [
+        {
+          "title": "Reddit (RDDT): CTO Offloads $1.29M as Jefferies Remains Bullish",
+          "url": "https://www.mexc.com/news/913877",
+          "date": "Mar 12, 2026"
+        },
+        {
+          "title": "Forecasting The Future: 18 Analyst Projections For Reddit",
+          "url": "https://www.benzinga.com/insights/analyst-ratings/26/03/51172621/forecasting-the-future-18-analyst-projections-for-reddit",
+          "date": "Mar 11, 2026"
+        }
+      ]
+    }
+  },
+  "fetched_at": "2026-03-13T04:41:14Z"
+};
+
+// ===== DATA =====
+const DATA = {"companies":{"PLTR":{"ticker":"PLTR","name":"Palantir Technologies","sector":"AI Infrastructure","market_cap_b":351.74,"description":"AI-powered data analytics platform serving US government and commercial clients. AIP (AI Platform) is driving an inflection in commercial growth.","financials":{"quarterly":[{"period":"2024 Q1","revenue":634.3,"gross_margin_pct":81.7,"net_income":105.5,"fcf":126.9},{"period":"2024 Q2","revenue":678.1,"gross_margin_pct":81.0,"net_income":134.1,"fcf":148.0},{"period":"2024 Q3","revenue":725.5,"gross_margin_pct":80.7,"net_income":149.3,"fcf":434.6},{"period":"2024 Q4","revenue":827.5,"gross_margin_pct":79.8,"net_income":169.0,"fcf":517.0},{"period":"2025 Q1","revenue":884.0,"gross_margin_pct":83.5,"net_income":214.3,"fcf":370.3},{"period":"2025 Q2","revenue":942.1,"gross_margin_pct":84.0,"net_income":233.0,"fcf":488.0},{"period":"2025 Q3","revenue":1071.5,"gross_margin_pct":84.6,"net_income":283.2,"fcf":524.0},{"period":"2025 Q4","revenue":1151.8,"gross_margin_pct":85.0,"net_income":323.0,"fcf":580.0}],"annual":{"2024":{"revenue":2865.4,"net_income":462.1,"gross_margin_pct":80.3},"2025":{"revenue":4049.4,"net_income":1053.5,"gross_margin_pct":84.3}},"stock_price":{"current":153.5,"year_high":207.52,"year_low":66.12,"history":[{"date":"2024-03","close":23.0},{"date":"2024-06","close":28.5},{"date":"2024-09","close":38.0},{"date":"2024-12","close":78.0},{"date":"2025-03","close":96.0},{"date":"2025-06","close":142.0},{"date":"2025-09","close":175.0},{"date":"2025-12","close":153.5}]}},"operational_metrics":[{"name":"US Commercial Revenue","value":"$628M","period":"2025 Annual","note":""},{"name":"US Government Revenue","value":"$931M","period":"2025 Annual","note":""},{"name":"US Commercial Customers","value":"571","period":"Q4 2025","note":""},{"name":"AIP Boot Camp Customers","value":"500+","period":"2025","note":""},{"name":"Rule of 40 Score","value":"94","period":"Q4 2025","note":""},{"name":"US Commercial TCV","value":"$803M","period":"Q4 2025","note":""}]},"RKLB":{"ticker":"RKLB","name":"Rocket Lab USA","sector":"Space / Defense","market_cap_b":38.8,"description":"The only company rivaling SpaceX in launch cadence. Electron is the workhorse; Neutron is the moonshot. Space Systems segment growing faster than launches.","financials":{"quarterly":[{"period":"2024 Q1","revenue":92.8,"gross_margin_pct":27.0,"net_income":-46.0,"fcf":-55.0},{"period":"2024 Q2","revenue":106.3,"gross_margin_pct":29.0,"net_income":-49.1,"fcf":-60.0},{"period":"2024 Q3","revenue":104.8,"gross_margin_pct":31.0,"net_income":-47.5,"fcf":-58.0},{"period":"2024 Q4","revenue":132.4,"gross_margin_pct":33.0,"net_income":-52.3,"fcf":-62.0},{"period":"2025 Q1","revenue":120.0,"gross_margin_pct":31.0,"net_income":-50.0,"fcf":-55.0},{"period":"2025 Q2","revenue":145.0,"gross_margin_pct":33.0,"net_income":-48.0,"fcf":-52.0},{"period":"2025 Q3","revenue":168.0,"gross_margin_pct":35.0,"net_income":-45.0,"fcf":-48.0},{"period":"2025 Q4","revenue":209.0,"gross_margin_pct":37.0,"net_income":-40.0,"fcf":-42.0}],"annual":{"2024":{"revenue":436.3,"net_income":-194.9,"gross_margin_pct":29.8},"2025":{"revenue":642.0,"net_income":-183.0,"gross_margin_pct":34.0}},"stock_price":{"current":23.4,"year_high":32.5,"year_low":4.0,"history":[{"date":"2024-03","close":4.1},{"date":"2024-06","close":5.2},{"date":"2024-09","close":11.0},{"date":"2024-12","close":22.0},{"date":"2025-03","close":28.0},{"date":"2025-06","close":21.0},{"date":"2025-09","close":18.0},{"date":"2025-12","close":23.4}]}},"operational_metrics":[{"name":"Electron Launches (2025)","value":"16","period":"2025"},{"name":"Electron Launches (2024)","value":"16","period":"2024"},{"name":"Backlog","value":"$1.85B","period":"Q4 2025"},{"name":"Space Systems Revenue","value":"$430M+","period":"2025 Annual"},{"name":"Launch Services Revenue","value":"$270M+","period":"2025 Annual"},{"name":"Neutron Dev Status","value":"Stage 1 Test Fire Q1 2026","period":"2026","note":"est."}]},"APP":{"ticker":"APP","name":"AppLovin Corporation","sector":"Ad Tech / AI","market_cap_b":151.85,"description":"AXON 2.0 AI engine has redefined mobile advertising efficiency. Now expanding into e-commerce, CTV, and web with same model. Highest FCF margin of any ad-tech company.","financials":{"quarterly":[{"period":"2024 Q1","revenue":1058.0,"gross_margin_pct":77.1,"net_income":234.0,"fcf":499.0},{"period":"2024 Q2","revenue":1182.0,"gross_margin_pct":79.0,"net_income":310.0,"fcf":600.0},{"period":"2024 Q3","revenue":1199.0,"gross_margin_pct":77.3,"net_income":434.0,"fcf":710.0},{"period":"2024 Q4","revenue":1371.0,"gross_margin_pct":80.0,"net_income":599.0,"fcf":855.0},{"period":"2025 Q1","revenue":1480.0,"gross_margin_pct":79.5,"net_income":630.0,"fcf":940.0},{"period":"2025 Q2","revenue":1563.0,"gross_margin_pct":80.2,"net_income":695.0,"fcf":1010.0},{"period":"2025 Q3","revenue":1720.0,"gross_margin_pct":80.5,"net_income":780.0,"fcf":1120.0},{"period":"2025 Q4","revenue":1994.0,"gross_margin_pct":81.0,"net_income":950.0,"fcf":1350.0}],"annual":{"2024":{"revenue":4810.0,"net_income":1577.0,"gross_margin_pct":78.5},"2025":{"revenue":6757.0,"net_income":3055.0,"gross_margin_pct":80.3}},"stock_price":{"current":318.0,"year_high":515.0,"year_low":43.0,"history":[{"date":"2024-03","close":69.0},{"date":"2024-06","close":82.0},{"date":"2024-09","close":110.0},{"date":"2024-12","close":350.0},{"date":"2025-03","close":415.0},{"date":"2025-06","close":340.0},{"date":"2025-09","close":380.0},{"date":"2025-12","close":318.0}]}},"operational_metrics":[{"name":"Software Platform Revenue (Q4 '25)","value":"$1.17B","period":"Q4 2025"},{"name":"Apps Revenue (Q4 '25)","value":"$824M","period":"Q4 2025"},{"name":"AXON Engine Advertiser ROAS","value":"4–5x","period":"2025"},{"name":"Active Advertisers","value":"20,000+","period":"2025"},{"name":"E-commerce Revenue (est.)","value":"$400M+","period":"2025 Annual","note":"est."}]},"VRT":{"ticker":"VRT","name":"Vertiv Holdings","sector":"AI Infrastructure","market_cap_b":101.53,"description":"The thermal management and power infrastructure backbone of AI data centers. Direct beneficiary of GPU density increases. Backlog is a forward indicator.","financials":{"quarterly":[{"period":"2024 Q1","revenue":1651.0,"gross_margin_pct":34.0,"net_income":202.0,"fcf":180.0},{"period":"2024 Q2","revenue":1803.0,"gross_margin_pct":35.2,"net_income":275.0,"fcf":265.0},{"period":"2024 Q3","revenue":2007.0,"gross_margin_pct":35.5,"net_income":333.0,"fcf":310.0},{"period":"2024 Q4","revenue":2376.0,"gross_margin_pct":36.0,"net_income":424.0,"fcf":400.0},{"period":"2025 Q1","revenue":2355.0,"gross_margin_pct":36.0,"net_income":356.0,"fcf":330.0},{"period":"2025 Q2","revenue":2588.0,"gross_margin_pct":36.4,"net_income":412.0,"fcf":390.0},{"period":"2025 Q3","revenue":2770.0,"gross_margin_pct":36.0,"net_income":460.0,"fcf":440.0},{"period":"2025 Q4","revenue":3197.0,"gross_margin_pct":36.5,"net_income":579.0,"fcf":560.0}],"annual":{"2024":{"revenue":7837.0,"net_income":1234.0,"gross_margin_pct":35.2},"2025":{"revenue":10910.0,"net_income":1807.0,"gross_margin_pct":36.2}},"stock_price":{"current":81.0,"year_high":155.0,"year_low":54.0,"history":[{"date":"2024-03","close":88.0},{"date":"2024-06","close":96.0},{"date":"2024-09","close":118.0},{"date":"2024-12","close":133.0},{"date":"2025-03","close":126.0},{"date":"2025-06","close":95.0},{"date":"2025-09","close":88.0},{"date":"2025-12","close":81.0}]}},"operational_metrics":[{"name":"Orders Backlog","value":"$7.4B+","period":"Q4 2025"},{"name":"AI/Data Center Revenue Mix","value":"60%+","period":"2025"},{"name":"Liquid Cooling Revenue Growth","value":"+200% YoY","period":"2025"},{"name":"Americas Revenue","value":"$7.8B","period":"2025 Annual"},{"name":"GB200 NVL72 Supplier","value":"Lead Supplier","period":"2025"}]},"AXON":{"ticker":"AXON","name":"Axon Enterprise","sector":"Defense / Public Safety Tech","market_cap_b":40.15,"description":"TASER + Body Cameras + Evidence Cloud + AI = a platform monopoly in public safety. SaaS ARR is the real story. Draft One AI writes police reports — enormous time savings.","financials":{"quarterly":[{"period":"2024 Q1","revenue":461.1,"gross_margin_pct":58.7,"net_income":56.8,"fcf":38.0},{"period":"2024 Q2","revenue":504.1,"gross_margin_pct":59.3,"net_income":72.0,"fcf":55.0},{"period":"2024 Q3","revenue":544.3,"gross_margin_pct":59.5,"net_income":74.2,"fcf":60.0},{"period":"2024 Q4","revenue":609.0,"gross_margin_pct":60.0,"net_income":80.0,"fcf":70.0},{"period":"2025 Q1","revenue":654.0,"gross_margin_pct":59.4,"net_income":90.0,"fcf":65.0},{"period":"2025 Q2","revenue":702.0,"gross_margin_pct":59.5,"net_income":105.0,"fcf":75.0},{"period":"2025 Q3","revenue":762.0,"gross_margin_pct":59.5,"net_income":120.0,"fcf":90.0},{"period":"2025 Q4","revenue":851.0,"gross_margin_pct":60.5,"net_income":141.0,"fcf":112.0}],"annual":{"2024":{"revenue":2118.5,"net_income":283.0,"gross_margin_pct":59.4},"2025":{"revenue":2969.0,"net_income":456.0,"gross_margin_pct":59.7}},"stock_price":{"current":534.0,"year_high":728.0,"year_low":165.0,"history":[{"date":"2024-03","close":190.0},{"date":"2024-06","close":245.0},{"date":"2024-09","close":380.0},{"date":"2024-12","close":618.0},{"date":"2025-03","close":660.0},{"date":"2025-06","close":560.0},{"date":"2025-09","close":580.0},{"date":"2025-12","close":534.0}]}},"operational_metrics":[{"name":"SaaS ARR","value":"$1.35B","period":"Q4 2025"},{"name":"Net Revenue Retention","value":"125%","period":"Q4 2025"},{"name":"TASER 10 Units Shipped","value":"100,000+","period":"2025"},{"name":"Active Officers on Platform","value":"400,000+","period":"2025"},{"name":"Draft One AI Adoption","value":"40%+ of eligible agencies","period":"Q4 2025"}]},"CRWV":{"ticker":"CRWV","name":"CoreWeave","sector":"AI Infrastructure","market_cap_b":41.98,"description":"Purpose-built GPU cloud for AI workloads. Revenue backlog of $66B makes it the most visible AI infra growth story. Still heavily dependent on Microsoft contracts.","financials":{"quarterly":[{"period":"2024 Q1","revenue":188.0,"gross_margin_pct":55.0,"net_income":-130.0,"fcf":-850.0},{"period":"2024 Q2","revenue":265.0,"gross_margin_pct":58.0,"net_income":-140.0,"fcf":-1100.0},{"period":"2024 Q3","revenue":395.0,"gross_margin_pct":59.0,"net_income":-150.0,"fcf":-1200.0},{"period":"2024 Q4","revenue":559.0,"gross_margin_pct":60.0,"net_income":-160.0,"fcf":-1300.0},{"period":"2025 Q1","revenue":981.6,"gross_margin_pct":62.0,"net_income":-45.0,"fcf":-980.0},{"period":"2025 Q2","revenue":1142.0,"gross_margin_pct":63.0,"net_income":-30.0,"fcf":-870.0},{"period":"2025 Q3","revenue":1304.0,"gross_margin_pct":62.5,"net_income":-10.0,"fcf":-750.0},{"period":"2025 Q4","revenue":1571.0,"gross_margin_pct":63.5,"net_income":25.0,"fcf":-600.0}],"annual":{"2024":{"revenue":1407.0,"net_income":-580.0,"gross_margin_pct":58.0},"2025":{"revenue":4998.6,"net_income":-60.0,"gross_margin_pct":62.8}},"stock_price":{"current":44.5,"year_high":62.0,"year_low":35.0,"history":[{"date":"2025-03","close":40.0},{"date":"2025-06","close":38.0},{"date":"2025-09","close":44.0},{"date":"2025-12","close":44.5}]}},"operational_metrics":[{"name":"Revenue Backlog","value":"$66.8B","period":"Q4 2025"},{"name":"GPU Capacity (H100 equiv)","value":"250,000+","period":"2025"},{"name":"Data Center Capacity","value":"590 MW","period":"Q4 2025"},{"name":"Microsoft Revenue Concentration","value":"62%","period":"2025"},{"name":"Remaining Performance Obligations","value":"$15.1B","period":"Q4 2025"}]},"SPOT":{"ticker":"SPOT","name":"Spotify Technology","sector":"Digital Media","market_cap_b":104.92,"description":"The global audio OS. Two-sided marketplace with 6M+ podcasters and 263M premium subscribers. Gross margin expansion is the key trade thesis — from 26% to 33%+ in 2 years.","financials":{"quarterly":[{"period":"2024 Q1","revenue":3560.0,"gross_margin_pct":27.6,"net_income":168.0,"fcf":224.0},{"period":"2024 Q2","revenue":3808.0,"gross_margin_pct":29.2,"net_income":274.0,"fcf":400.0},{"period":"2024 Q3","revenue":3988.0,"gross_margin_pct":31.1,"net_income":330.0,"fcf":517.0},{"period":"2024 Q4","revenue":4241.0,"gross_margin_pct":32.2,"net_income":378.0,"fcf":560.0},{"period":"2025 Q1","revenue":4193.0,"gross_margin_pct":31.5,"net_income":282.0,"fcf":450.0},{"period":"2025 Q2","revenue":4520.0,"gross_margin_pct":32.5,"net_income":356.0,"fcf":580.0},{"period":"2025 Q3","revenue":4740.0,"gross_margin_pct":33.0,"net_income":406.0,"fcf":650.0},{"period":"2025 Q4","revenue":4975.0,"gross_margin_pct":33.1,"net_income":456.0,"fcf":720.0}],"annual":{"2024":{"revenue":15597.0,"net_income":1150.0,"gross_margin_pct":30.0},"2025":{"revenue":18428.0,"net_income":1500.0,"gross_margin_pct":32.5}},"stock_price":{"current":618.0,"year_high":695.0,"year_low":198.0,"history":[{"date":"2024-03","close":270.0},{"date":"2024-06","close":320.0},{"date":"2024-09","close":390.0},{"date":"2024-12","close":460.0},{"date":"2025-03","close":555.0},{"date":"2025-06","close":580.0},{"date":"2025-09","close":600.0},{"date":"2025-12","close":618.0}]}},"operational_metrics":[{"name":"Monthly Active Users","value":"751M","period":"Q4 2025"},{"name":"Premium Subscribers","value":"263M","period":"Q4 2025"},{"name":"Gross Margin","value":"33.1%","period":"Q4 2025"},{"name":"ARPU","value":"€4.92","period":"Q4 2025"},{"name":"Podcast Shows","value":"6M+","period":"2025"},{"name":"Audiobook Listeners","value":"18M+","period":"2025"}]},"DDOG":{"ticker":"DDOG","name":"Datadog","sector":"Cloud / SaaS","market_cap_b":45.0,"description":"The observability and security platform for cloud-native companies. Product expansion from APM → logs → security → AI observability creates powerful land-and-expand dynamics.","financials":{"quarterly":[{"period":"2024 Q1","revenue":611.0,"gross_margin_pct":80.6,"net_income":57.0,"fcf":170.0},{"period":"2024 Q2","revenue":645.0,"gross_margin_pct":81.2,"net_income":67.0,"fcf":195.0},{"period":"2024 Q3","revenue":690.0,"gross_margin_pct":81.3,"net_income":80.0,"fcf":220.0},{"period":"2024 Q4","revenue":738.0,"gross_margin_pct":81.6,"net_income":110.0,"fcf":260.0},{"period":"2025 Q1","revenue":762.0,"gross_margin_pct":81.5,"net_income":90.0,"fcf":200.0},{"period":"2025 Q2","revenue":815.0,"gross_margin_pct":81.7,"net_income":115.0,"fcf":235.0},{"period":"2025 Q3","revenue":878.0,"gross_margin_pct":82.0,"net_income":148.0,"fcf":275.0},{"period":"2025 Q4","revenue":973.0,"gross_margin_pct":82.0,"net_income":188.0,"fcf":330.0}],"annual":{"2024":{"revenue":2684.0,"net_income":314.0,"gross_margin_pct":81.2},"2025":{"revenue":3428.0,"net_income":541.0,"gross_margin_pct":81.8}},"stock_price":{"current":108.0,"year_high":155.0,"year_low":95.0,"history":[{"date":"2024-03","close":128.0},{"date":"2024-06","close":115.0},{"date":"2024-09","close":120.0},{"date":"2024-12","close":145.0},{"date":"2025-03","close":138.0},{"date":"2025-06","close":115.0},{"date":"2025-09","close":110.0},{"date":"2025-12","close":108.0}]}},"operational_metrics":[{"name":"Customers $100K+ ARR","value":"4,150+","period":"Q4 2025"},{"name":"Total Customers","value":"32,700+","period":"Q4 2025"},{"name":"Net Revenue Retention","value":"120%+","period":"2025"},{"name":"AI Native Customer Revenue","value":"8%+ of ARR","period":"Q4 2025"},{"name":"LLM Observability Growth","value":"3x+ YoY","period":"2025"},{"name":"Remaining Performance Obligations","value":"$3.46B","period":"Q4 2025"}]},"KTOS":{"ticker":"KTOS","name":"Kratos Defense & Security","sector":"Defense Tech","market_cap_b":16.71,"description":"The pure-play drone and hypersonics company. Valkyrie (XQ-58A) and Mako programs position Kratos uniquely in the autonomous combat air vehicle space. Government contract backlog provides revenue visibility.","financials":{"quarterly":[{"period":"2024 Q1","revenue":295.0,"gross_margin_pct":23.0,"net_income":8.0,"fcf":-8.0},{"period":"2024 Q2","revenue":314.0,"gross_margin_pct":23.5,"net_income":10.0,"fcf":-5.0},{"period":"2024 Q3","revenue":325.0,"gross_margin_pct":24.0,"net_income":12.0,"fcf":-3.0},{"period":"2024 Q4","revenue":350.0,"gross_margin_pct":24.5,"net_income":15.0,"fcf":5.0},{"period":"2025 Q1","revenue":328.0,"gross_margin_pct":23.5,"net_income":10.0,"fcf":-6.0},{"period":"2025 Q2","revenue":360.0,"gross_margin_pct":23.8,"net_income":14.0,"fcf":2.0},{"period":"2025 Q3","revenue":388.0,"gross_margin_pct":24.0,"net_income":18.0,"fcf":8.0},{"period":"2025 Q4","revenue":420.0,"gross_margin_pct":24.5,"net_income":22.0,"fcf":16.0}],"annual":{"2024":{"revenue":1284.0,"net_income":45.0,"gross_margin_pct":23.8},"2025":{"revenue":1496.0,"net_income":64.0,"gross_margin_pct":23.95}},"stock_price":{"current":23.1,"year_high":32.0,"year_low":14.0,"history":[{"date":"2024-03","close":18.0},{"date":"2024-06","close":21.0},{"date":"2024-09","close":24.0},{"date":"2024-12","close":28.0},{"date":"2025-03","close":30.0},{"date":"2025-06","close":24.0},{"date":"2025-09","close":22.0},{"date":"2025-12","close":23.1}]}},"operational_metrics":[{"name":"Drone Autonomy Revenue","value":"$180M+","period":"2025 Annual"},{"name":"DoD Contracts Backlog","value":"$1.3B+","period":"Q4 2025"},{"name":"Space / Satellite Revenue","value":"$200M+","period":"2025 Annual"},{"name":"Government Revenue %","value":"85%+","period":"2025"},{"name":"Valkyrie (XQ-58A) Status","value":"Active USAF Program","period":"2025"}]},"RDDT":{"ticker":"RDDT","name":"Reddit","sector":"Digital Media","market_cap_b":25.26,"description":"Community platform with uniquely authentic human-generated content — the exact data AI companies need. Data licensing to Google and OpenAI is a high-margin business on top of advertising.","financials":{"quarterly":[{"period":"2024 Q1","revenue":243.0,"gross_margin_pct":88.7,"net_income":-575.0,"fcf":-4.0},{"period":"2024 Q2","revenue":281.0,"gross_margin_pct":89.6,"net_income":-10.0,"fcf":70.0},{"period":"2024 Q3","revenue":348.0,"gross_margin_pct":90.2,"net_income":29.9,"fcf":127.0},{"period":"2024 Q4","revenue":427.7,"gross_margin_pct":90.8,"net_income":71.0,"fcf":180.0},{"period":"2025 Q1","revenue":392.0,"gross_margin_pct":90.5,"net_income":28.0,"fcf":140.0},{"period":"2025 Q2","revenue":452.0,"gross_margin_pct":90.8,"net_income":58.0,"fcf":175.0},{"period":"2025 Q3","revenue":548.0,"gross_margin_pct":91.0,"net_income":102.0,"fcf":220.0},{"period":"2025 Q4","revenue":682.0,"gross_margin_pct":91.2,"net_income":148.0,"fcf":280.0}],"annual":{"2024":{"revenue":1299.7,"net_income":-484.1,"gross_margin_pct":89.8},"2025":{"revenue":2074.0,"net_income":336.0,"gross_margin_pct":90.9}},"stock_price":{"current":124.0,"year_high":185.0,"year_low":53.0,"history":[{"date":"2024-03","close":53.0},{"date":"2024-06","close":68.0},{"date":"2024-09","close":75.0},{"date":"2024-12","close":155.0},{"date":"2025-03","close":170.0},{"date":"2025-06","close":140.0},{"date":"2025-09","close":130.0},{"date":"2025-12","close":124.0}]}},"operational_metrics":[{"name":"Daily Active Users","value":"101M+","period":"Q4 2025"},{"name":"Ad Revenue","value":"$600M+","period":"2025 Annual"},{"name":"Data Licensing Revenue","value":"$120M+","period":"2025 Annual"},{"name":"ARPU Growth YoY","value":"35%+","period":"2025"},{"name":"AI Training Data Deals","value":"Google, OpenAI + others","period":"2024–2025"}]}},"cross_company_metrics":{"revenue_growth_pct":{"PLTR":56.2,"RKLB":47.2,"APP":40.4,"VRT":39.2,"AXON":40.1,"CRWV":255.3,"SPOT":18.2,"DDOG":27.7,"KTOS":16.5,"RDDT":59.6},"gross_margin_pct":{"PLTR":84.3,"RKLB":34.0,"APP":80.3,"VRT":36.2,"AXON":59.7,"CRWV":62.8,"SPOT":32.5,"DDOG":81.8,"KTOS":24.0,"RDDT":90.9},"fcf_margin_pct":{"PLTR":47.7,"RKLB":-27.0,"APP":68.8,"VRT":15.4,"AXON":11.5,"CRWV":-65.0,"SPOT":14.9,"DDOG":29.9,"KTOS":-1.4,"RDDT":39.5},"ev_revenue_ttm":{"PLTR":80.0,"RKLB":16.8,"APP":30.0,"VRT":10.0,"AXON":15.0,"CRWV":8.7,"SPOT":6.2,"DDOG":14.0,"KTOS":12.0,"RDDT":11.5},"market_cap_b":{"PLTR":351.74,"RKLB":38.8,"APP":151.85,"VRT":101.53,"AXON":40.15,"CRWV":41.98,"SPOT":104.92,"DDOG":45.0,"KTOS":16.71,"RDDT":25.26}}};
+
+// ===== SECTOR CONFIG =====
+const SECTOR_COLORS = {
+  'AI Infrastructure': { bg: 'rgba(79,152,163,0.15)', color: '#4f98a3', label: 'AI Infra' },
+  'Ad Tech / AI':      { bg: 'rgba(155,111,212,0.15)', color: '#9b6fd4', label: 'Ad Tech' },
+  'Defense / Public Safety Tech': { bg: 'rgba(193,125,60,0.15)', color: '#c17d3c', label: 'Defense' },
+  'Defense Tech':      { bg: 'rgba(193,125,60,0.15)', color: '#c17d3c', label: 'Defense' },
+  'Space / Defense':   { bg: 'rgba(74,127,191,0.15)', color: '#4a7fbf', label: 'Space' },
+  'Digital Media':     { bg: 'rgba(155,111,212,0.15)', color: '#9b6fd4', label: 'Media' },
+  'Cloud / SaaS':      { bg: 'rgba(91,158,111,0.15)', color: '#5b9e6f', label: 'SaaS' },
+};
+
+const CHART_COLORS = ['#4f98a3','#9b6fd4','#e87c4a','#5b9e6f','#4a7fbf','#c17d3c','#d4875a','#e0984c','#6ec6ad','#a78be8'];
+
+// ===== STATE =====
+let selectedTicker = null;
+let activeTab = 'financials';
+let chartInstances = {};
+let compareChartInstance = null;
+let compareSelectedTickers = Object.keys(DATA.companies);
+
+// ===== THEME TOGGLE =====
+(function() {
+  const btn = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  root.setAttribute('data-theme', theme);
+  function updateIcon() {
+    btn.innerHTML = theme === 'dark'
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    btn.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+  }
+  updateIcon();
+  btn.addEventListener('click', () => {
+    theme = theme === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', theme);
+    updateIcon();
+    // Re-render charts after theme change
+    setTimeout(() => {
+      if (selectedTicker) renderDetailCharts(selectedTicker, activeTab);
+      renderCompareChart();
+renderNewsGrid();
+applyLiveQuotesToCards();
+    }, 100);
+  });
+})();
+
+// ===== CHART.JS DEFAULTS =====
+function getChartDefaults() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  return {
+    textColor: isDark ? '#e2e4ea' : '#111318',
+    mutedColor: isDark ? '#6b7285' : '#5a6075',
+    gridColor: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.06)',
+    surfaceColor: isDark ? '#1a1c22' : '#ffffff',
+  };
+}
+
+Chart.defaults.font.family = "'Inter', sans-serif";
+Chart.defaults.font.size = 11;
+
+// ===== UTILITIES =====
+function fmt(n, prefix = '', suffix = '') {
+  if (n === undefined || n === null) return '—';
+  if (Math.abs(n) >= 1000) return prefix + (n/1000).toFixed(1) + 'K' + suffix;
+  return prefix + n.toFixed(n % 1 === 0 ? 0 : 1) + suffix;
+}
+function fmtB(n) { return n ? '$' + n.toFixed(1) + 'B' : '—'; }
+function fmtPct(n) { return n !== undefined ? (n > 0 ? '+' : '') + n.toFixed(1) + '%' : '—'; }
+function colorClass(n) { return n > 0 ? 'up' : n < 0 ? 'down' : ''; }
+
+function destroyChart(id) {
+  if (chartInstances[id]) { chartInstances[id].destroy(); delete chartInstances[id]; }
+}
+
+// ===== HERO STATS =====
+function renderHeroStats() {
+  const ccm = DATA.cross_company_metrics;
+  const companies = Object.keys(DATA.companies);
+  const totalMcap = companies.reduce((s, t) => s + (ccm.market_cap_b[t] || 0), 0);
+  const growthVals = Object.values(ccm.revenue_growth_pct).filter(v => v > 0);
+  const avgGrowth = growthVals.reduce((s, v) => s + v, 0) / growthVals.length;
+  document.getElementById('stat-total-mcap').textContent = '$' + (totalMcap / 1000).toFixed(1) + 'T';
+  document.getElementById('stat-avg-growth').textContent = '+' + avgGrowth.toFixed(0) + '%';
+}
+
+// ===== NAV =====
+function renderNav() {
+  const nav = document.getElementById('companyNav');
+  nav.innerHTML = Object.values(DATA.companies).map(c =>
+    `<a href="#overview" class="nav-pill" data-ticker="${c.ticker}" onclick="selectCompany('${c.ticker}');return false;">${c.ticker}</a>`
+  ).join('') + `<a href="#compare" class="nav-pill">Compare ↓</a>`;
+}
+
+// ===== COMPANY CARDS =====
+function renderCards() {
+  const grid = document.getElementById('companyGrid');
+  grid.innerHTML = Object.values(DATA.companies).map(c => {
+    const ann = c.financials.annual;
+    const rev24 = ann['2024']?.revenue || 0;
+    const rev25 = ann['2025']?.revenue || 0;
+    const growth = rev24 > 0 ? ((rev25 - rev24) / rev24 * 100) : 0;
+    const sp = c.financials.stock_price;
+    const sc = SECTOR_COLORS[c.sector] || { bg: 'rgba(79,152,163,0.15)', color: '#4f98a3', label: c.sector };
+    const hist = sp.history || [];
+    const sparkPts = hist.map(h => h.close);
+    const sparkLabel = `style="color:${sc.color};background:${sc.bg}"`;
+
+    return `<div class="company-card" id="card-${c.ticker}" onclick="selectCompany('${c.ticker}')" data-ticker="${c.ticker}">
+      <div class="card-header">
+        <div class="card-ticker">${c.ticker}</div>
+        <span class="sector-badge" ${sparkLabel}>${sc.label}</span>
+      </div>
+      <div class="card-name">${c.name}</div>
+      <div class="card-mcap">Mkt Cap: ${fmtB(c.market_cap_b)}</div>
+      <div class="card-metrics">
+        <div class="card-metric">
+          <div class="card-metric-val ${colorClass(growth)}">${fmtPct(growth)}</div>
+          <div class="card-metric-lbl">Rev Growth</div>
+        </div>
+        <div class="card-metric">
+          <div class="card-metric-val">${ann['2025']?.gross_margin_pct?.toFixed(1)}%</div>
+          <div class="card-metric-lbl">Gross Margin</div>
+        </div>
+        <div class="card-metric">
+          <div class="card-metric-val ${sp.current > (hist[0]?.close || sp.current) ? 'up' : 'down'}">$${sp.current}</div>
+          <div class="card-metric-lbl">Price</div>
+        </div>
+      </div>
+      <div class="card-sparkline">
+        <canvas id="spark-${c.ticker}" height="36"></canvas>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Render sparklines
+  Object.values(DATA.companies).forEach(c => {
+    const hist = c.financials.stock_price.history || [];
+    if (!hist.length) return;
+    const canvas = document.getElementById(`spark-${c.ticker}`);
+    if (!canvas) return;
+    const sc = SECTOR_COLORS[c.sector] || { color: '#4f98a3' };
+    const isUp = hist[hist.length-1].close >= hist[0].close;
+    const color = isUp ? '#4caf7a' : '#e05c6b';
+    chartInstances[`spark-${c.ticker}`] = new Chart(canvas, {
+      type: 'line',
+      data: {
+        labels: hist.map(h => h.date),
+        datasets: [{ data: hist.map(h => h.close), borderColor: color, borderWidth: 1.5, tension: 0.4, pointRadius: 0, fill: true,
+          backgroundColor: isUp ? 'rgba(76,175,122,0.1)' : 'rgba(224,92,107,0.1)' }]
+      },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { enabled: false } },
+        scales: { x: { display: false }, y: { display: false } }, animation: { duration: 400 } }
+    });
+  });
+}
+
+// ===== SELECT COMPANY =====
+function selectCompany(ticker) {
+  if (selectedTicker === ticker) {
+    // Deselect
+    selectedTicker = null;
+    document.querySelectorAll('.company-card').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('.nav-pill[data-ticker]').forEach(p => p.classList.remove('active'));
+    document.getElementById('detailPanel').classList.remove('visible');
+    return;
+  }
+  selectedTicker = ticker;
+  activeTab = 'financials';
+  document.querySelectorAll('.company-card').forEach(c => {
+    c.classList.toggle('selected', c.dataset.ticker === ticker);
+  });
+  document.querySelectorAll('.nav-pill[data-ticker]').forEach(p => {
+    p.classList.toggle('active', p.dataset.ticker === ticker);
+  });
+  renderDetailPanel(ticker);
+  setTimeout(() => {
+    const panel = document.getElementById('detailPanel');
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 80);
+}
+
+// ===== DETAIL PANEL =====
+function renderDetailPanel(ticker) {
+  const c = DATA.companies[ticker];
+  const panel = document.getElementById('detailPanel');
+  const ann = c.financials.annual;
+  const sp = c.financials.stock_price;
+  const rev25 = ann['2025']?.revenue;
+  const rev24 = ann['2024']?.revenue;
+  const growth = rev24 > 0 ? ((rev25 - rev24) / rev24 * 100) : 0;
+  const sc = SECTOR_COLORS[c.sector] || { color: '#4f98a3', bg: 'rgba(79,152,163,0.15)', label: c.sector };
+
+  panel.innerHTML = `
+    <div class="detail-header">
+      <div class="detail-ticker-block">
+        <div>
+          <div class="detail-ticker">${c.ticker}</div>
+          <div class="detail-name">${c.name}</div>
+        </div>
+        <span class="sector-badge" style="color:${sc.color};background:${sc.bg};font-size:var(--text-xs);padding:4px 12px">${sc.label}</span>
+      </div>
+      <div class="detail-kpis">
+        <div class="detail-kpi">
+          <div class="detail-kpi-val">${fmtB(c.market_cap_b)}</div>
+          <div class="detail-kpi-lbl">Market Cap</div>
+        </div>
+        <div class="detail-kpi">
+          <div class="detail-kpi-val ${colorClass(growth)}">${fmtPct(growth)}</div>
+          <div class="detail-kpi-lbl">Rev Growth (2025)</div>
+        </div>
+        <div class="detail-kpi">
+          <div class="detail-kpi-val">${ann['2025']?.gross_margin_pct?.toFixed(1)}%</div>
+          <div class="detail-kpi-lbl">Gross Margin</div>
+        </div>
+        <div class="detail-kpi">
+          <div class="detail-kpi-val">$${sp.current}</div>
+          <div class="detail-kpi-lbl">Stock Price</div>
+        </div>
+        <div class="detail-kpi">
+          <div class="detail-kpi-val">$${sp.year_high} / $${sp.year_low}</div>
+          <div class="detail-kpi-lbl">52W High / Low</div>
+        </div>
+      </div>
+    </div>
+    <div class="detail-tabs">
+      <button class="detail-tab active" onclick="switchTab('${ticker}','financials',this)">Financials</button>
+      <button class="detail-tab" onclick="switchTab('${ticker}','operational',this)">Operational KPIs</button>
+      <button class="detail-tab" onclick="switchTab('${ticker}','stock',this)">Stock Price</button>
+    </div>
+    <div class="detail-body" id="detailBody-${ticker}"></div>
+  `;
+  panel.classList.add('visible');
+  renderDetailCharts(ticker, 'financials');
+}
+
+function switchTab(ticker, tab, el) {
+  activeTab = tab;
+  document.querySelectorAll('.detail-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  renderDetailCharts(ticker, tab);
+}
+
+// ===== DETAIL CHARTS =====
+function renderDetailCharts(ticker, tab) {
+  const c = DATA.companies[ticker];
+  const body = document.getElementById(`detailBody-${ticker}`);
+  if (!body) return;
+
+  // Destroy old charts in detail panel
+  Object.keys(chartInstances).filter(k => k.startsWith(`detail-${ticker}`)).forEach(k => destroyChart(k));
+
+  const q = c.financials.quarterly;
+  const labels = q.map(x => x.period);
+  const { textColor, mutedColor, gridColor } = getChartDefaults();
+
+  const baseLineOpts = (yLabel) => ({
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false,
+      backgroundColor: 'rgba(20,21,25,0.95)', titleColor: textColor, bodyColor: mutedColor,
+      borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1, padding: 10 }},
+    scales: {
+      x: { ticks: { color: mutedColor, font: { size: 10 }, maxRotation: 45 }, grid: { color: gridColor } },
+      y: { ticks: { color: mutedColor, font: { size: 10 } }, grid: { color: gridColor }, title: { display: !!yLabel, text: yLabel, color: mutedColor, font: { size: 10 } } }
+    }
+  });
+
+  if (tab === 'financials') {
+    body.innerHTML = `<div class="charts-grid">
+      <div class="chart-card">
+        <div class="chart-title">Quarterly Revenue</div>
+        <div class="chart-subtitle">$M · 8 quarters</div>
+        <div class="chart-canvas-wrap"><canvas id="detail-${ticker}-rev"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Gross Margin %</div>
+        <div class="chart-subtitle">8 quarters</div>
+        <div class="chart-canvas-wrap"><canvas id="detail-${ticker}-gm"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Quarterly Net Income</div>
+        <div class="chart-subtitle">$M · profit / loss</div>
+        <div class="chart-canvas-wrap"><canvas id="detail-${ticker}-ni"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Free Cash Flow</div>
+        <div class="chart-subtitle">$M · quarterly</div>
+        <div class="chart-canvas-wrap"><canvas id="detail-${ticker}-fcf"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Annual Revenue</div>
+        <div class="chart-subtitle">2024 vs 2025</div>
+        <div class="chart-canvas-wrap"><canvas id="detail-${ticker}-ann"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">QoQ Revenue Growth</div>
+        <div class="chart-subtitle">Quarter-over-quarter %</div>
+        <div class="chart-canvas-wrap"><canvas id="detail-${ticker}-qoq"></canvas></div>
+      </div>
+    </div>`;
+
+    // Revenue
+    chartInstances[`detail-${ticker}-rev`] = new Chart(document.getElementById(`detail-${ticker}-rev`), {
+      type: 'bar',
+      data: { labels, datasets: [{ label: 'Revenue $M', data: q.map(x => x.revenue), backgroundColor: CHART_COLORS[0] + 'cc', borderColor: CHART_COLORS[0], borderWidth: 1, borderRadius: 4 }] },
+      options: { ...baseLineOpts('$M'), plugins: { ...baseLineOpts().plugins, legend: { display: false } } }
+    });
+
+    // Gross Margin
+    chartInstances[`detail-${ticker}-gm`] = new Chart(document.getElementById(`detail-${ticker}-gm`), {
+      type: 'line',
+      data: { labels, datasets: [{ label: 'Gross Margin %', data: q.map(x => x.gross_margin_pct), borderColor: CHART_COLORS[1], backgroundColor: CHART_COLORS[1] + '22', fill: true, tension: 0.4, pointRadius: 4, pointBackgroundColor: CHART_COLORS[1] }] },
+      options: baseLineOpts('%')
+    });
+
+    // Net Income
+    const niData = q.map(x => x.net_income);
+    chartInstances[`detail-${ticker}-ni`] = new Chart(document.getElementById(`detail-${ticker}-ni`), {
+      type: 'bar',
+      data: { labels, datasets: [{ label: 'Net Income $M', data: niData,
+        backgroundColor: niData.map(v => v >= 0 ? CHART_COLORS[2] + 'cc' : '#e05c6b66'),
+        borderColor: niData.map(v => v >= 0 ? CHART_COLORS[2] : '#e05c6b'),
+        borderWidth: 1, borderRadius: 4 }] },
+      options: baseLineOpts('$M')
+    });
+
+    // FCF
+    const fcfData = q.map(x => x.fcf);
+    chartInstances[`detail-${ticker}-fcf`] = new Chart(document.getElementById(`detail-${ticker}-fcf`), {
+      type: 'bar',
+      data: { labels, datasets: [{ label: 'FCF $M', data: fcfData,
+        backgroundColor: fcfData.map(v => v >= 0 ? CHART_COLORS[3] + 'cc' : '#e05c6b66'),
+        borderColor: fcfData.map(v => v >= 0 ? CHART_COLORS[3] : '#e05c6b'),
+        borderWidth: 1, borderRadius: 4 }] },
+      options: baseLineOpts('$M')
+    });
+
+    // Annual bar
+    const ann = c.financials.annual;
+    chartInstances[`detail-${ticker}-ann`] = new Chart(document.getElementById(`detail-${ticker}-ann`), {
+      type: 'bar',
+      data: {
+        labels: ['2024', '2025'],
+        datasets: [
+          { label: 'Revenue $M', data: [ann['2024']?.revenue, ann['2025']?.revenue], backgroundColor: [CHART_COLORS[0] + '99', CHART_COLORS[0]], borderRadius: 4 },
+          { label: 'Net Income $M', data: [ann['2024']?.net_income, ann['2025']?.net_income], backgroundColor: [CHART_COLORS[2] + '99', CHART_COLORS[2]], borderRadius: 4 }
+        ]
+      },
+      options: { ...baseLineOpts('$M'), plugins: { legend: { display: true, labels: { color: mutedColor, boxWidth: 12 } }, tooltip: { mode: 'index' } } }
+    });
+
+    // QoQ growth
+    const qoqData = q.map((x, i) => i === 0 ? null : parseFloat(((x.revenue - q[i-1].revenue) / q[i-1].revenue * 100).toFixed(1)));
+    chartInstances[`detail-${ticker}-qoq`] = new Chart(document.getElementById(`detail-${ticker}-qoq`), {
+      type: 'bar',
+      data: { labels, datasets: [{ label: 'QoQ Growth %', data: qoqData,
+        backgroundColor: qoqData.map(v => v === null ? 'transparent' : v >= 0 ? CHART_COLORS[4] + 'cc' : '#e05c6b66'),
+        borderColor: qoqData.map(v => v === null ? 'transparent' : v >= 0 ? CHART_COLORS[4] : '#e05c6b'),
+        borderWidth: 1, borderRadius: 4 }] },
+      options: baseLineOpts('%')
+    });
+
+  } else if (tab === 'operational') {
+    const ops = c.operational_metrics;
+    body.innerHTML = `<div class="op-metrics-grid" id="opGrid-${ticker}">
+      ${ops.map(op => `
+        <div class="op-metric-card">
+          <div class="op-metric-name">${op.name}</div>
+          <div class="op-metric-val">${op.value}</div>
+          <div class="op-metric-period">${op.period}</div>
+          ${op.note ? `<div class="op-metric-note">~ estimated</div>` : ''}
+        </div>
+      `).join('')}
+    </div>
+    <p style="font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-4)">Sources: SEC filings, earnings transcripts, and analyst coverage through early 2026. Values marked "est." are analyst estimates.</p>`;
+
+  } else if (tab === 'stock') {
+    const sp = c.financials.stock_price;
+    const hist = sp.history || [];
+    const isUp = hist.length > 1 && hist[hist.length-1].close >= hist[0].close;
+    body.innerHTML = `
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--space-4);margin-bottom:var(--space-5)">
+      <div class="op-metric-card"><div class="op-metric-name">Current Price</div><div class="op-metric-val">$${sp.current}</div></div>
+      <div class="op-metric-card"><div class="op-metric-name">52W High</div><div class="op-metric-val up">$${sp.year_high}</div></div>
+      <div class="op-metric-card"><div class="op-metric-name">52W Low</div><div class="op-metric-val down">$${sp.year_low}</div></div>
+      ${sp.pe ? `<div class="op-metric-card"><div class="op-metric-name">P/E Ratio</div><div class="op-metric-val">${sp.pe}x</div></div>` : ''}
+    </div>
+    <div class="chart-card" style="max-width:100%">
+      <div class="chart-title">Stock Price History</div>
+      <div class="chart-subtitle">Monthly closes · March 2024 – March 2026</div>
+      <div style="height:260px;position:relative"><canvas id="detail-${ticker}-stock"></canvas></div>
+    </div>`;
+
+    chartInstances[`detail-${ticker}-stock`] = new Chart(document.getElementById(`detail-${ticker}-stock`), {
+      type: 'line',
+      data: {
+        labels: hist.map(h => h.date),
+        datasets: [{
+          label: 'Price $', data: hist.map(h => h.close),
+          borderColor: isUp ? '#4caf7a' : '#e05c6b',
+          backgroundColor: isUp ? 'rgba(76,175,122,0.08)' : 'rgba(224,92,107,0.08)',
+          fill: true, tension: 0.4, pointRadius: 4,
+          pointBackgroundColor: isUp ? '#4caf7a' : '#e05c6b'
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { mode: 'index', backgroundColor: 'rgba(20,21,25,0.95)', titleColor: textColor, bodyColor: mutedColor, borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1 }},
+        scales: {
+          x: { ticks: { color: mutedColor, font: { size: 10 }, maxRotation: 45 }, grid: { color: gridColor } },
+          y: { ticks: { color: mutedColor, font: { size: 10 }, callback: v => '$' + v }, grid: { color: gridColor } }
+        }
+      }
+    });
+  }
+}
+
+// ===== COMPARE =====
+function renderCompareCheckboxes() {
+  const wrap = document.getElementById('compareCheckboxes');
+  wrap.innerHTML = Object.values(DATA.companies).map(c => {
+    const checked = compareSelectedTickers.includes(c.ticker);
+    return `<label class="checkbox-label ${checked ? 'checked' : ''}" id="chk-lbl-${c.ticker}">
+      <input type="checkbox" ${checked ? 'checked' : ''} onchange="toggleCompareTicker('${c.ticker}',this)" style="display:none">
+      ${c.ticker}
+    </label>`;
+  }).join('');
+}
+
+function toggleCompareTicker(ticker, el) {
+  if (el.checked) {
+    compareSelectedTickers.push(ticker);
+  } else {
+    compareSelectedTickers = compareSelectedTickers.filter(t => t !== ticker);
+  }
+  document.getElementById(`chk-lbl-${ticker}`).classList.toggle('checked', el.checked);
+  renderCompareChart();
+renderNewsGrid();
+applyLiveQuotesToCards();
+}
+
+function renderCompareChart() {
+  const metricKey = document.getElementById('compareMetric').value;
+  const ccm = DATA.cross_company_metrics[metricKey] || {};
+  const tickers = compareSelectedTickers.filter(t => ccm[t] !== undefined);
+  const { textColor, mutedColor, gridColor } = getChartDefaults();
+
+  const metricLabels = {
+    revenue_growth_pct: 'Revenue Growth % (2025 vs 2024)',
+    gross_margin_pct: 'Gross Margin %',
+    fcf_margin_pct: 'Free Cash Flow Margin %',
+    ev_revenue_ttm: 'EV / Revenue (TTM)',
+    market_cap_b: 'Market Cap ($B)',
+  };
+
+  if (compareChartInstance) { compareChartInstance.destroy(); compareChartInstance = null; }
+
+  compareChartInstance = new Chart(document.getElementById('compareChart'), {
+    type: 'bar',
+    data: {
+      labels: tickers.map(t => DATA.companies[t]?.ticker || t),
+      datasets: [{
+        label: metricLabels[metricKey] || metricKey,
+        data: tickers.map(t => ccm[t]),
+        backgroundColor: tickers.map((_, i) => CHART_COLORS[i % CHART_COLORS.length] + 'cc'),
+        borderColor: tickers.map((_, i) => CHART_COLORS[i % CHART_COLORS.length]),
+        borderWidth: 1.5, borderRadius: 6,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: 'rgba(20,21,25,0.95)', titleColor: textColor, bodyColor: mutedColor,
+          borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1, padding: 10,
+          callbacks: {
+            label: ctx => {
+              const v = ctx.parsed.x;
+              if (metricKey === 'market_cap_b') return ' $' + v.toFixed(1) + 'B';
+              if (metricKey.includes('pct') || metricKey.includes('growth')) return ' ' + (v > 0 ? '+' : '') + v.toFixed(1) + '%';
+              return ' ' + v.toFixed(1) + 'x';
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: mutedColor, font: { size: 11 } },
+          grid: { color: gridColor },
+          title: { display: true, text: metricLabels[metricKey] || metricKey, color: mutedColor, font: { size: 11 } }
+        },
+        y: { ticks: { color: textColor, font: { size: 11, weight: '600' } }, grid: { display: false } }
+      }
+    }
+  });
+}
+
+document.getElementById('compareMetric').addEventListener('change', renderCompareChart);
+
+
+// ===== NEWS RENDERING =====
+function renderNewsGrid() {
+  const grid = document.getElementById('newsGrid');
+  if (!grid) return;
+  const tickers = Object.keys(DATA.companies);
+  grid.innerHTML = tickers.map(ticker => {
+    const news = LIVE_DATA.news_data[ticker];
+    const quote = LIVE_DATA.live_quotes[ticker];
+    const sc = SECTOR_COLORS[DATA.companies[ticker]?.sector] || { color: '#4f98a3', bg: 'rgba(79,152,163,0.15)', label: '—' };
+    if (!news || !quote) return '';
+    const upDown = quote.changePct >= 0;
+    const changeStr = (upDown ? '+' : '') + quote.changePct.toFixed(2) + '%';
+    return `<div class="news-card" id="news-${ticker}">
+      <div class="news-card-top">
+        <div style="display:flex;align-items:center;gap:var(--space-2)">
+          <div class="news-ticker">${ticker}</div>
+          <span class="sector-badge" style="color:${sc.color};background:${sc.bg};font-size:10px;padding:2px 8px">${sc.label}</span>
+        </div>
+        <div class="news-price-block">
+          <div class="news-price">$${quote.price.toFixed(2)}</div>
+          <div class="news-change ${upDown ? 'up' : 'down'}">${changeStr} today</div>
+        </div>
+      </div>
+      <div class="news-headline">${news.headline}</div>
+      <div class="bull-bear-row">
+        <div class="bull-block"><div class="bull-label">🐂 Bull</div>${news.bull}</div>
+        <div class="bear-block"><div class="bear-label">🐻 Bear</div>${news.bear}</div>
+      </div>
+      <div class="news-stories">
+        ${news.stories.map(s => `
+          <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="news-story">
+            <span class="news-story-title">${s.title}</span>
+            <span class="news-story-date">${s.date}</span>
+          </a>`).join('')}
+      </div>
+    </div>`;
+  }).join('');
+
+  // Update last-refreshed status
+  const statusEl = document.getElementById('refreshStatus');
+  if (statusEl && LIVE_DATA.fetched_at) {
+    const d = new Date(LIVE_DATA.fetched_at);
+    statusEl.textContent = 'Last updated: ' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' · ' + d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
+  }
+}
+
+// Update company cards with live prices
+function applyLiveQuotesToCards() {
+  Object.values(DATA.companies).forEach(c => {
+    const q = LIVE_DATA.live_quotes[c.ticker];
+    if (!q) return;
+    const card = document.getElementById(`card-${c.ticker}`);
+    if (!card) return;
+    const metrics = card.querySelectorAll('.card-metric-val');
+    // 3rd metric is price
+    if (metrics[2]) {
+      metrics[2].textContent = '$' + q.price.toFixed(2);
+      metrics[2].className = 'card-metric-val ' + (q.changePct >= 0 ? 'up' : 'down');
+    }
+  });
+}
+
+// ===== REFRESH BUTTON =====
+async function triggerRefresh() {
+  const btn = document.getElementById('refreshBtn');
+  const statusEl = document.getElementById('refreshStatus');
+  btn.classList.add('spinning');
+  btn.disabled = true;
+  if (statusEl) { statusEl.textContent = 'Refreshing...'; statusEl.className = 'refresh-status'; }
+
+  try {
+    // Attempt to fetch live_data.json (will get latest if re-deployed, same file otherwise)
+    const res = await fetch('./live_data.json?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const fresh = await res.json();
+    LIVE_DATA = fresh;
+    renderNewsGrid();
+    applyLiveQuotesToCards();
+    if (statusEl) {
+      statusEl.textContent = '✓ Updated just now';
+      statusEl.className = 'refresh-status success';
+      setTimeout(() => {
+        if (statusEl) {
+          const d = new Date(LIVE_DATA.fetched_at);
+          statusEl.textContent = 'Last updated: ' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' · ' + d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
+          statusEl.className = 'refresh-status';
+        }
+      }, 3000);
+    }
+  } catch(e) {
+    if (statusEl) { statusEl.textContent = '⚠ Could not fetch live data'; statusEl.className = 'refresh-status error'; }
+    console.warn('Refresh failed:', e);
+  } finally {
+    btn.classList.remove('spinning');
+    btn.disabled = false;
+  }
+}
+
+// ===== INIT =====
+renderHeroStats();
+renderNav();
+renderCards();
+renderCompareCheckboxes();
+renderCompareChart();
+renderNewsGrid();
+applyLiveQuotesToCards();
+</script>
+</body>
+</html>

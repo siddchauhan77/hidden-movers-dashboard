@@ -1,0 +1,2681 @@
+{
+  "metadata": {
+    "generated": "2026-03-13",
+    "total_companies": 50,
+    "tickers": [
+      "PLTR",
+      "APP",
+      "VRT",
+      "SPOT",
+      "CRWV",
+      "AXON",
+      "RKLB",
+      "CLS",
+      "DDOG",
+      "NET",
+      "RDDT",
+      "SMCI",
+      "KTOS",
+      "AFRM",
+      "TOST",
+      "ZS",
+      "MDB",
+      "MDGL",
+      "BAH",
+      "PL",
+      "HIMS",
+      "PCTY",
+      "GTLS",
+      "WTS",
+      "APLD",
+      "FLNC",
+      "ARRY",
+      "IRDM",
+      "GTM",
+      "BRZE",
+      "RAMP",
+      "SOUN",
+      "ACLS",
+      "CWAN",
+      "NCNO",
+      "RXRX",
+      "FRSH",
+      "CACI",
+      "S",
+      "LYFT",
+      "VRNT",
+      "ALAB",
+      "PGYZ",
+      "SHLS",
+      "WOLF",
+      "LUNR",
+      "JOBY",
+      "ASTS",
+      "TMDX",
+      "PTON"
+    ],
+    "notes": [
+      "Revenue in USD millions unless noted (SPOT in EUR millions)",
+      "Fiscal year offsets: SMCI, PCTY, BAH, AFRM, ZS, MDB, BRZE, S, RAMP, VRNT, NCNO, CACI, PL, PTON have FY offsets",
+      "Data sourced from SEC filings, earnings reports, and analyst coverage. Values marked 'est.' are estimates.",
+      "Price history: monthly end-of-month close prices"
+    ]
+  },
+  "companies": {
+    "PLTR": {
+      "ticker": "PLTR",
+      "name": "Palantir Technologies",
+      "sector": "AI/Defense Software",
+      "market_cap_b": 351.74,
+      "description": "AI-powered data analytics platform for government and commercial enterprises. AIP (Artificial Intelligence Platform) drives rapid enterprise adoption via boot camps.",
+      "website": "https://www.palantir.com",
+      "financials": {
+        "quarterly": [
+          {
+            "period": "2024 Q1",
+            "date": "2024-03-31",
+            "revenue": 634.3,
+            "gross_profit": 518.1,
+            "gross_margin_pct": 81.7,
+            "net_income": 105.5,
+            "eps": 0.05,
+            "fcf": 126.9
+          },
+          {
+            "period": "2024 Q2",
+            "date": "2024-06-30",
+            "revenue": 678.1,
+            "gross_profit": 549.6,
+            "gross_margin_pct": 81.0,
+            "net_income": 134.1,
+            "eps": 0.06,
+            "fcf": 141.3
+          },
+          {
+            "period": "2024 Q3",
+            "date": "2024-09-30",
+            "revenue": 725.5,
+            "gross_profit": 578.9,
+            "gross_margin_pct": 79.8,
+            "net_income": 143.5,
+            "eps": 0.06,
+            "fcf": 415.8
+          },
+          {
+            "period": "2024 Q4",
+            "date": "2024-12-31",
+            "revenue": 827.5,
+            "gross_profit": 653.0,
+            "gross_margin_pct": 78.9,
+            "net_income": 79.0,
+            "eps": 0.03,
+            "fcf": 457.2
+          },
+          {
+            "period": "2025 Q1",
+            "date": "2025-03-31",
+            "revenue": 883.9,
+            "gross_profit": 710.9,
+            "gross_margin_pct": 80.4,
+            "net_income": 214.0,
+            "eps": 0.09,
+            "fcf": 304.1
+          },
+          {
+            "period": "2025 Q2",
+            "date": "2025-06-30",
+            "revenue": 1003.7,
+            "gross_profit": 810.8,
+            "gross_margin_pct": 80.8,
+            "net_income": 326.7,
+            "eps": 0.14,
+            "fcf": 531.6
+          },
+          {
+            "period": "2025 Q3",
+            "date": "2025-09-30",
+            "revenue": 1181.1,
+            "gross_profit": 973.8,
+            "gross_margin_pct": 82.4,
+            "net_income": 475.6,
+            "eps": 0.2,
+            "fcf": 501.9
+          },
+          {
+            "period": "2025 Q4",
+            "date": "2025-12-31",
+            "revenue": 1406.8,
+            "gross_profit": 1190.8,
+            "gross_margin_pct": 84.6,
+            "net_income": 608.7,
+            "eps": 0.26,
+            "fcf": 764.0
+          }
+        ],
+        "annual": {
+          "2024": {
+            "revenue": 2865.4,
+            "gross_profit": 2299.6,
+            "gross_margin_pct": 80.3,
+            "net_income": 462.1,
+            "fcf": 1141.2,
+            "quarters_included": 4
+          },
+          "2025": {
+            "revenue": 4475.5,
+            "gross_profit": 3686.3,
+            "gross_margin_pct": 82.4,
+            "net_income": 1625.0,
+            "fcf": 2101.6,
+            "quarters_included": 4,
+            "yoy_revenue_growth_pct": 56.2
+          }
+        },
+        "stock_price": {
+          "current": 153.5,
+          "pe": 239.84,
+          "eps_ttm": 0.64,
+          "year_high": 207.52,
+          "year_low": 66.12,
+          "history": [
+            {
+              "date": "2024-03",
+              "close": 23.01
+            },
+            {
+              "date": "2024-04",
+              "close": 21.97
+            },
+            {
+              "date": "2024-05",
+              "close": 21.68
+            },
+            {
+              "date": "2024-06",
+              "close": 25.33
+            },
+            {
+              "date": "2024-07",
+              "close": 26.89
+            },
+            {
+              "date": "2024-08",
+              "close": 31.48
+            },
+            {
+              "date": "2024-09",
+              "close": 37.2
+            },
+            {
+              "date": "2024-10",
+              "close": 41.56
+            },
+            {
+              "date": "2024-11",
+              "close": 67.08
+            },
+            {
+              "date": "2024-12",
+              "close": 75.63
+            },
+            {
+              "date": "2025-01",
+              "close": 82.49
+            },
+            {
+              "date": "2025-02",
+              "close": 84.92
+            },
+            {
+              "date": "2025-03",
+              "close": 84.4
+            },
+            {
+              "date": "2025-04",
+              "close": 118.44
+            },
+            {
+              "date": "2025-05",
+              "close": 131.78
+            },
+            {
+              "date": "2025-06",
+              "close": 136.32
+            },
+            {
+              "date": "2025-07",
+              "close": 158.35
+            },
+            {
+              "date": "2025-08",
+              "close": 156.71
+            },
+            {
+              "date": "2025-09",
+              "close": 182.42
+            },
+            {
+              "date": "2025-10",
+              "close": 200.47
+            },
+            {
+              "date": "2025-11",
+              "close": 168.45
+            },
+            {
+              "date": "2025-12",
+              "close": 177.75
+            },
+            {
+              "date": "2026-01",
+              "close": 146.59
+            },
+            {
+              "date": "2026-02",
+              "close": 137.19
+            },
+            {
+              "date": "2026-03",
+              "close": 153.5
+            }
+          ]
+        }
+      },
+      "operational_metrics": [
+        {
+          "name": "US Commercial Revenue",
+          "value": "$628M",
+          "period": "2025 Annual",
+          "note": "est."
+        },
+        {
+          "name": "US Government Revenue",
+          "value": "$931M",
+          "period": "2025 Annual",
+          "note": "est."
+        },
+        {
+          "name": "US Commercial Customers",
+          "value": "571",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "AIP Boot Camp Customers",
+          "value": "500+",
+          "period": "2025"
+        },
+        {
+          "name": "Rule of 40",
+          "value": "94",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "US Commercial TCV",
+          "value": "$803M",
+          "period": "Q4 2025"
+        }
+      ],
+      "cross_comparable": {
+        "ev_revenue_ttm": 80.0,
+        "gross_margin_pct": 84.6,
+        "fcf_margin_pct": 47.7,
+        "yoy_revenue_growth_pct": 56.2,
+        "arr_b": 3.7,
+        "nrr_pct": 124,
+        "backlog_b": 4.21,
+        "rule_of_40": 94
+      }
+    },
+    "RKLB": {
+      "ticker": "RKLB",
+      "name": "Rocket Lab USA",
+      "sector": "Space / Launch / Defense",
+      "market_cap_b": 38.8,
+      "description": "#2 small satellite launch provider globally. Electron rocket, Neutron in development, Space Systems satellite manufacturing. $1.85B backlog.",
+      "website": "https://www.rocketlabusa.com",
+      "financials": {
+        "quarterly": [
+          {
+            "period": "2024 Q1",
+            "date": "2024-03-31",
+            "revenue": 92.8,
+            "gross_profit": 24.2,
+            "gross_margin_pct": 26.1,
+            "net_income": -44.3,
+            "eps": -0.09,
+            "fcf": -21.8
+          },
+          {
+            "period": "2024 Q2",
+            "date": "2024-06-30",
+            "revenue": 106.3,
+            "gross_profit": 27.2,
+            "gross_margin_pct": 25.6,
+            "net_income": -41.6,
+            "eps": -0.08,
+            "fcf": -28.3
+          },
+          {
+            "period": "2024 Q3",
+            "date": "2024-09-30",
+            "revenue": 104.8,
+            "gross_profit": 28.0,
+            "gross_margin_pct": 26.7,
+            "net_income": -51.9,
+            "eps": -0.1,
+            "fcf": -41.9
+          },
+          {
+            "period": "2024 Q4",
+            "date": "2024-12-31",
+            "revenue": 132.4,
+            "gross_profit": 36.8,
+            "gross_margin_pct": 27.8,
+            "net_income": -52.3,
+            "eps": -0.1,
+            "fcf": -23.9
+          },
+          {
+            "period": "2025 Q1",
+            "date": "2025-03-31",
+            "revenue": 122.6,
+            "gross_profit": 35.2,
+            "gross_margin_pct": 28.7,
+            "net_income": -60.6,
+            "eps": -0.12,
+            "fcf": -82.9
+          },
+          {
+            "period": "2025 Q2",
+            "date": "2025-06-30",
+            "revenue": 144.5,
+            "gross_profit": 46.4,
+            "gross_margin_pct": 32.1,
+            "net_income": -66.4,
+            "eps": -0.13,
+            "fcf": -55.3
+          },
+          {
+            "period": "2025 Q3",
+            "date": "2025-09-30",
+            "revenue": 155.1,
+            "gross_profit": 57.3,
+            "gross_margin_pct": 36.9,
+            "net_income": -18.3,
+            "eps": -0.03,
+            "fcf": -69.4
+          },
+          {
+            "period": "2025 Q4",
+            "date": "2025-12-31",
+            "revenue": 179.7,
+            "gross_profit": 68.2,
+            "gross_margin_pct": 38.0,
+            "net_income": -52.9,
+            "eps": -0.09,
+            "fcf": -114.2
+          }
+        ],
+        "annual": {
+          "2024": {
+            "revenue": 436.3,
+            "gross_profit": 116.2,
+            "gross_margin_pct": 26.6,
+            "net_income": -190.1,
+            "fcf": -115.9,
+            "quarters_included": 4
+          },
+          "2025": {
+            "revenue": 601.9,
+            "gross_profit": 207.1,
+            "gross_margin_pct": 34.4,
+            "net_income": -198.2,
+            "fcf": -321.8,
+            "quarters_included": 4,
+            "yoy_revenue_growth_pct": 38.0
+          }
+        },
+        "stock_price": {
+          "current": 68.37,
+          "pe": -184.78,
+          "eps_ttm": -0.37,
+          "year_high": 99.58,
+          "year_low": 14.71,
+          "history": [
+            {
+              "date": "2024-03",
+              "close": 4.11
+            },
+            {
+              "date": "2024-04",
+              "close": 3.76
+            },
+            {
+              "date": "2024-05",
+              "close": 4.37
+            },
+            {
+              "date": "2024-06",
+              "close": 4.8
+            },
+            {
+              "date": "2024-07",
+              "close": 5.24
+            },
+            {
+              "date": "2024-08",
+              "close": 6.27
+            },
+            {
+              "date": "2024-09",
+              "close": 9.73
+            },
+            {
+              "date": "2024-10",
+              "close": 10.7
+            },
+            {
+              "date": "2024-11",
+              "close": 27.28
+            },
+            {
+              "date": "2024-12",
+              "close": 25.47
+            },
+            {
+              "date": "2025-01",
+              "close": 29.05
+            },
+            {
+              "date": "2025-02",
+              "close": 20.49
+            },
+            {
+              "date": "2025-03",
+              "close": 17.88
+            },
+            {
+              "date": "2025-04",
+              "close": 21.79
+            },
+            {
+              "date": "2025-05",
+              "close": 26.79
+            },
+            {
+              "date": "2025-06",
+              "close": 35.77
+            },
+            {
+              "date": "2025-07",
+              "close": 45.92
+            },
+            {
+              "date": "2025-08",
+              "close": 48.6
+            },
+            {
+              "date": "2025-09",
+              "close": 47.91
+            },
+            {
+              "date": "2025-10",
+              "close": 62.98
+            },
+            {
+              "date": "2025-11",
+              "close": 42.14
+            },
+            {
+              "date": "2025-12",
+              "close": 69.76
+            },
+            {
+              "date": "2026-01",
+              "close": 80.07
+            },
+            {
+              "date": "2026-02",
+              "close": 69.1
+            },
+            {
+              "date": "2026-03",
+              "close": 68.37
+            }
+          ]
+        }
+      },
+      "operational_metrics": [
+        {
+          "name": "Electron Launches (2025)",
+          "value": "16",
+          "period": "2025"
+        },
+        {
+          "name": "Electron Launches (2024)",
+          "value": "16",
+          "period": "2024"
+        },
+        {
+          "name": "Backlog",
+          "value": "$1.85B",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "Space Systems Revenue",
+          "value": "$430M+",
+          "period": "2025 Annual",
+          "note": "est."
+        },
+        {
+          "name": "Launch Services Revenue",
+          "value": "$270M+",
+          "period": "2025 Annual",
+          "note": "est."
+        },
+        {
+          "name": "Neutron Dev Milestone",
+          "value": "Stage 1 test fire 2026",
+          "period": "2026"
+        }
+      ],
+      "cross_comparable": {
+        "ev_revenue_ttm": 16.8,
+        "gross_margin_pct": 33.3,
+        "fcf_margin_pct": -44.4,
+        "yoy_revenue_growth_pct": 32.4,
+        "backlog_b": 1.85
+      }
+    },
+    "APP": {
+      "ticker": "APP",
+      "name": "AppLovin Corporation",
+      "sector": "Ad Tech / Mobile AI",
+      "market_cap_b": 151.85,
+      "description": "AI-powered mobile advertising and app monetization platform. AXON 2.0 engine drives industry-leading ad ROI. Expanding into e-commerce advertising.",
+      "website": "https://www.applovin.com",
+      "financials": {
+        "quarterly": [
+          {
+            "period": "2024 Q1",
+            "date": "2024-03-31",
+            "revenue": 1058.1,
+            "gross_profit": 764.0,
+            "gross_margin_pct": 72.2,
+            "net_income": 236.2,
+            "eps": 0.7,
+            "fcf": 392.8
+          },
+          {
+            "period": "2024 Q2",
+            "date": "2024-06-30",
+            "revenue": 711.0,
+            "gross_profit": 589.3,
+            "gross_margin_pct": 82.9,
+            "net_income": 310.0,
+            "eps": 0.92,
+            "fcf": 454.5
+          },
+          {
+            "period": "2024 Q3",
+            "date": "2024-09-30",
+            "revenue": 835.2,
+            "gross_profit": 714.3,
+            "gross_margin_pct": 85.5,
+            "net_income": 434.4,
+            "eps": 1.29,
+            "fcf": 547.5
+          },
+          {
+            "period": "2024 Q4",
+            "date": "2024-12-31",
+            "revenue": 1372.8,
+            "gross_profit": 1052.3,
+            "gross_margin_pct": 76.7,
+            "net_income": 599.2,
+            "eps": 1.77,
+            "fcf": 696.2
+          },
+          {
+            "period": "2025 Q1",
+            "date": "2025-03-31",
+            "revenue": 1484.0,
+            "gross_profit": 1212.8,
+            "gross_margin_pct": 81.7,
+            "net_income": 576.4,
+            "eps": 1.7,
+            "fcf": 831.7
+          },
+          {
+            "period": "2025 Q2",
+            "date": "2025-06-30",
+            "revenue": 1258.8,
+            "gross_profit": 1103.7,
+            "gross_margin_pct": 87.7,
+            "net_income": 819.5,
+            "eps": 2.42,
+            "fcf": 772.2
+          },
+          {
+            "period": "2025 Q3",
+            "date": "2025-09-30",
+            "revenue": 1405.0,
+            "gross_profit": 1230.2,
+            "gross_margin_pct": 87.6,
+            "net_income": 835.5,
+            "eps": 2.47,
+            "fcf": 1053.4
+          },
+          {
+            "period": "2025 Q4",
+            "date": "2025-12-31",
+            "revenue": 1657.9,
+            "gross_profit": 1474.4,
+            "gross_margin_pct": 88.9,
+            "net_income": 1102.3,
+            "eps": 3.26,
+            "fcf": 1285.4
+          }
+        ],
+        "annual": {
+          "2024": {
+            "revenue": 3977.1,
+            "gross_profit": 3119.9,
+            "gross_margin_pct": 78.4,
+            "net_income": 1579.8,
+            "fcf": 2091.0,
+            "quarters_included": 4
+          },
+          "2025": {
+            "revenue": 5805.7,
+            "gross_profit": 5021.1,
+            "gross_margin_pct": 86.5,
+            "net_income": 3333.7,
+            "fcf": 3942.7,
+            "quarters_included": 4,
+            "yoy_revenue_growth_pct": 46.0
+          }
+        },
+        "stock_price": {
+          "current": 449.33,
+          "pe": 44.8,
+          "eps_ttm": 10.03,
+          "year_high": 745.61,
+          "year_low": 200.5,
+          "history": [
+            {
+              "date": "2024-03",
+              "close": 69.22
+            },
+            {
+              "date": "2024-04",
+              "close": 70.57
+            },
+            {
+              "date": "2024-05",
+              "close": 81.48
+            },
+            {
+              "date": "2024-06",
+              "close": 83.22
+            },
+            {
+              "date": "2024-07",
+              "close": 77.1
+            },
+            {
+              "date": "2024-08",
+              "close": 92.87
+            },
+            {
+              "date": "2024-09",
+              "close": 130.55
+            },
+            {
+              "date": "2024-10",
+              "close": 169.39
+            },
+            {
+              "date": "2024-11",
+              "close": 336.75
+            },
+            {
+              "date": "2024-12",
+              "close": 323.83
+            },
+            {
+              "date": "2025-01",
+              "close": 369.59
+            },
+            {
+              "date": "2025-02",
+              "close": 325.74
+            },
+            {
+              "date": "2025-03",
+              "close": 264.97
+            },
+            {
+              "date": "2025-04",
+              "close": 269.31
+            },
+            {
+              "date": "2025-05",
+              "close": 393.0
+            },
+            {
+              "date": "2025-06",
+              "close": 350.08
+            },
+            {
+              "date": "2025-07",
+              "close": 390.7
+            },
+            {
+              "date": "2025-08",
+              "close": 478.59
+            },
+            {
+              "date": "2025-09",
+              "close": 718.54
+            },
+            {
+              "date": "2025-10",
+              "close": 637.33
+            },
+            {
+              "date": "2025-11",
+              "close": 599.48
+            },
+            {
+              "date": "2025-12",
+              "close": 673.82
+            },
+            {
+              "date": "2026-01",
+              "close": 473.11
+            },
+            {
+              "date": "2026-02",
+              "close": 434.77
+            },
+            {
+              "date": "2026-03",
+              "close": 449.33
+            }
+          ]
+        }
+      },
+      "operational_metrics": [
+        {
+          "name": "Software Revenue",
+          "value": "$835M",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "Apps Revenue",
+          "value": "$823M",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "AXON Engine Advertiser ROAS",
+          "value": "4-5x",
+          "period": "2025"
+        },
+        {
+          "name": "E-commerce Revenue (est.)",
+          "value": "$400M+",
+          "period": "2025 Annual",
+          "note": "est."
+        },
+        {
+          "name": "Active Advertisers",
+          "value": "20,000+",
+          "period": "2025"
+        }
+      ],
+      "cross_comparable": {
+        "ev_revenue_ttm": 30.0,
+        "gross_margin_pct": 79.9,
+        "fcf_margin_pct": 68.8,
+        "yoy_revenue_growth_pct": 39.3,
+        "rule_of_40": 108
+      }
+    },
+    "VRT": {
+      "ticker": "VRT",
+      "name": "Vertiv Holdings",
+      "sector": "AI Data Center Infrastructure",
+      "market_cap_b": 101.53,
+      "description": "Critical digital infrastructure provider specializing in power, cooling, and IT infrastructure for AI data centers. Leading supplier for NVIDIA GB200 NVL72 systems.",
+      "website": "https://www.vertiv.com",
+      "financials": {
+        "quarterly": [
+          {
+            "period": "2024 Q1",
+            "date": "2024-03-31",
+            "revenue": 1639.1,
+            "gross_profit": 516.6,
+            "gross_margin_pct": 31.5,
+            "net_income": -5.9,
+            "eps": -0.02,
+            "fcf": 101.0
+          },
+          {
+            "period": "2024 Q2",
+            "date": "2024-06-30",
+            "revenue": 1952.8,
+            "gross_profit": 695.4,
+            "gross_margin_pct": 35.6,
+            "net_income": 178.1,
+            "eps": 0.48,
+            "fcf": 336.5
+          },
+          {
+            "period": "2024 Q3",
+            "date": "2024-09-30",
+            "revenue": 2073.5,
+            "gross_profit": 712.5,
+            "gross_margin_pct": 34.4,
+            "net_income": 176.6,
+            "eps": 0.47,
+            "fcf": 335.9
+          },
+          {
+            "period": "2024 Q4",
+            "date": "2024-12-31",
+            "revenue": 2346.4,
+            "gross_profit": 825.1,
+            "gross_margin_pct": 35.2,
+            "net_income": 147.0,
+            "eps": 0.39,
+            "fcf": 361.8
+          },
+          {
+            "period": "2025 Q1",
+            "date": "2025-03-31",
+            "revenue": 2036.0,
+            "gross_profit": 635.8,
+            "gross_margin_pct": 31.2,
+            "net_income": 164.5,
+            "eps": 0.43,
+            "fcf": 264.5
+          },
+          {
+            "period": "2025 Q2",
+            "date": "2025-06-30",
+            "revenue": 2638.1,
+            "gross_profit": 848.5,
+            "gross_margin_pct": 32.2,
+            "net_income": 324.2,
+            "eps": 0.85,
+            "fcf": 277.0
+          },
+          {
+            "period": "2025 Q3",
+            "date": "2025-09-30",
+            "revenue": 2675.8,
+            "gross_profit": 1010.7,
+            "gross_margin_pct": 37.8,
+            "net_income": 398.5,
+            "eps": 1.04,
+            "fcf": 466.7
+          },
+          {
+            "period": "2025 Q4",
+            "date": "2025-12-31",
+            "revenue": 2880.0,
+            "gross_profit": 1062.1,
+            "gross_margin_pct": 36.9,
+            "net_income": 445.6,
+            "eps": 1.17,
+            "fcf": 911.6
+          }
+        ],
+        "annual": {
+          "2024": {
+            "revenue": 8011.8,
+            "gross_profit": 2749.6,
+            "gross_margin_pct": 34.3,
+            "net_income": 495.8,
+            "fcf": 1135.2,
+            "quarters_included": 4
+          },
+          "2025": {
+            "revenue": 10229.9,
+            "gross_profit": 3557.1,
+            "gross_margin_pct": 34.8,
+            "net_income": 1332.8,
+            "fcf": 1919.8,
+            "quarters_included": 4,
+            "yoy_revenue_growth_pct": 27.7
+          }
+        },
+        "stock_price": {
+          "current": 265.38,
+          "pe": 78.05,
+          "eps_ttm": 3.4,
+          "year_high": 276.78,
+          "year_low": 53.6,
+          "history": [
+            {
+              "date": "2024-03",
+              "close": 81.67
+            },
+            {
+              "date": "2024-04",
+              "close": 93.0
+            },
+            {
+              "date": "2024-05",
+              "close": 98.07
+            },
+            {
+              "date": "2024-06",
+              "close": 86.57
+            },
+            {
+              "date": "2024-07",
+              "close": 78.7
+            },
+            {
+              "date": "2024-08",
+              "close": 83.03
+            },
+            {
+              "date": "2024-09",
+              "close": 99.49
+            },
+            {
+              "date": "2024-10",
+              "close": 109.29
+            },
+            {
+              "date": "2024-11",
+              "close": 127.6
+            },
+            {
+              "date": "2024-12",
+              "close": 113.61
+            },
+            {
+              "date": "2025-01",
+              "close": 117.02
+            },
+            {
+              "date": "2025-02",
+              "close": 95.17
+            },
+            {
+              "date": "2025-03",
+              "close": 72.2
+            },
+            {
+              "date": "2025-04",
+              "close": 85.38
+            },
+            {
+              "date": "2025-05",
+              "close": 107.93
+            },
+            {
+              "date": "2025-06",
+              "close": 128.41
+            },
+            {
+              "date": "2025-07",
+              "close": 145.6
+            },
+            {
+              "date": "2025-08",
+              "close": 127.55
+            },
+            {
+              "date": "2025-09",
+              "close": 150.86
+            },
+            {
+              "date": "2025-10",
+              "close": 192.86
+            },
+            {
+              "date": "2025-11",
+              "close": 179.73
+            },
+            {
+              "date": "2025-12",
+              "close": 162.01
+            },
+            {
+              "date": "2026-01",
+              "close": 186.18
+            },
+            {
+              "date": "2026-02",
+              "close": 254.89
+            },
+            {
+              "date": "2026-03",
+              "close": 265.38
+            }
+          ]
+        }
+      },
+      "operational_metrics": [
+        {
+          "name": "AI/Data Center Revenue Mix",
+          "value": "60%+",
+          "period": "2025",
+          "note": "est."
+        },
+        {
+          "name": "Liquid Cooling Revenue Growth",
+          "value": "200%+",
+          "period": "2025 YoY",
+          "note": "est."
+        },
+        {
+          "name": "Backlog/Pipeline",
+          "value": "$7.4B+",
+          "period": "Q4 2025",
+          "note": "est."
+        },
+        {
+          "name": "Americas Revenue",
+          "value": "$7.8B",
+          "period": "2025 Annual",
+          "note": "est."
+        },
+        {
+          "name": "GB200 NVL72 System Support",
+          "value": "Leading supplier",
+          "period": "2025"
+        }
+      ],
+      "cross_comparable": {
+        "ev_revenue_ttm": 10.0,
+        "gross_margin_pct": 36.0,
+        "fcf_margin_pct": 25.1,
+        "yoy_revenue_growth_pct": 34.6
+      }
+    },
+    "AXON": {
+      "ticker": "AXON",
+      "name": "Axon Enterprise",
+      "sector": "Public Safety Technology",
+      "market_cap_b": 40.15,
+      "description": "Dominant platform for law enforcement: TASER devices, body cameras, cloud software, and AI. SaaS ARR $1.35B+ with 125% NRR.",
+      "website": "https://www.axon.com",
+      "financials": {
+        "quarterly": [
+          {
+            "period": "2024 Q1",
+            "date": "2024-03-31",
+            "revenue": 459.9,
+            "gross_profit": 258.6,
+            "gross_margin_pct": 56.2,
+            "net_income": 133.4,
+            "eps": 1.77,
+            "fcf": -32.1
+          },
+          {
+            "period": "2024 Q2",
+            "date": "2024-06-30",
+            "revenue": 503.2,
+            "gross_profit": 306.2,
+            "gross_margin_pct": 60.9,
+            "net_income": 41.5,
+            "eps": 0.54,
+            "fcf": 71.4
+          },
+          {
+            "period": "2024 Q3",
+            "date": "2024-09-30",
+            "revenue": 544.3,
+            "gross_profit": 330.7,
+            "gross_margin_pct": 60.8,
+            "net_income": 67.0,
+            "eps": 0.89,
+            "fcf": 64.8
+          },
+          {
+            "period": "2024 Q4",
+            "date": "2024-12-31",
+            "revenue": 575.1,
+            "gross_profit": 345.8,
+            "gross_margin_pct": 60.1,
+            "net_income": 135.2,
+            "eps": 1.77,
+            "fcf": 225.4
+          },
+          {
+            "period": "2025 Q1",
+            "date": "2025-03-31",
+            "revenue": 603.6,
+            "gross_profit": 365.7,
+            "gross_margin_pct": 60.6,
+            "net_income": 88.0,
+            "eps": 1.14,
+            "fcf": 0.9
+          },
+          {
+            "period": "2025 Q2",
+            "date": "2025-06-30",
+            "revenue": 668.5,
+            "gross_profit": 403.7,
+            "gross_margin_pct": 60.4,
+            "net_income": 36.1,
+            "eps": 0.46,
+            "fcf": -114.7
+          },
+          {
+            "period": "2025 Q3",
+            "date": "2025-09-30",
+            "revenue": 710.6,
+            "gross_profit": 427.3,
+            "gross_margin_pct": 60.1,
+            "net_income": -2.2,
+            "eps": -0.03,
+            "fcf": 33.4
+          },
+          {
+            "period": "2025 Q4",
+            "date": "2025-12-31",
+            "revenue": 796.7,
+            "gross_profit": 461.3,
+            "gross_margin_pct": 57.9,
+            "net_income": 3.0,
+            "eps": 0.04,
+            "fcf": 155.4
+          }
+        ],
+        "annual": {
+          "2024": {
+            "revenue": 2082.5,
+            "gross_profit": 1241.3,
+            "gross_margin_pct": 59.6,
+            "net_income": 377.1,
+            "fcf": 329.5,
+            "quarters_included": 4
+          },
+          "2025": {
+            "revenue": 2779.4,
+            "gross_profit": 1658.0,
+            "gross_margin_pct": 59.7,
+            "net_income": 124.9,
+            "fcf": 75.0,
+            "quarters_included": 4,
+            "yoy_revenue_growth_pct": 33.5
+          }
+        },
+        "stock_price": {
+          "current": 499.4,
+          "pe": 337.43,
+          "eps_ttm": 1.48,
+          "year_high": 885.92,
+          "year_low": 396.41,
+          "history": [
+            {
+              "date": "2024-03",
+              "close": 312.88
+            },
+            {
+              "date": "2024-04",
+              "close": 313.66
+            },
+            {
+              "date": "2024-05",
+              "close": 281.67
+            },
+            {
+              "date": "2024-06",
+              "close": 294.24
+            },
+            {
+              "date": "2024-07",
+              "close": 300.01
+            },
+            {
+              "date": "2024-08",
+              "close": 364.97
+            },
+            {
+              "date": "2024-09",
+              "close": 399.6
+            },
+            {
+              "date": "2024-10",
+              "close": 423.5
+            },
+            {
+              "date": "2024-11",
+              "close": 646.96
+            },
+            {
+              "date": "2024-12",
+              "close": 594.32
+            },
+            {
+              "date": "2025-01",
+              "close": 652.18
+            },
+            {
+              "date": "2025-02",
+              "close": 528.45
+            },
+            {
+              "date": "2025-03",
+              "close": 525.95
+            },
+            {
+              "date": "2025-04",
+              "close": 613.3
+            },
+            {
+              "date": "2025-05",
+              "close": 750.36
+            },
+            {
+              "date": "2025-06",
+              "close": 827.94
+            },
+            {
+              "date": "2025-07",
+              "close": 755.49
+            },
+            {
+              "date": "2025-08",
+              "close": 747.29
+            },
+            {
+              "date": "2025-09",
+              "close": 717.64
+            },
+            {
+              "date": "2025-10",
+              "close": 732.23
+            },
+            {
+              "date": "2025-11",
+              "close": 540.14
+            },
+            {
+              "date": "2025-12",
+              "close": 567.93
+            },
+            {
+              "date": "2026-01",
+              "close": 483.58
+            },
+            {
+              "date": "2026-02",
+              "close": 542.4
+            },
+            {
+              "date": "2026-03",
+              "close": 499.4
+            }
+          ]
+        }
+      },
+      "operational_metrics": [
+        {
+          "name": "SaaS ARR",
+          "value": "$1.35B",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "Net Revenue Retention",
+          "value": "125%",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "TASER 10 Units Shipped",
+          "value": "100,000+",
+          "period": "2025",
+          "note": "est."
+        },
+        {
+          "name": "Active Officers on Platform",
+          "value": "400,000+",
+          "period": "2025",
+          "note": "est."
+        },
+        {
+          "name": "Draft One AI Adoption",
+          "value": "40%+ of eligible agencies",
+          "period": "Q4 2025",
+          "note": "est."
+        }
+      ],
+      "cross_comparable": {
+        "ev_revenue_ttm": 15.0,
+        "gross_margin_pct": 59.0,
+        "fcf_margin_pct": 7.4,
+        "yoy_revenue_growth_pct": 32.4,
+        "arr_b": 1.35,
+        "nrr_pct": 125
+      }
+    },
+    "CRWV": {
+      "ticker": "CRWV",
+      "name": "CoreWeave",
+      "sector": "AI Cloud Infrastructure",
+      "market_cap_b": 41.98,
+      "description": "Pure-play AI cloud infrastructure company. Operates specialized GPU clusters for AI/ML workloads. IPO'd March 2025. $66.8B revenue backlog.",
+      "website": "https://www.coreweave.com",
+      "financials": {
+        "quarterly": [
+          {
+            "period": "2024 Q1",
+            "date": "2024-03-31",
+            "revenue": 188.7,
+            "gross_profit": 129.5,
+            "gross_margin_pct": 68.6,
+            "net_income": -129.2,
+            "eps": -0.32,
+            "fcf": 297.1
+          },
+          {
+            "period": "2024 Q2",
+            "date": "2024-06-30",
+            "revenue": 395.4,
+            "gross_profit": 286.5,
+            "gross_margin_pct": 72.5,
+            "net_income": -323.0,
+            "eps": -0.84,
+            "fcf": -2365.0
+          },
+          {
+            "period": "2024 Q3",
+            "date": "2024-09-30",
+            "revenue": 583.9,
+            "gross_profit": 440.8,
+            "gross_margin_pct": 75.5,
+            "net_income": -359.8,
+            "eps": -0.89,
+            "fcf": -573.9
+          },
+          {
+            "period": "2024 Q4",
+            "date": "2024-12-31",
+            "revenue": 747.4,
+            "gross_profit": 565.3,
+            "gross_margin_pct": 75.6,
+            "net_income": -51.4,
+            "eps": -0.17,
+            "fcf": -3311.1
+          },
+          {
+            "period": "2025 Q1",
+            "date": "2025-03-31",
+            "revenue": 981.6,
+            "gross_profit": 719.2,
+            "gross_margin_pct": 73.3,
+            "net_income": -314.6,
+            "eps": -0.78,
+            "fcf": -1346.2
+          },
+          {
+            "period": "2025 Q2",
+            "date": "2025-06-30",
+            "revenue": 1212.8,
+            "gross_profit": 900.1,
+            "gross_margin_pct": 74.2,
+            "net_income": -290.5,
+            "eps": -0.6,
+            "fcf": -2704.2
+          },
+          {
+            "period": "2025 Q3",
+            "date": "2025-09-30",
+            "revenue": 1364.7,
+            "gross_profit": 995.9,
+            "gross_margin_pct": 73.0,
+            "net_income": -110.1,
+            "eps": -0.22,
+            "fcf": -699.8
+          },
+          {
+            "period": "2025 Q4",
+            "date": "2025-12-31",
+            "revenue": 1571.9,
+            "gross_profit": 1062.8,
+            "gross_margin_pct": 67.6,
+            "net_income": -451.7,
+            "eps": -0.89,
+            "fcf": -2501.0
+          }
+        ],
+        "annual": {
+          "2024": {
+            "revenue": 1915.4,
+            "gross_profit": 1422.1,
+            "gross_margin_pct": 74.2,
+            "net_income": -863.4,
+            "fcf": -5952.9,
+            "quarters_included": 4
+          },
+          "2025": {
+            "revenue": 5131.0,
+            "gross_profit": 3678.0,
+            "gross_margin_pct": 71.7,
+            "net_income": -1166.9,
+            "fcf": -7251.2,
+            "quarters_included": 4,
+            "yoy_revenue_growth_pct": 167.9
+          }
+        },
+        "stock_price": {
+          "current": 79.86,
+          "pe": -28.42,
+          "eps_ttm": -2.81,
+          "year_high": 187.0,
+          "year_low": 33.52,
+          "history": [
+            {
+              "date": "2025-03",
+              "close": 37.08
+            },
+            {
+              "date": "2025-04",
+              "close": 41.3
+            },
+            {
+              "date": "2025-05",
+              "close": 111.31
+            },
+            {
+              "date": "2025-06",
+              "close": 163.06
+            },
+            {
+              "date": "2025-07",
+              "close": 114.13
+            },
+            {
+              "date": "2025-08",
+              "close": 103.04
+            },
+            {
+              "date": "2025-09",
+              "close": 136.85
+            },
+            {
+              "date": "2025-10",
+              "close": 133.71
+            },
+            {
+              "date": "2025-11",
+              "close": 73.12
+            },
+            {
+              "date": "2025-12",
+              "close": 71.61
+            },
+            {
+              "date": "2026-01",
+              "close": 93.19
+            },
+            {
+              "date": "2026-02",
+              "close": 79.56
+            },
+            {
+              "date": "2026-03",
+              "close": 79.86
+            }
+          ]
+        }
+      },
+      "operational_metrics": [
+        {
+          "name": "Revenue Backlog",
+          "value": "$66.8B",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "GPU Capacity (H100 equiv)",
+          "value": "250,000+",
+          "period": "2025",
+          "note": "est."
+        },
+        {
+          "name": "Data Center Capacity",
+          "value": "590 MW",
+          "period": "Q4 2025",
+          "note": "est."
+        },
+        {
+          "name": "Microsoft Revenue %",
+          "value": "62%",
+          "period": "2025",
+          "note": "est."
+        },
+        {
+          "name": "Remaining Performance Obligations",
+          "value": "$15.1B",
+          "period": "Q4 2025"
+        }
+      ],
+      "cross_comparable": {
+        "ev_revenue_ttm": 8.7,
+        "gross_margin_pct": 59.9,
+        "fcf_margin_pct": -108.0,
+        "yoy_revenue_growth_pct": 115.0,
+        "backlog_b": 66.8,
+        "data_center_mw": 590
+      }
+    },
+    "SPOT": {
+      "ticker": "SPOT",
+      "name": "Spotify Technology",
+      "sector": "Digital Media / Streaming",
+      "market_cap_b": 104.92,
+      "description": "World's largest audio streaming platform with 751M+ MAUs. Revenue reported in EUR. AI DJ, podcasts, and audiobooks drive ARPU expansion.",
+      "website": "https://www.spotify.com",
+      "financials": {
+        "quarterly": [
+          {
+            "period": "2024 Q1",
+            "date": "2024-03-31",
+            "revenue": 3636.0,
+            "gross_profit": 1004.0,
+            "gross_margin_pct": 27.6,
+            "net_income": 197.0,
+            "eps": 0.99,
+            "fcf": 206.0
+          },
+          {
+            "period": "2024 Q2",
+            "date": "2024-06-30",
+            "revenue": 3807.0,
+            "gross_profit": 1112.0,
+            "gross_margin_pct": 29.2,
+            "net_income": 274.0,
+            "eps": 1.37,
+            "fcf": 490.0
+          },
+          {
+            "period": "2024 Q3",
+            "date": "2024-09-30",
+            "revenue": 3988.0,
+            "gross_profit": 1240.0,
+            "gross_margin_pct": 31.1,
+            "net_income": 300.0,
+            "eps": 1.49,
+            "fcf": 711.0
+          },
+          {
+            "period": "2024 Q4",
+            "date": "2024-12-31",
+            "revenue": 4242.0,
+            "gross_profit": 1368.0,
+            "gross_margin_pct": 32.2,
+            "net_income": 367.0,
+            "eps": 1.81,
+            "fcf": 877.0
+          },
+          {
+            "period": "2025 Q1",
+            "date": "2025-03-31",
+            "revenue": 4190.0,
+            "gross_profit": 1326.0,
+            "gross_margin_pct": 31.6,
+            "net_income": 225.0,
+            "eps": 1.1,
+            "fcf": 533.0
+          },
+          {
+            "period": "2025 Q2",
+            "date": "2025-06-30",
+            "revenue": 4193.0,
+            "gross_profit": 1320.0,
+            "gross_margin_pct": 31.5,
+            "net_income": -86.0,
+            "eps": -0.42,
+            "fcf": 699.0
+          },
+          {
+            "period": "2025 Q3",
+            "date": "2025-09-30",
+            "revenue": 4272.0,
+            "gross_profit": 1351.0,
+            "gross_margin_pct": 31.6,
+            "net_income": 899.0,
+            "eps": 4.36,
+            "fcf": 823.0
+          },
+          {
+            "period": "2025 Q4",
+            "date": "2025-12-31",
+            "revenue": 4531.0,
+            "gross_profit": 1499.0,
+            "gross_margin_pct": 33.1,
+            "net_income": 1174.0,
+            "eps": 5.71,
+            "fcf": 852.0
+          }
+        ],
+        "annual": {
+          "2024": {
+            "revenue": 15673.0,
+            "gross_profit": 4724.0,
+            "gross_margin_pct": 30.1,
+            "net_income": 1138.0,
+            "fcf": 2284.0,
+            "quarters_included": 4
+          },
+          "2025": {
+            "revenue": 17186.0,
+            "gross_profit": 5496.0,
+            "gross_margin_pct": 32.0,
+            "net_income": 2212.0,
+            "fcf": 2907.0,
+            "quarters_included": 4,
+            "yoy_revenue_growth_pct": 9.7
+          }
+        },
+        "stock_price": {
+          "current": 509.59,
+          "pe": 41.8,
+          "eps_ttm": 12.19,
+          "year_high": 785.0,
+          "year_low": 405.0,
+          "history": [
+            {
+              "date": "2024-03",
+              "close": 263.9
+            },
+            {
+              "date": "2024-04",
+              "close": 280.44
+            },
+            {
+              "date": "2024-05",
+              "close": 296.78
+            },
+            {
+              "date": "2024-06",
+              "close": 313.79
+            },
+            {
+              "date": "2024-07",
+              "close": 343.94
+            },
+            {
+              "date": "2024-08",
+              "close": 342.88
+            },
+            {
+              "date": "2024-09",
+              "close": 368.53
+            },
+            {
+              "date": "2024-10",
+              "close": 385.1
+            },
+            {
+              "date": "2024-11",
+              "close": 476.96
+            },
+            {
+              "date": "2024-12",
+              "close": 447.38
+            },
+            {
+              "date": "2025-01",
+              "close": 548.55
+            },
+            {
+              "date": "2025-02",
+              "close": 608.01
+            },
+            {
+              "date": "2025-03",
+              "close": 550.03
+            },
+            {
+              "date": "2025-04",
+              "close": 613.98
+            },
+            {
+              "date": "2025-05",
+              "close": 665.14
+            },
+            {
+              "date": "2025-06",
+              "close": 767.34
+            },
+            {
+              "date": "2025-07",
+              "close": 626.54
+            },
+            {
+              "date": "2025-08",
+              "close": 681.88
+            },
+            {
+              "date": "2025-09",
+              "close": 698.0
+            },
+            {
+              "date": "2025-10",
+              "close": 655.32
+            },
+            {
+              "date": "2025-11",
+              "close": 598.87
+            },
+            {
+              "date": "2025-12",
+              "close": 580.71
+            },
+            {
+              "date": "2026-01",
+              "close": 500.35
+            },
+            {
+              "date": "2026-02",
+              "close": 514.94
+            },
+            {
+              "date": "2026-03",
+              "close": 509.59
+            }
+          ]
+        }
+      },
+      "operational_metrics": [
+        {
+          "name": "Monthly Active Users",
+          "value": "751M",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "Premium Subscribers",
+          "value": "263M",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "Gross Margin",
+          "value": "33.1%",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "ARPU (EUR)",
+          "value": "\u20ac4.92",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "Podcast Shows",
+          "value": "6M+",
+          "period": "2025"
+        },
+        {
+          "name": "Audiobook Listeners",
+          "value": "18M+",
+          "period": "2025",
+          "note": "est."
+        }
+      ],
+      "cross_comparable": {
+        "ev_revenue_ttm": 6.2,
+        "gross_margin_pct": 33.1,
+        "fcf_margin_pct": 21.8,
+        "yoy_revenue_growth_pct": 13.6,
+        "mau_m": 751,
+        "premium_subscribers_m": 263
+      }
+    },
+    "DDOG": {
+      "ticker": "DDOG",
+      "name": "Datadog",
+      "sector": "AI Observability / Cloud Monitoring",
+      "market_cap_b": 45.0,
+      "description": "Cloud monitoring and AI observability platform. LLM Observability module growing 3x+ YoY. 32,700+ customers, 120% NRR, $3.46B RPO.",
+      "website": "https://www.datadoghq.com",
+      "financials": {
+        "quarterly": [
+          {
+            "period": "2024 Q1",
+            "date": "2024-03-31",
+            "revenue": 611.3,
+            "gross_profit": 500.9,
+            "gross_margin_pct": 81.9,
+            "net_income": 42.6,
+            "eps": 0.13,
+            "fcf": 186.7
+          },
+          {
+            "period": "2024 Q2",
+            "date": "2024-06-30",
+            "revenue": 645.3,
+            "gross_profit": 521.6,
+            "gross_margin_pct": 80.8,
+            "net_income": 43.8,
+            "eps": 0.13,
+            "fcf": 143.8
+          },
+          {
+            "period": "2024 Q3",
+            "date": "2024-09-30",
+            "revenue": 690.0,
+            "gross_profit": 552.1,
+            "gross_margin_pct": 80.0,
+            "net_income": 51.7,
+            "eps": 0.15,
+            "fcf": 247.9
+          },
+          {
+            "period": "2024 Q4",
+            "date": "2024-12-31",
+            "revenue": 737.7,
+            "gross_profit": 593.3,
+            "gross_margin_pct": 80.4,
+            "net_income": 45.6,
+            "eps": 0.13,
+            "fcf": 257.5
+          },
+          {
+            "period": "2025 Q1",
+            "date": "2025-03-31",
+            "revenue": 761.6,
+            "gross_profit": 603.7,
+            "gross_margin_pct": 79.3,
+            "net_income": 24.6,
+            "eps": 0.07,
+            "fcf": 244.4
+          },
+          {
+            "period": "2025 Q2",
+            "date": "2025-06-30",
+            "revenue": 826.8,
+            "gross_profit": 660.6,
+            "gross_margin_pct": 79.9,
+            "net_income": 2.6,
+            "eps": 0.01,
+            "fcf": 203.3
+          },
+          {
+            "period": "2025 Q3",
+            "date": "2025-09-30",
+            "revenue": 885.7,
+            "gross_profit": 709.2,
+            "gross_margin_pct": 80.1,
+            "net_income": 33.9,
+            "eps": 0.1,
+            "fcf": 234.7
+          },
+          {
+            "period": "2025 Q4",
+            "date": "2025-12-31",
+            "revenue": 953.2,
+            "gross_profit": 766.3,
+            "gross_margin_pct": 80.4,
+            "net_income": 46.6,
+            "eps": 0.13,
+            "fcf": 318.2
+          }
+        ],
+        "annual": {
+          "2024": {
+            "revenue": 2684.3,
+            "gross_profit": 2167.9,
+            "gross_margin_pct": 80.8,
+            "net_income": 183.7,
+            "fcf": 835.9,
+            "quarters_included": 4
+          },
+          "2025": {
+            "revenue": 3427.3,
+            "gross_profit": 2739.8,
+            "gross_margin_pct": 79.9,
+            "net_income": 107.7,
+            "fcf": 1000.6,
+            "quarters_included": 4,
+            "yoy_revenue_growth_pct": 27.7
+          }
+        },
+        "stock_price": {
+          "current": 127.16,
+          "pe": 397.38,
+          "eps_ttm": 0.32,
+          "year_high": 201.69,
+          "year_low": 81.63,
+          "history": [
+            {
+              "date": "2024-03",
+              "close": 123.6
+            },
+            {
+              "date": "2024-04",
+              "close": 125.5
+            },
+            {
+              "date": "2024-05",
+              "close": 110.18
+            },
+            {
+              "date": "2024-06",
+              "close": 129.69
+            },
+            {
+              "date": "2024-07",
+              "close": 116.44
+            },
+            {
+              "date": "2024-08",
+              "close": 116.26
+            },
+            {
+              "date": "2024-09",
+              "close": 115.06
+            },
+            {
+              "date": "2024-10",
+              "close": 125.44
+            },
+            {
+              "date": "2024-11",
+              "close": 152.75
+            },
+            {
+              "date": "2024-12",
+              "close": 142.89
+            },
+            {
+              "date": "2025-01",
+              "close": 142.71
+            },
+            {
+              "date": "2025-02",
+              "close": 116.55
+            },
+            {
+              "date": "2025-03",
+              "close": 99.21
+            },
+            {
+              "date": "2025-04",
+              "close": 102.16
+            },
+            {
+              "date": "2025-05",
+              "close": 117.88
+            },
+            {
+              "date": "2025-06",
+              "close": 134.33
+            },
+            {
+              "date": "2025-07",
+              "close": 139.98
+            },
+            {
+              "date": "2025-08",
+              "close": 136.68
+            },
+            {
+              "date": "2025-09",
+              "close": 142.4
+            },
+            {
+              "date": "2025-10",
+              "close": 162.81
+            },
+            {
+              "date": "2025-11",
+              "close": 160.01
+            },
+            {
+              "date": "2025-12",
+              "close": 135.99
+            },
+            {
+              "date": "2026-01",
+              "close": 129.32
+            },
+            {
+              "date": "2026-02",
+              "close": 111.96
+            },
+            {
+              "date": "2026-03",
+              "close": 127.16
+            }
+          ]
+        }
+      },
+      "operational_metrics": [
+        {
+          "name": "Customers $100K+ ARR",
+          "value": "4,150+",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "Total Customers",
+          "value": "32,700+",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "Net Revenue Retention",
+          "value": "120%+",
+          "period": "2025"
+        },
+        {
+          "name": "AI Native Customer Revenue",
+          "value": "8%+ of ARR",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "LLM Observability Growth",
+          "value": "3x+ YoY",
+          "period": "2025",
+          "note": "est."
+        },
+        {
+          "name": "Remaining Performance Obligations",
+          "value": "$3.46B",
+          "period": "Q4 2025"
+        }
+      ],
+      "cross_comparable": {
+        "ev_revenue_ttm": 14.0,
+        "gross_margin_pct": 81.7,
+        "fcf_margin_pct": 28.6,
+        "yoy_revenue_growth_pct": 25.6,
+        "arr_b": 3.46,
+        "nrr_pct": 120
+      }
+    },
+    "KTOS": {
+      "ticker": "KTOS",
+      "name": "Kratos Defense & Security",
+      "sector": "Defense Technology",
+      "market_cap_b": 16.71,
+      "description": "Affordable, high-performance defense systems: drones, jet target drones, space/satellite systems, microwave electronics. Valkyrie XQ-58A program.",
+      "website": "https://www.kratosdefense.com",
+      "financials": {
+        "quarterly": [
+          {
+            "period": "2024 Q1",
+            "date": "2024-03-31",
+            "revenue": 277.2,
+            "gross_profit": 71.0,
+            "gross_margin_pct": 25.6,
+            "net_income": 1.3,
+            "eps": 0.01,
+            "fcf": -15.9
+          },
+          {
+            "period": "2024 Q2",
+            "date": "2024-06-30",
+            "revenue": 300.1,
+            "gross_profit": 77.2,
+            "gross_margin_pct": 25.7,
+            "net_income": 7.9,
+            "eps": 0.05,
+            "fcf": -15.4
+          },
+          {
+            "period": "2024 Q3",
+            "date": "2024-09-29",
+            "revenue": 275.9,
+            "gross_profit": 69.2,
+            "gross_margin_pct": 25.1,
+            "net_income": 3.2,
+            "eps": 0.02,
+            "fcf": -9.2
+          },
+          {
+            "period": "2024 Q4",
+            "date": "2024-12-31",
+            "revenue": 283.1,
+            "gross_profit": 69.8,
+            "gross_margin_pct": 24.7,
+            "net_income": 3.9,
+            "eps": 0.03,
+            "fcf": 32.0
+          },
+          {
+            "period": "2025 Q1",
+            "date": "2025-03-30",
+            "revenue": 302.6,
+            "gross_profit": 73.6,
+            "gross_margin_pct": 24.3,
+            "net_income": 4.5,
+            "eps": 0.03,
+            "fcf": -51.8
+          },
+          {
+            "period": "2025 Q2",
+            "date": "2025-06-29",
+            "revenue": 351.5,
+            "gross_profit": 73.8,
+            "gross_margin_pct": 21.0,
+            "net_income": 2.9,
+            "eps": 0.02,
+            "fcf": -32.2
+          },
+          {
+            "period": "2025 Q3",
+            "date": "2025-09-28",
+            "revenue": 347.6,
+            "gross_profit": 77.1,
+            "gross_margin_pct": 22.2,
+            "net_income": 8.7,
+            "eps": 0.05,
+            "fcf": -41.3
+          },
+          {
+            "period": "2025 Q4",
+            "date": "2025-12-28",
+            "revenue": 345.1,
+            "gross_profit": 73.8,
+            "gross_margin_pct": 21.4,
+            "net_income": 5.9,
+            "eps": 0.03,
+            "fcf": -12.1
+          }
+        ],
+        "annual": {
+          "2024": {
+            "revenue": 1136.3,
+            "gross_profit": 287.2,
+            "gross_margin_pct": 25.3,
+            "net_income": 16.3,
+            "fcf": -8.5,
+            "quarters_included": 4
+          },
+          "2025": {
+            "revenue": 1346.8,
+            "gross_profit": 298.3,
+            "gross_margin_pct": 22.1,
+            "net_income": 22.0,
+            "fcf": -137.4,
+            "quarters_included": 4,
+            "yoy_revenue_growth_pct": 18.5
+          }
+        },
+        "stock_price": {
+          "current": 89.46,
+          "pe": 688.15,
+          "eps_ttm": 0.13,
+          "year_high": 134.0,
+          "year_low": 25.78,
+          "history": [
+            {
+              "date": "2024-03",
+              "close": 18.38
+            },
+            {
+              "date": "2024-04",
+              "close": 17.82
+            },
+            {
+              "date": "2024-05",
+              "close": 21.74
+            },
+            {
+              "date": "2024-06",
+              "close": 20.01
+            },
+            {
+              "date": "2024-07",
+              "close": 22.54
+            },
+            {
+              "date": "2024-08",
+              "close": 22.94
+            },
+            {
+              "date": "2024-09",
+              "close": 23.3
+            },
+            {
+              "date": "2024-10",
+              "close": 22.72
+            },
+            {
+              "date": "2024-11",
+              "close": 27.09
+            },
+            {
+              "date": "2024-12",
+              "close": 26.38
+            },
+            {
+              "date": "2025-01",
+              "close": 33.37
+            },
+            {
+              "date": "2025-02",
+              "close": 26.39
+            },
+            {
+              "date": "2025-03",
+              "close": 29.69
+            },
+            {
+              "date": "2025-04",
+              "close": 33.78
+            },
+            {
+              "date": "2025-05",
+              "close": 36.89
+            },
+            {
+              "date": "2025-06",
+              "close": 46.45
+            },
+            {
+              "date": "2025-07",
+              "close": 58.7
+            },
+            {
+              "date": "2025-08",
+              "close": 65.84
+            },
+            {
+              "date": "2025-09",
+              "close": 91.37
+            },
+            {
+              "date": "2025-10",
+              "close": 90.6
+            },
+            {
+              "date": "2025-11",
+              "close": 76.1
+            },
+            {
+              "date": "2025-12",
+              "close": 75.91
+            },
+            {
+              "date": "2026-01",
+              "close": 103.01
+            },
+            {
+              "date": "2026-02",
+              "close": 86.18
+            },
+            {
+              "date": "2026-03",
+              "close": 89.46
+            }
+          ]
+        }
+      },
+      "operational_metrics": [
+        {
+          "name": "Drone Autonomy Revenue",
+          "value": "$180M+",
+          "period": "2025 Annual",
+          "note": "est."
+        },
+        {
+          "name": "DoD Contracts Backlog",
+          "value": "$1.3B+",
+          "period": "Q4 2025",
+          "note": "est."
+        },
+        {
+          "name": "Valkyrie (XQ-58A) Deliveries",
+          "value": "Classified quantities",
+          "period": "2025"
+        },
+        {
+          "name": "Space/Satellite Revenue",
+          "value": "$200M+",
+          "period": "2025 Annual",
+          "note": "est."
+        },
+        {
+          "name": "Government Revenue %",
+          "value": "85%+",
+          "period": "2025"
+        }
+      ],
+      "cross_comparable": {
+        "ev_revenue_ttm": 12.0,
+        "gross_margin_pct": 23.6,
+        "fcf_margin_pct": -10.4,
+        "yoy_revenue_growth_pct": 12.4,
+        "backlog_b": 1.3
+      }
+    },
+    "RDDT": {
+      "ticker": "RDDT",
+      "name": "Reddit",
+      "sector": "Social Media / AI Data",
+      "market_cap_b": 25.26,
+      "description": "Community-driven social platform. Data licensing to AI companies (Google, OpenAI). ~1.5B MAUs with strong advertising and API revenue growth.",
+      "website": "https://www.reddit.com",
+      "financials": {
+        "quarterly": [
+          {
+            "period": "2024 Q1",
+            "date": "2024-03-31",
+            "revenue": 243.0,
+            "gross_profit": 215.3,
+            "gross_margin_pct": 88.6,
+            "net_income": -575.1,
+            "eps": -3.52,
+            "fcf": 29.2
+          },
+          {
+            "period": "2024 Q2",
+            "date": "2024-06-30",
+            "revenue": 281.2,
+            "gross_profit": 251.7,
+            "gross_margin_pct": 89.5,
+            "net_income": -10.1,
+            "eps": -0.06,
+            "fcf": 27.2
+          },
+          {
+            "period": "2024 Q3",
+            "date": "2024-09-30",
+            "revenue": 348.4,
+            "gross_profit": 313.7,
+            "gross_margin_pct": 90.0,
+            "net_income": 29.9,
+            "eps": 0.17,
+            "fcf": 70.3
+          },
+          {
+            "period": "2024 Q4",
+            "date": "2024-12-31",
+            "revenue": 427.7,
+            "gross_profit": 395.9,
+            "gross_margin_pct": 92.6,
+            "net_income": 71.0,
+            "eps": 0.39,
+            "fcf": 89.2
+          },
+          {
+            "period": "2025 Q1",
+            "date": "2025-03-31",
+            "revenue": 392.4,
+            "gross_profit": 355.3,
+            "gross_margin_pct": 90.5,
+            "net_income": 26.2,
+            "eps": 0.14,
+            "fcf": 126.6
+          },
+          {
+            "period": "2025 Q2",
+            "date": "2025-06-30",
+            "revenue": 499.6,
+            "gross_profit": 453.7,
+            "gross_margin_pct": 90.8,
+            "net_income": 89.3,
+            "eps": 0.48,
+            "fcf": 110.8
+          },
+          {
+            "period": "2025 Q3",
+            "date": "2025-09-30",
+            "revenue": 584.9,
+            "gross_profit": 532.4,
+            "gross_margin_pct": 91.0,
+            "net_income": 162.7,
+            "eps": 0.87,
+            "fcf": 183.1
+          },
+          {
+            "period": "2025 Q4",
+            "date": "2025-12-31",
+            "revenue": 725.6,
+            "gross_profit": 666.9,
+            "gross_margin_pct": 91.9,
+            "net_income": 251.6,
+            "eps": 1.32,
+            "fcf": 263.6
+          }
+        ],
+        "annual": {
+          "2024": {
+            "revenue": 1300.3,
+            "gross_profit": 1176.6,
+            "gross_margin_pct": 90.5,
+            "net_income": -484.3,
+            "fcf": 215.9,
+            "quarters_included": 4
+          },
+          "2025": {
+            "revenue": 2202.5,
+            "gross_profit": 2008.3,
+            "gross_margin_pct": 91.2,
+            "net_income": 529.8,
+            "fcf": 684.1,
+            "quarters_included": 4,
+            "yoy_revenue_growth_pct": 69.4
+          }
+        },
+        "stock_price": {
+          "current": 132.24,
+          "pe": 50.47,
+          "eps_ttm": 2.62,
+          "year_high": 282.95,
+          "year_low": 79.75,
+          "history": [
+            {
+              "date": "2024-03",
+              "close": 49.32
+            },
+            {
+              "date": "2024-04",
+              "close": 44.44
+            },
+            {
+              "date": "2024-05",
+              "close": 54.24
+            },
+            {
+              "date": "2024-06",
+              "close": 63.89
+            },
+            {
+              "date": "2024-07",
+              "close": 60.85
+            },
+            {
+              "date": "2024-08",
+              "close": 60.03
+            },
+            {
+              "date": "2024-09",
+              "close": 65.92
+            },
+            {
+              "date": "2024-10",
+              "close": 119.3
+            },
+            {
+              "date": "2024-11",
+              "close": 140.69
+            },
+            {
+              "date": "2024-12",
+              "close": 163.44
+            },
+            {
+              "date": "2025-01",
+              "close": 199.55
+            },
+            {
+              "date": "2025-02",
+              "close": 161.78
+            },
+            {
+              "date": "2025-03",
+              "close": 104.9
+            },
+            {
+              "date": "2025-04",
+              "close": 116.57
+            },
+            {
+              "date": "2025-05",
+              "close": 112.35
+            },
+            {
+              "date": "2025-06",
+              "close": 150.57
+            },
+            {
+              "date": "2025-07",
+              "close": 160.59
+            },
+            {
+              "date": "2025-08",
+              "close": 225.08
+            },
+            {
+              "date": "2025-09",
+              "close": 229.99
+            },
+            {
+              "date": "2025-10",
+              "close": 208.95
+            },
+            {
+              "date": "2025-11",
+              "close": 216.47
+            },
+            {
+              "date": "2025-12",
+              "close": 229.87
+            },
+            {
+              "date": "2026-01",
+              "close": 180.27
+            },
+            {
+              "date": "2026-02",
+              "close": 145.81
+            },
+            {
+              "date": "2026-03",
+              "close": 132.25
+            }
+          ]
+        }
+      },
+      "operational_metrics": [
+        {
+          "name": "Daily Active Users",
+          "value": "101M+",
+          "period": "Q4 2025"
+        },
+        {
+          "name": "Ad Revenue",
+          "value": "$600M+",
+          "period": "2025 Annual",
+          "note": "est."
+        },
+        {
+          "name": "Data Licensing Revenue",
+          "value": "$120M+",
+          "period": "2025 Annual",
+          "note": "est."
+        },
+        {
+          "name": "ARPU Growth YoY",
+          "value": "35%+",
+          "period": "2025",
+          "note": "est."
+        },
+        {
+          "name": "AI Training Data Deals",
+          "value": "Google, OpenAI + others",
+          "period": "2024-2025"
+        }
+      ],
+      "cross_comparable": {
+        "ev_revenue_ttm": 11.5,
+        "gross_margin_pct": 90.8,
+        "fcf_margin_pct": 30.0,
+        "yoy_revenue_growth_pct": 61.7,
+        "dau_m": 101
+      }
+    }
+  },
+  "cross_company_metrics": {
+    "revenue_growth_pct": {
+      "PLTR": 56.2,
+      "RKLB": 32.4,
+      "APP": 39.3,
+      "VRT": 34.6,
+      "AXON": 32.4,
+      "CRWV": 115.0,
+      "SPOT": 13.6,
+      "DDOG": 25.6,
+      "KTOS": 12.4,
+      "RDDT": 61.7
+    },
+    "gross_margin_pct": {
+      "PLTR": 84.6,
+      "RKLB": 33.3,
+      "APP": 79.9,
+      "VRT": 36.0,
+      "AXON": 59.0,
+      "CRWV": 59.9,
+      "SPOT": 33.1,
+      "DDOG": 81.7,
+      "KTOS": 23.6,
+      "RDDT": 90.8
+    },
+    "fcf_margin_pct": {
+      "PLTR": 47.7,
+      "RKLB": -44.4,
+      "APP": 68.8,
+      "VRT": 25.1,
+      "AXON": 7.4,
+      "CRWV": -108.0,
+      "SPOT": 21.8,
+      "DDOG": 28.6,
+      "KTOS": -10.4,
+      "RDDT": 30.0
+    },
+    "ev_revenue_ttm": {
+      "PLTR": 80.0,
+      "RKLB": 16.8,
+      "APP": 30.0,
+      "VRT": 10.0,
+      "AXON": 15.0,
+      "CRWV": 8.7,
+      "SPOT": 6.2,
+      "DDOG": 14.0,
+      "KTOS": 12.0,
+      "RDDT": 11.5
+    },
+    "market_cap_b": {
+      "PLTR": 351.74,
+      "RKLB": 38.8,
+      "APP": 151.85,
+      "VRT": 101.53,
+      "AXON": 40.15,
+      "CRWV": 41.98,
+      "SPOT": 104.92,
+      "DDOG": 45.0,
+      "KTOS": 16.71,
+      "RDDT": 25.26
+    },
+    "yoy_revenue_2025_vs_2024": {
+      "PLTR": 56.2,
+      "RKLB": 38.0,
+      "APP": 46.0,
+      "VRT": 27.7,
+      "AXON": 33.5,
+      "CRWV": 167.9,
+      "SPOT": 9.7,
+      "DDOG": 27.7,
+      "KTOS": 18.5,
+      "RDDT": 69.4
+    }
+  }
+}

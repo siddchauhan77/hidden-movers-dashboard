@@ -1,0 +1,307 @@
+{
+  "live_quotes": {
+    "PLTR": {
+      "price": 153.5,
+      "change": 1.9,
+      "changePct": 1.25,
+      "pe": 239.84,
+      "eps": 0.64,
+      "volume": 53976763,
+      "avgVolume": 48617233,
+      "yearLow": 66.12,
+      "yearHigh": 207.52,
+      "previousClose": 151.6,
+      "marketCap": 351740645000
+    },
+    "RKLB": {
+      "price": 68.37,
+      "change": -3.59,
+      "changePct": -4.99,
+      "pe": null,
+      "eps": -0.37,
+      "volume": 17599532,
+      "avgVolume": 23057979,
+      "yearLow": 14.71,
+      "yearHigh": 99.58,
+      "previousClose": 71.96,
+      "marketCap": 38796214650
+    },
+    "APP": {
+      "price": 449.33,
+      "change": -12.12,
+      "changePct": -2.63,
+      "pe": 44.67,
+      "eps": 10.06,
+      "volume": 4983196,
+      "avgVolume": 5953515,
+      "yearLow": 200.5,
+      "yearHigh": 745.61,
+      "previousClose": 461.45,
+      "marketCap": 151853317903
+    },
+    "VRT": {
+      "price": 265.38,
+      "change": -2.88,
+      "changePct": -1.07,
+      "pe": 77.82,
+      "eps": 3.41,
+      "volume": 7447890,
+      "avgVolume": 6340589,
+      "yearLow": 53.6,
+      "yearHigh": 276.78,
+      "previousClose": 268.26,
+      "marketCap": 101533857240
+    },
+    "AXON": {
+      "price": 499.4,
+      "change": -18.17,
+      "changePct": -3.51,
+      "pe": 337.43,
+      "eps": 1.48,
+      "volume": 1015851,
+      "avgVolume": 1005153,
+      "yearLow": 396.41,
+      "yearHigh": 885.92,
+      "previousClose": 517.57,
+      "marketCap": 40150598895
+    },
+    "CRWV": {
+      "price": 79.86,
+      "change": -2.1,
+      "changePct": -2.56,
+      "pe": null,
+      "eps": -2.81,
+      "volume": 15680428,
+      "avgVolume": 27512767,
+      "yearLow": 33.52,
+      "yearHigh": 187.0,
+      "previousClose": 81.96,
+      "marketCap": 41981452944
+    },
+    "SPOT": {
+      "price": 509.59,
+      "change": -4.78,
+      "changePct": -0.93,
+      "pe": 41.8,
+      "eps": 12.19,
+      "volume": 1865937,
+      "avgVolume": 2893211,
+      "yearLow": 405.0,
+      "yearHigh": 785.0,
+      "previousClose": 514.37,
+      "marketCap": 104921527027
+    },
+    "DDOG": {
+      "price": 127.16,
+      "change": -0.33,
+      "changePct": -0.26,
+      "pe": 397.38,
+      "eps": 0.32,
+      "volume": 3627373,
+      "avgVolume": 5677854,
+      "yearLow": 81.63,
+      "yearHigh": 201.69,
+      "previousClose": 127.49,
+      "marketCap": 44995733343
+    },
+    "KTOS": {
+      "price": 89.46,
+      "change": 0.54,
+      "changePct": 0.61,
+      "pe": 688.15,
+      "eps": 0.13,
+      "volume": 3903675,
+      "avgVolume": 4055705,
+      "yearLow": 25.78,
+      "yearHigh": 134.0,
+      "previousClose": 88.92,
+      "marketCap": 16707346436
+    },
+    "RDDT": {
+      "price": 132.24,
+      "change": -4.88,
+      "changePct": -3.56,
+      "pe": 50.47,
+      "eps": 2.62,
+      "volume": 3067342,
+      "avgVolume": 5436432,
+      "yearLow": 79.75,
+      "yearHigh": 282.95,
+      "previousClose": 137.12,
+      "marketCap": 25262572076
+    }
+  },
+  "news_data": {
+    "PLTR": {
+      "headline": "Geopolitical tailwinds + 56% revenue growth; Truist reiterates Buy at $223 target",
+      "bull": "US Army consolidated 75 contracts into a single Palantir deal \u2014 a model for future gov agreements driven by wartime urgency. Rosenblatt raised PT to $200.",
+      "bear": "Peter Thiel disclosed plan to sell 2M shares (~$280M). P/E of 240x leaves little room for error; some analysts have $50 targets.",
+      "stories": [
+        {
+          "title": "Truist reiterates Palantir Buy rating after investor meeting",
+          "url": "https://www.investing.com/news/analyst-ratings/truist-reiterates-palantir-stock-buy-rating-after-investor-meeting-93CH-4554651",
+          "date": "Mar 11, 2026"
+        },
+        {
+          "title": "Analyst revises PLTR target amid growing insider sale concerns",
+          "url": "https://finbold.com/analyst-revises-palantir-stock-price-target-amid-growing-insider-sale-concerns/",
+          "date": "Mar 3, 2026"
+        }
+      ]
+    },
+    "RKLB": {
+      "headline": "Neutron stage 1 tank rupture delays launch to Q4 2026; backlog doubles to $1.85B",
+      "bull": "Cantor Fitzgerald raised PT to $85 (Overweight) citing record revenue and doubling backlog. $816M SDA Tranche 3 contract cements national security role.",
+      "bear": "TD Cowen warns Neutron rupture raises execution risk. KeyBanc downgraded citing growth catalysts already priced in.",
+      "stories": [
+        {
+          "title": "Cantor Fitzgerald raises RKLB target on record revenue",
+          "url": "https://www.investing.com/news/analyst-ratings/cantor-fitzgerald-raises-rocket-lab-stock-price-target-on-record-revenue-93CH-4534683",
+          "date": "Mar 2, 2026"
+        },
+        {
+          "title": "Rocket Lab Stock Decline Analysis Post Earnings",
+          "url": "https://intellectia.ai/news/stock/rocket-lab-stock-decline-analysis-post-earnings",
+          "date": "Mar 7, 2026"
+        }
+      ]
+    },
+    "APP": {
+      "headline": "SEC probe disclosed Feb 2026; AXON 2.0 e-commerce expansion drives 70% YoY rev growth",
+      "bull": "Wedbush, BofA, and Benchmark all cite e-commerce TAM as 5-10x gaming \u2014 a massive expansion. 82% EBITDA margin for full-year 2025.",
+      "bear": "SEC probe adds regulatory overhang. Oppenheimer cut target from $740 to $660; stock fell from $672 to ~$380 in early 2026.",
+      "stories": [
+        {
+          "title": "Why Wedbush Analysts Love AppLovin Stock Right Now",
+          "url": "https://www.barchart.com/story/news/721533/why-wedbush-analysts-love-applovin-stock-right-now",
+          "date": "Mar 12, 2026"
+        },
+        {
+          "title": "BofA reiterates AppLovin Buy rating on e-commerce growth",
+          "url": "https://investing.com/news/analyst-ratings/bofa-reiterates-applovin-stock-buy-rating-on-ecommerce-growth-93CH-4549312",
+          "date": "Mar 9, 2026"
+        }
+      ]
+    },
+    "VRT": {
+      "headline": "Orders backlog surges to $15B (+252% YoY organic); Wolfe Research downgrades on valuation",
+      "bull": "Analyst consensus: 34% annualized revenue growth through 2026, 61% EPS surge to $5.62. GB200 NVL72 lead supplier status cements AI infra moat.",
+      "bear": "Wolfe Research downgraded from Outperform to Peer Perform. Insiders sold ~490K shares (~$104M) in past 3 months including EVP cutting stake 46%.",
+      "stories": [
+        {
+          "title": "Vertiv Share Prices Surge After Analysts Raise Price Targets",
+          "url": "https://stockstotrade.com/news/vertiv-holdings-llc-vrt-news-2026_03_09/",
+          "date": "Mar 10, 2026"
+        },
+        {
+          "title": "Vertiv (VRT) Stock Slides 3% Despite Analyst Price Target Upgrades",
+          "url": "https://www.mexc.com/news/875625",
+          "date": "Mar 7, 2026"
+        }
+      ]
+    },
+    "AXON": {
+      "headline": "AI software grew 40% in Q4; TD Cowen raises PT to $950; Q4 net income collapsed 98% YoY",
+      "bull": "125% net revenue retention + $7.4B bookings backlog. 27-30% revenue growth guided for 2026. RBC cites data moats as durable competitive advantage.",
+      "bear": "Q4 net income collapsed to $2.75M from $135M a year ago. UBS cut PT to $570 (Neutral) \u2014 expectations now 'extremely elevated'.",
+      "stories": [
+        {
+          "title": "Axon Stock Soared After Earnings \u2014 Analysts Think It Can Gain Another 30%",
+          "url": "https://www.barchart.com/story/news/513025/axon-stock-soared-after-earnings-analysts-think-it-can-gain-another-30-from-here",
+          "date": "Mar 2, 2026"
+        },
+        {
+          "title": "UBS Adjusts Price Target on Axon Enterprise to $570",
+          "url": "https://www.marketscreener.com/news/ubs-adjusts-price-target-on-axon-enterprise-to-570-from-610-maintains-neutral-rating-ce7e5cdbd08af720",
+          "date": "Feb 25, 2026"
+        }
+      ]
+    },
+    "CRWV": {
+      "headline": "Securities class-action lawsuits filed; $66.8B revenue backlog; Bernstein Underperform at $56",
+      "bull": "Oppenheimer Outperform with $140 PT \u2014 'distinct competitive advantages over hyperscalers.' 110% YoY revenue growth. $30-35B capex in 2026 signals hypergrowth confidence.",
+      "bear": "Multiple securities fraud lawsuits filed. Insiders sold $373M in shares. Bernstein Underperform at $56. HSBC Reduce citing rising interest costs and credit spread widening.",
+      "stories": [
+        {
+          "title": "Oppenheimer Issues Bullish Call on CRWV With $140 Target",
+          "url": "https://www.mexc.com/news/869211",
+          "date": "Mar 6, 2026"
+        },
+        {
+          "title": "Hagens Berman Analyzes CoreWeave $452M Q4 Loss & Securities Litigation",
+          "url": "https://www.barchart.com/story/news/721538/crwv-alert-hagens-berman-analyzes-coreweave-crwv-452m-q4-loss-and-soft-guidance-amid-ongoing-securities-fraud-litigation",
+          "date": "Mar 12, 2026"
+        }
+      ]
+    },
+    "SPOT": {
+      "headline": "Operating income swung from \u20ac446M loss in 2023 to \u20ac2.2B in 2025; Wolfe Research downgrades on saturation",
+      "bull": "751M MAUs \u2014 still only 3.5% of global population. Arete upgraded to Buy at $680. FCF reached \u20ac2.9B full-year. Q1 2026 guidance: 15% constant-currency rev growth.",
+      "bear": "JPMorgan cut PT 13% to $700 on royalty cost headwinds. Ad revenue fell 4% YoY in Q4. Wolfe Research downgraded citing 'full' revenue forecasts.",
+      "stories": [
+        {
+          "title": "Spotify Stock Is Down 28% This Year, But Analysts See 77% Upside Ahead",
+          "url": "https://www.tikr.com/blog/spotify-stock-is-down-28-this-year-but-analysts-see-77-upside-ahead",
+          "date": "Mar 8, 2026"
+        },
+        {
+          "title": "Arete Upgrades Spotify Technology to Buy, $680 Target",
+          "url": "https://www.marketscreener.com/news/arete-upgrades-spotify-technology-to-buy-from-neutral-680-price-target-ce7e5cd9d880f42c",
+          "date": "Feb 26, 2026"
+        }
+      ]
+    },
+    "DDOG": {
+      "headline": "FY2026 revenue guidance missed consensus; MCP server tool calls up 11x QoQ; Buy consensus holds",
+      "bull": "11x surge in MCP server tool calls QoQ. 2,000+ trial/paying customers for AI SRE agent in first month. Average analyst 12-month PT: $182-207 (43-60% upside).",
+      "bear": "FY2026 guidance of $4.06-4.10B missed consensus \u2014 multiple analysts cut targets. BTIG cut PT from $221 to $170. Forward P/S of 10x vs. 3.9x industry average.",
+      "stories": [
+        {
+          "title": "Baird Lowers Price Target on DDOG to $180, Maintains Outperform",
+          "url": "https://www.insidermonkey.com/blog/baird-lowers-its-price-target-on-datadog-inc-ddog-to-180-and-maintains-an-outperform-rating-1699906/",
+          "date": "Feb 21, 2026"
+        },
+        {
+          "title": "Will Datadog Stock Sustain Growth on Rising AI Cloud Monitoring Spend?",
+          "url": "https://www.nasdaq.com/articles/will-datadog-stock-sustain-growth-rising-ai-cloud-monitoring-spend",
+          "date": "Feb 19, 2026"
+        }
+      ]
+    },
+    "KTOS": {
+      "headline": "MACH-TB 2.0 hypersonics targeting $400M in 2026; book-to-bill 1.3x; stock up 7x in 3 years",
+      "bull": "MTCR rule changes + DoD jet drone demand. $400M 2026 DRSS target from MACH-TB 2.0. Book-to-bill 1.3x with $1.57B backlog.",
+      "bear": "Trades at 120x earnings. FCF deeply negative through 2026. Thin profitability raises self-funding concerns as multiple programs scale simultaneously.",
+      "stories": [
+        {
+          "title": "Kratos Defense Soars on Strong Q4 Earnings & Drone Programs",
+          "url": "https://stockstotrade.com/news/kratos-defense-security-solutions-inc-ktos-news-2026_03_09/",
+          "date": "Mar 10, 2026"
+        },
+        {
+          "title": "Is It Too Late to Consider KTOS After Its 7x Three-Year Surge?",
+          "url": "https://www.sahmcapital.com/news/content/is-it-too-late-to-consider-kratos-defense-security-solutions-ktos-after-7x-three-year-surge-2026-03-08",
+          "date": "Mar 8, 2026"
+        }
+      ]
+    },
+    "RDDT": {
+      "headline": "46% six-month stock decline; Q4 ad revenue +75% YoY; $1B buyback announced; CTO sells $1.29M",
+      "bull": "Jefferies: RDDT revenue-per-user at 70% discount to peers. Q4 revenue $725.6M (+70% YoY), adj. EBITDA +112%. $1B share buyback. Consensus PT ~$235-251.",
+      "bear": "US time-spent down 10.5% YoY in Jan. GAAP operating losses widened. Simply Wall St bear-case intrinsic value: $38. CTO just sold $1.29M in shares.",
+      "stories": [
+        {
+          "title": "Reddit (RDDT): CTO Offloads $1.29M as Jefferies Remains Bullish",
+          "url": "https://www.mexc.com/news/913877",
+          "date": "Mar 12, 2026"
+        },
+        {
+          "title": "Forecasting The Future: 18 Analyst Projections For Reddit",
+          "url": "https://www.benzinga.com/insights/analyst-ratings/26/03/51172621/forecasting-the-future-18-analyst-projections-for-reddit",
+          "date": "Mar 11, 2026"
+        }
+      ]
+    }
+  },
+  "fetched_at": "2026-03-13T04:41:14Z"
+}
