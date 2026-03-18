@@ -1,0 +1,11 @@
+{
+  "name": "hidden-movers-dashboard",
+  "version": "1.0.0",
+  "description": "Hidden Movers Dashboard - Live stock data",
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "yahoo-finance2": "^2.13.3"
+  }
+}
