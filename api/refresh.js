@@ -5,13 +5,16 @@
  * 2. Ranks by market cap → picks top 10
  * 3. Compares against previous top 10 → reports any entries/exits
  * 4. Fetches quotes + news for the live top 10
- * 5. Returns full payload so the frontend can re-render the entire dashboard
+ * 5. Fetches SEC EDGAR fundamentals (revenue, net income, EPS, recent filings)
+ * 6. Returns full payload so the frontend can re-render the entire dashboard
  *
  * Data sources:
  *   Primary quotes/market cap : Yahoo Finance v7 (no API key)
  *   Fallback quote             : Yahoo Finance v8 chart (no API key)
  *   News primary               : Yahoo Finance search (no API key)
  *   News fallback              : Finnhub (free key — set FINNHUB_API_KEY env var)
+ *   Fundamentals               : SEC EDGAR XBRL API (free, no API key)
+ *   Insider filings            : SEC EDGAR submissions API (free, no API key)
  */
 
 const path = require('path');
@@ -184,6 +187,89 @@ function bullBearText(articles, sentiment) {
   };
 }
 
+// ── SEC EDGAR: Company facts (revenue, net income, EPS) ───────────────────
+async function fetchSecFundamentals(cik) {
+  if (!cik) return null;
+  try {
+    const paddedCik = cik.replace(/^0+/, '').padStart(10, '0');
+    const url = `https://data.sec.gov/api/xbrl/companyfacts/CIK${paddedCik}.json`;
+    const res = await fetch(url, {
+      headers: {
+        'User-Agent': 'HiddenMoversDashboard contact@example.com',
+        'Accept': 'application/json',
+      },
+    });
+    if (!res.ok) throw new Error(`SEC facts HTTP ${res.status}`);
+    const data = await res.json();
+    const usgaap = data.facts?.['us-gaap'] || {};
+    const dei    = data.facts?.dei || {};
+
+    // Helper: get the N most recent quarterly values for a concept
+    function getQuarterly(concept, n = 8) {
+      const units = usgaap[concept]?.units?.USD || dei[concept]?.units?.shares || [];
+      return units
+        .filter(u => u.form === '10-Q' || u.form === '10-K')
+        .filter(u => u.fp && u.end)
+        .sort((a, b) => new Date(b.end) - new Date(a.end))
+        .slice(0, n)
+        .reverse();
+    }
+
+    // Revenue
+    const revConcept = usgaap['RevenueFromContractWithCustomerExcludingAssessedTax']
+      ? 'RevenueFromContractWithCustomerExcludingAssessedTax'
+      : usgaap['Revenues'] ? 'Revenues'
+      : usgaap['SalesRevenueNet'] ? 'SalesRevenueNet' : null;
+    const revenue = revConcept ? getQuarterly(revConcept) : [];
+
+    // Net income
+    const netIncome = getQuarterly('NetIncomeLoss');
+
+    // EPS (diluted)
+    const epsRaw = (usgaap['EarningsPerShareDiluted']?.units?.['USD/shares'] || [])
+      .filter(u => u.form === '10-Q' || u.form === '10-K')
+      .sort((a, b) => new Date(b.end) - new Date(a.end))
+      .slice(0, 8)
+      .reverse();
+
+    // Recent filings (10-K and 10-Q only)
+    const subUrl = `https://data.sec.gov/submissions/CIK${paddedCik}.json`;
+    const subRes = await fetch(subUrl, {
+      headers: { 'User-Agent': 'HiddenMoversDashboard contact@example.com' },
+    });
+    let recentFilings = [];
+    if (subRes.ok) {
+      const subData = await subRes.json();
+      const filings = subData.filings?.recent || {};
+      const forms   = filings.form || [];
+      const dates   = filings.filingDate || [];
+      const accNos  = filings.accessionNumber || [];
+      const docs    = filings.primaryDocument || [];
+      for (let i = 0; i < forms.length && recentFilings.length < 6; i++) {
+        if (forms[i] === '10-K' || forms[i] === '10-Q' || forms[i] === '4') {
+          recentFilings.push({
+            form: forms[i],
+            filed: dates[i],
+            accession: accNos[i],
+            url: `https://www.sec.gov/Archives/edgar/data/${parseInt(paddedCik, 10)}/${accNos[i].replace(/-/g,'')}/${docs[i]}`,
+          });
+        }
+      }
+    }
+
+    return {
+      revenue: revenue.map(r => ({ period: r.end, value: r.val, form: r.form })),
+      net_income: netIncome.map(r => ({ period: r.end, value: r.val, form: r.form })),
+      eps_diluted: epsRaw.map(r => ({ period: r.end, value: r.val, form: r.form })),
+      recent_filings: recentFilings,
+      source: 'SEC EDGAR (free)',
+    };
+  } catch (e) {
+    console.error(`SEC fundamentals failed for CIK ${cik}:`, e.message);
+    return null;
+  }
+}
+
 // ── Main Handler ───────────────────────────────────────────────────────────
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -238,22 +324,32 @@ module.exports = async function handler(req, res) {
     const entered = top10Tickers.filter(t => !prevTop10.includes(t) && prevTop10.length > 0);
     const exited  = prevTop10.filter(t => !top10Tickers.includes(t));
 
-    // ── STEP 3: Fetch news for only the top 10 ─────────────────────────────
-    const newsResults = await Promise.all(
-      top10Tickers.map(async (ticker) => {
-        let articles = await fetchYahooNews(ticker);
-        if (articles.length < 2 && FINNHUB_KEY) {
-          const fh = await fetchFinnhubNews(ticker, FINNHUB_KEY);
-          articles = [...articles, ...fh].slice(0, 4);
-        }
-        const sentiment = scoreSentiment(articles);
-        const { bull, bear } = bullBearText(articles, sentiment);
-        return [ticker, { headline: articles[0]?.headline || `${ticker} — no recent news`, summary: articles[0]?.summary || '', bull, bear, sentiment: sentiment.signal, articles }];
-      })
-    );
+    // ── STEP 3: Fetch news + SEC fundamentals in parallel ──────────────────
+    const [newsResults, secResults] = await Promise.all([
+      Promise.all(
+        top10Tickers.map(async (ticker) => {
+          let articles = await fetchYahooNews(ticker);
+          if (articles.length < 2 && FINNHUB_KEY) {
+            const fh = await fetchFinnhubNews(ticker, FINNHUB_KEY);
+            articles = [...articles, ...fh].slice(0, 4);
+          }
+          const sentiment = scoreSentiment(articles);
+          const { bull, bear } = bullBearText(articles, sentiment);
+          return [ticker, { headline: articles[0]?.headline || `${ticker} — no recent news`, summary: articles[0]?.summary || '', bull, bear, sentiment: sentiment.signal, articles }];
+        })
+      ),
+      Promise.all(
+        top10Tickers.map(ticker => {
+          const cik = (COMPANY_META[ticker] && COMPANY_META[ticker].cik) || null;
+          return fetchSecFundamentals(cik);
+        })
+      ),
+    ]);
     const newsData = Object.fromEntries(newsResults);
+    const secData  = {};
+    top10Tickers.forEach((ticker, i) => { if (secResults[i]) secData[ticker] = secResults[i]; });
 
-    // ── STEP 4: Build company objects for the top 10 ───────────────────────
+    // ── STEP 4: Build company objects for the top 10 ─────────────────────
     const top10Companies = {};
     for (const { ticker, market_cap_b, quote } of top10) {
       const meta = COMPANY_META[ticker] || {};
@@ -268,7 +364,7 @@ module.exports = async function handler(req, res) {
       };
     }
 
-    // ── STEP 5: Build live_quotes for top 10 ──────────────────────────────
+    // ── STEP 5: Build live_quotes for top 10 ──────────────────────────
     const liveQuotes = {};
     for (const { ticker, quote } of top10) {
       if (quote) liveQuotes[ticker] = quote;
@@ -287,9 +383,10 @@ module.exports = async function handler(req, res) {
       top10_companies: top10Companies,
       live_quotes: liveQuotes,
       news_data: newsData,
+      sec_fundamentals: secData,
       // Meta
       watchlist_size: ALL_TICKERS.length,
-      sources_used: ['Yahoo Finance v7', FINNHUB_KEY ? 'Finnhub' : null].filter(Boolean),
+      sources_used: ['Yahoo Finance v7', 'SEC EDGAR', FINNHUB_KEY ? 'Finnhub' : null].filter(Boolean),
     });
 
   } catch (err) {

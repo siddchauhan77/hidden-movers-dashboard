@@ -561,6 +561,57 @@ canvas { max-width: 100% !important; }
   .charts-grid { grid-template-columns: 1fr; }
   .detail-header { flex-direction: column; align-items: flex-start; }
 }
+
+/* ===== RANKING HISTORY SECTION ===== */
+.history-section { background: var(--color-surface); border-top: 1px solid var(--color-border); padding: var(--space-12) 0; }
+.history-table-wrap { overflow-x: auto; margin-top: var(--space-6); border-radius: var(--radius-lg); border: 1px solid var(--color-border); }
+.history-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.history-table th {
+  background: var(--color-surface-2); color: var(--color-text-muted); font-size: var(--text-xs);
+  font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em;
+  padding: var(--space-3) var(--space-4); text-align: left; border-bottom: 1px solid var(--color-border);
+}
+.history-table td { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-divider); vertical-align: middle; }
+.history-table tr:last-child td { border-bottom: none; }
+.history-table tr:hover td { background: var(--color-surface-offset); }
+.hist-badge { display:inline-flex; align-items:center; gap:4px; padding: 3px 10px; border-radius: 99px; font-size: var(--text-xs); font-weight: 600; white-space: nowrap; }
+.hist-badge.entered { background: rgba(76,175,122,0.15); color: var(--color-success); }
+.hist-badge.exited  { background: rgba(224, 92,107,0.15); color: var(--color-error); }
+.hist-badge.current { background: rgba(79,152,163,0.15); color: var(--color-primary); }
+.hist-empty { text-align:center; color: var(--color-text-muted); padding: var(--space-10); font-size: var(--text-sm); }
+.history-streak { display:inline-flex; align-items:center; gap:3px; }
+.streak-dot { width:8px; height:8px; border-radius:50%; background: var(--color-success); flex-shrink:0; }
+.streak-dot.out { background: var(--color-error); }
+.history-clear-btn {
+  font-size: var(--text-xs); color: var(--color-text-muted); background: none; border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm); padding: 4px 12px; cursor: pointer; transition: all var(--transition);
+}
+.history-clear-btn:hover { color: var(--color-error); border-color: var(--color-error); }
+.history-summary { display:flex; gap: var(--space-6); flex-wrap:wrap; margin-bottom: var(--space-5); }
+.history-stat { }
+.history-stat-val { font-size: var(--text-lg); font-weight: 700; color: var(--color-text); font-family: var(--font-mono); }
+.history-stat-lbl { font-size: var(--text-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-top: 2px; }
+
+/* ===== SEC FUNDAMENTALS PANEL (inside company detail) ===== */
+.sec-panel { margin-top: var(--space-6); }
+.sec-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-6); }
+.sec-kpi { background: var(--color-surface-2); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-4); }
+.sec-kpi-label { font-size: var(--text-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.07em; }
+.sec-kpi-val { font-size: var(--text-lg); font-weight: 700; color: var(--color-text); font-family: var(--font-mono); margin-top: var(--space-1); }
+.sec-kpi-sub { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 2px; }
+.sec-filings-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap: var(--space-2); }
+.sec-filing-item { display:flex; align-items:center; gap: var(--space-3); padding: var(--space-2) var(--space-3); background: var(--color-surface-2); border-radius: var(--radius-sm); border: 1px solid var(--color-border); }
+.sec-filing-form { font-size: var(--text-xs); font-weight: 700; padding: 2px 8px; border-radius: 4px; background: var(--color-surface-offset); color: var(--color-primary); font-family: var(--font-mono); min-width: 40px; text-align:center; }
+.sec-filing-form.k { background: rgba(79,152,163,0.12); }
+.sec-filing-form.q { background: rgba(76,175,122,0.12); color: var(--color-success); }
+.sec-filing-form.f4 { background: rgba(224,152,76,0.12); color: var(--color-warning); }
+.sec-filing-date { font-size: var(--text-xs); color: var(--color-text-muted); font-family: var(--font-mono); }
+.sec-filing-link { font-size: var(--text-xs); color: var(--color-primary); text-decoration: none; margin-left: auto; }
+.sec-filing-link:hover { text-decoration: underline; }
+.sec-chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+@media (max-width: 640px) { .sec-chart-row { grid-template-columns: 1fr; } .sec-grid { grid-template-columns: 1fr 1fr; } }
+.sec-loading { text-align:center; color: var(--color-text-muted); padding: var(--space-8); font-size: var(--text-sm); }
+.sec-source-badge { display:inline-flex; align-items:center; gap:4px; font-size: var(--text-xs); color: var(--color-text-muted); background: var(--color-surface-offset); border-radius: 99px; padding: 2px 10px; border: 1px solid var(--color-border); }
 </style>
 </head>
 <body>
@@ -673,6 +724,38 @@ canvas { max-width: 100% !important; }
       <div class="compare-chart-canvas">
         <canvas id="compareChart"></canvas>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- RANKING HISTORY -->
+<section class="history-section" id="rankingHistory">
+  <div class="container">
+    <div class="section-header" style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4)">
+      <div>
+        <h2 class="section-title">Ranking History</h2>
+        <p class="section-desc">Every time a company enters or exits the top 10, it's logged here permanently — even if you close the browser.</p>
+      </div>
+      <button class="history-clear-btn" onclick="clearHistory()" title="Clear all history">Clear History</button>
+    </div>
+    <div class="history-summary" id="historySummary"></div>
+    <div class="history-table-wrap">
+      <table class="history-table" id="historyTable">
+        <thead>
+          <tr>
+            <th>Date &amp; Time</th>
+            <th>Ticker</th>
+            <th>Company</th>
+            <th>Event</th>
+            <th>Market Cap at Event</th>
+            <th>Rank</th>
+            <th>Times In Top 10</th>
+          </tr>
+        </thead>
+        <tbody id="historyTbody">
+          <tr><td colspan="7" class="hist-empty">No ranking changes recorded yet. Hit <strong>Refresh</strong> to start tracking.</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -1226,6 +1309,7 @@ function renderDetailPanel(ticker) {
       <button class="detail-tab active" onclick="switchTab('${ticker}','financials',this)">Financials</button>
       <button class="detail-tab" onclick="switchTab('${ticker}','operational',this)">Operational KPIs</button>
       <button class="detail-tab" onclick="switchTab('${ticker}','stock',this)">Stock Price</button>
+      <button class="detail-tab" onclick="switchTab('${ticker}','sec',this)">SEC Fundamentals</button>
     </div>
     <div class="detail-body" id="detailBody-${ticker}"></div>
   `;
@@ -1411,6 +1495,10 @@ function renderDetailCharts(ticker, tab) {
         }
       }
     });
+  } else if (tab === 'sec') {
+    const secContainerId = `sec-fundamentals-${ticker}`;
+    body.innerHTML = `<div id="${secContainerId}" style="min-height:200px;padding:var(--space-2) 0"></div>`;
+    renderSecFundamentals(ticker, secContainerId);
   }
 }
 
@@ -1737,7 +1825,12 @@ async function triggerRefresh() {
     const newTop10 = fresh.top10_tickers || currentTop10;
     const rankingChanged = fresh.ranking_changed && !usedFallback;
 
+    // Store SEC fundamentals whenever we get them
+    if (fresh.sec_fundamentals) storeFundamentals(fresh.sec_fundamentals);
+
     if (rankingChanged && fresh.top10_companies) {
+      // Log swap events to persistent history
+      recordSwapEvents(fresh.entered || [], fresh.exited || [], LIVE_DATA.live_quotes, newTop10, fresh.top10_companies);
       // Rebuild entire dashboard with new company set
       rebuildDashboard(fresh.top10_companies);
       // Show swap alert
@@ -1776,6 +1869,222 @@ async function triggerRefresh() {
   }
 }
 
+
+// ===== RANKING HISTORY (persisted in localStorage) =========================
+
+const HISTORY_KEY = 'hiddenMovers_rankHistory_v2';
+
+function loadHistory() {
+  try { return JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]'); } 
+  catch { return []; }
+}
+function saveHistory(log) {
+  try { localStorage.setItem(HISTORY_KEY, JSON.stringify(log.slice(0, 500))); } catch {}
+}
+
+function recordSwapEvents(entered, exited, liveQuotes, top10Tickers, companyMeta) {
+  if (!entered.length && !exited.length) return;
+  const log = loadHistory();
+  const now = new Date().toISOString();
+
+  // Count appearances per ticker across whole history
+  const appearances = {};
+  log.forEach(e => { appearances[e.ticker] = (appearances[e.ticker] || 0) + (e.event === 'entered' ? 1 : 0); });
+
+  entered.forEach(ticker => {
+    const rank = top10Tickers.indexOf(ticker) + 1;
+    const q = liveQuotes && liveQuotes[ticker];
+    const mcap = q ? (q.market_cap_b || (q.market_cap ? q.market_cap / 1e9 : null) || (q.marketCap ? q.marketCap / 1e9 : null)) : null;
+    const name = (companyMeta && companyMeta[ticker] && companyMeta[ticker].name) || ticker;
+    log.unshift({ ts: now, ticker, name, event: 'entered', market_cap_b: mcap ? parseFloat(mcap.toFixed(2)) : null, rank, appearances: (appearances[ticker] || 0) + 1 });
+  });
+  exited.forEach(ticker => {
+    const name = (companyMeta && companyMeta[ticker] && companyMeta[ticker].name) || ticker;
+    log.unshift({ ts: now, ticker, name, event: 'exited', market_cap_b: null, rank: null, appearances: appearances[ticker] || 0 });
+  });
+
+  saveHistory(log);
+  renderHistory();
+}
+
+function renderHistory() {
+  const log = loadHistory();
+  const tbody = document.getElementById('historyTbody');
+  const summary = document.getElementById('historySummary');
+  if (!tbody) return;
+
+  if (!log.length) {
+    tbody.innerHTML = '<tr><td colspan="7" class="hist-empty">No ranking changes recorded yet. Hit <strong>Refresh</strong> to start tracking.</td></tr>';
+    if (summary) summary.innerHTML = '';
+    return;
+  }
+
+  // Summary stats
+  const totalEvents = log.length;
+  const uniqueTickers = [...new Set(log.map(e => e.ticker))].length;
+  const swapSessions = [...new Set(log.map(e => e.ts.slice(0,16)))].length;
+  const mostVolatile = Object.entries(
+    log.reduce((acc, e) => { acc[e.ticker] = (acc[e.ticker]||0)+1; return acc; }, {})
+  ).sort((a,b)=>b[1]-a[1])[0];
+  if (summary) {
+    summary.innerHTML = `
+      <div class="history-stat"><div class="history-stat-val">${totalEvents}</div><div class="history-stat-lbl">Total Events</div></div>
+      <div class="history-stat"><div class="history-stat-val">${uniqueTickers}</div><div class="history-stat-lbl">Unique Tickers Tracked</div></div>
+      <div class="history-stat"><div class="history-stat-val">${swapSessions}</div><div class="history-stat-lbl">Refresh Sessions w/ Changes</div></div>
+      ${mostVolatile ? `<div class="history-stat"><div class="history-stat-val">${mostVolatile[0]}</div><div class="history-stat-lbl">Most Active (${mostVolatile[1]} events)</div></div>` : ''}
+    `;
+  }
+
+  // Table rows
+  tbody.innerHTML = log.map(e => {
+    const d = new Date(e.ts);
+    const dateStr = d.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+    const timeStr = d.toLocaleTimeString('en-US', { hour:'2-digit', minute:'2-digit', timeZoneName:'short' });
+    const badgeClass = e.event === 'entered' ? 'entered' : 'exited';
+    const badgeIcon = e.event === 'entered' ? '↑' : '↓';
+    const badgeLabel = e.event === 'entered' ? 'Entered Top 10' : 'Dropped Out';
+    const mcap = e.market_cap_b ? '$' + e.market_cap_b.toFixed(1) + 'B' : '—';
+    const rank = e.rank ? '#' + e.rank : '—';
+    const appearances = e.appearances || '—';
+    return `<tr>
+      <td><span style="font-family:var(--font-mono);font-size:var(--text-xs)">${dateStr}<br><span style="color:var(--color-text-muted)">${timeStr}</span></span></td>
+      <td><strong style="font-family:var(--font-mono)">${e.ticker}</strong></td>
+      <td style="color:var(--color-text-muted)">${e.name || e.ticker}</td>
+      <td><span class="hist-badge ${badgeClass}">${badgeIcon} ${badgeLabel}</span></td>
+      <td style="font-family:var(--font-mono)">${mcap}</td>
+      <td style="font-family:var(--font-mono)">${rank}</td>
+      <td><span class="hist-badge current">${appearances}x</span></td>
+    </tr>`;
+  }).join('');
+}
+
+function clearHistory() {
+  if (!confirm('Clear all ranking history? This cannot be undone.')) return;
+  localStorage.removeItem(HISTORY_KEY);
+  renderHistory();
+}
+
+// ===== SEC FUNDAMENTALS (fetched per company on demand + from refresh) ======
+
+// Store fetched fundamentals keyed by ticker
+const SEC_DATA = {};
+
+function storeFundamentals(secFundamentals) {
+  if (!secFundamentals) return;
+  for (const [ticker, data] of Object.entries(secFundamentals)) {
+    SEC_DATA[ticker] = data;
+  }
+}
+
+function fmtMillions(v) {
+  if (v == null) return '—';
+  const b = v / 1e9;
+  if (Math.abs(b) >= 1) return '$' + b.toFixed(2) + 'B';
+  return '$' + (v / 1e6).toFixed(0) + 'M';
+}
+
+function renderSecFundamentals(ticker, containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  const data = SEC_DATA[ticker];
+
+  if (!data) {
+    container.innerHTML = `<div class="sec-loading">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-bottom:8px;display:block;margin:0 auto 8px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      SEC fundamentals load on next Refresh — free data from <a href="https://efts.sec.gov" target="_blank" style="color:var(--color-primary)">SEC EDGAR</a>.
+    </div>`;
+    return;
+  }
+
+  // Latest revenue & net income
+  const latestRev = data.revenue && data.revenue.length ? data.revenue[data.revenue.length - 1] : null;
+  const prevRev   = data.revenue && data.revenue.length > 1 ? data.revenue[data.revenue.length - 2] : null;
+  const latestNI  = data.net_income && data.net_income.length ? data.net_income[data.net_income.length - 1] : null;
+  const latestEPS = data.eps_diluted && data.eps_diluted.length ? data.eps_diluted[data.eps_diluted.length - 1] : null;
+  const revGrowth = (latestRev && prevRev && prevRev.value) ? ((latestRev.value - prevRev.value) / Math.abs(prevRev.value) * 100) : null;
+
+  const kpis = [
+    { label: 'Latest Revenue (QTR)', val: fmtMillions(latestRev?.value), sub: latestRev ? latestRev.period : '' },
+    { label: 'QoQ Revenue Growth', val: revGrowth != null ? (revGrowth > 0 ? '+' : '') + revGrowth.toFixed(1) + '%' : '—', sub: 'Quarter-over-quarter', color: revGrowth > 0 ? 'var(--color-success)' : revGrowth < 0 ? 'var(--color-error)' : '' },
+    { label: 'Net Income (QTR)', val: fmtMillions(latestNI?.value), sub: latestNI ? latestNI.period : '', color: latestNI?.value >= 0 ? 'var(--color-success)' : 'var(--color-error)' },
+    { label: 'EPS Diluted (QTR)', val: latestEPS ? (latestEPS.value > 0 ? '+' : '') + '$' + latestEPS.value.toFixed(2) : '—', sub: latestEPS ? latestEPS.period : '', color: latestEPS?.value >= 0 ? 'var(--color-success)' : 'var(--color-error)' },
+  ];
+
+  // Build revenue chart data
+  const revLabels = (data.revenue || []).map(r => r.period.slice(0,7));
+  const revVals   = (data.revenue || []).map(r => r.value / 1e6);
+  const niLabels  = (data.net_income || []).map(r => r.period.slice(0,7));
+  const niVals    = (data.net_income || []).map(r => r.value / 1e6);
+  const epsLabels = (data.eps_diluted || []).map(r => r.period.slice(0,7));
+  const epsVals   = (data.eps_diluted || []).map(r => r.val !== undefined ? r.val : r.value);
+
+  const revChartId = `secRevChart_${ticker}`;
+  const niChartId  = `secNiChart_${ticker}`;
+
+  container.innerHTML = `
+    <div class="sec-panel">
+      <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4);">
+        <h4 style="font-size:var(--text-sm);font-weight:600;color:var(--color-text);margin:0">SEC EDGAR Fundamentals</h4>
+        <span class="sec-source-badge">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          SEC EDGAR · Free
+        </span>
+      </div>
+      <div class="sec-grid">
+        ${kpis.map(k => `<div class="sec-kpi">
+          <div class="sec-kpi-label">${k.label}</div>
+          <div class="sec-kpi-val" style="${k.color ? 'color:'+k.color : ''}">${k.val}</div>
+          <div class="sec-kpi-sub">${k.sub || ''}</div>
+        </div>`).join('')}
+      </div>
+      ${(revLabels.length > 1 || niLabels.length > 1) ? `
+      <div class="sec-chart-row" style="margin-bottom:var(--space-5)">
+        ${revLabels.length > 1 ? `<div><div style="font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-2);font-weight:600;text-transform:uppercase;letter-spacing:.06em">Revenue ($M) — SEC Filed</div><canvas id="${revChartId}" height="140"></canvas></div>` : ''}
+        ${niLabels.length > 1 ? `<div><div style="font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-2);font-weight:600;text-transform:uppercase;letter-spacing:.06em">Net Income ($M) — SEC Filed</div><canvas id="${niChartId}" height="140"></canvas></div>` : ''}
+      </div>` : ''}
+      ${data.recent_filings && data.recent_filings.length ? `
+      <div>
+        <div style="font-size:var(--text-xs);color:var(--color-text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--space-3)">Recent SEC Filings</div>
+        <ul class="sec-filings-list">
+          ${data.recent_filings.map(f => {
+            const cls = f.form === '10-K' ? 'k' : f.form === '10-Q' ? 'q' : 'f4';
+            return `<li class="sec-filing-item">
+              <span class="sec-filing-form ${cls}">${f.form}</span>
+              <span class="sec-filing-date">${f.filed}</span>
+              <a class="sec-filing-link" href="${f.url}" target="_blank" rel="noopener">View Filing →</a>
+            </li>`;
+          }).join('')}
+        </ul>
+      </div>` : ''}
+    </div>
+  `;
+
+  // Draw SEC revenue chart
+  if (revLabels.length > 1 && document.getElementById(revChartId)) {
+    const ctx = document.getElementById(revChartId).getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: revLabels,
+        datasets: [{ label: 'Revenue $M', data: revVals, backgroundColor: 'rgba(79,152,163,0.7)', borderRadius: 4, borderSkipped: false }]
+      },
+      options: { ...getChartDefaults(), plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => '$' + ctx.parsed.y.toFixed(0) + 'M' } } }, scales: { x: { grid: { display: false }, ticks: { color: '#6b7285', font: { size: 10 } } }, y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#6b7285', font: { size: 10 }, callback: v => '$' + v.toFixed(0) + 'M' } } } }
+    });
+  }
+  // Draw net income chart
+  if (niLabels.length > 1 && document.getElementById(niChartId)) {
+    const ctx = document.getElementById(niChartId).getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: niLabels,
+        datasets: [{ label: 'Net Income $M', data: niVals, backgroundColor: niVals.map(v => v >= 0 ? 'rgba(76,175,122,0.7)' : 'rgba(224,92,107,0.7)'), borderRadius: 4, borderSkipped: false }]
+      },
+      options: { ...getChartDefaults(), plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => '$' + ctx.parsed.y.toFixed(0) + 'M' } } }, scales: { x: { grid: { display: false }, ticks: { color: '#6b7285', font: { size: 10 } } }, y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#6b7285', font: { size: 10 }, callback: v => '$' + v.toFixed(0) + 'M' } } } }
+    });
+  }
+}
+
 // ===== INIT =====
 renderHeroStats();
 renderNav();
@@ -1784,6 +2093,7 @@ renderCompareCheckboxes();
 renderCompareChart();
 renderNewsGrid();
 applyLiveQuotesToCards();
+renderHistory();
 </script>
 </body>
 </html>
