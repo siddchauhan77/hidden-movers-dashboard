@@ -1,5 +1,5 @@
 /**
- * /api/refresh — Vercel Serverless Function
+ * /api/refresh — Vercel Serverless Function (CommonJS)
  *
  * 1. Fetches live market caps for ALL ~50 watchlist tickers via Yahoo Finance
  * 2. Ranks by market cap → picks top 10
@@ -14,7 +14,8 @@
  *   News fallback              : Finnhub (free key — set FINNHUB_API_KEY env var)
  */
 
-import watchlistData from '../watchlist.json' assert { type: 'json' };
+const path = require('path');
+const watchlistData = require('../watchlist.json');
 
 const ALL_TICKERS = watchlistData.tickers;          // ~50 tickers
 const COMPANY_META = watchlistData.companies;       // static metadata per ticker
@@ -145,7 +146,7 @@ async function fetchYahooNews(ticker) {
       source: n.publisher || 'Yahoo Finance',
       published_at: n.providerPublishTime ? new Date(n.providerPublishTime * 1000).toISOString() : null,
     }));
-  } catch { return []; }
+  } catch (e) { return []; }
 }
 
 // ── Finnhub news fallback ──────────────────────────────────────────────────
@@ -162,7 +163,7 @@ async function fetchFinnhubNews(ticker, key) {
       url: n.url, source: n.source||'Finnhub',
       published_at: n.datetime ? new Date(n.datetime*1000).toISOString() : null,
     }));
-  } catch { return []; }
+  } catch (e) { return []; }
 }
 
 // ── Simple keyword sentiment ───────────────────────────────────────────────
@@ -184,7 +185,7 @@ function bullBearText(articles, sentiment) {
 }
 
 // ── Main Handler ───────────────────────────────────────────────────────────
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
@@ -222,8 +223,7 @@ export default async function handler(req, res) {
     const ranked = ALL_TICKERS
       .map(ticker => {
         const q = allQuotes[ticker];
-        // Use live market cap if available, fall back to baseline from research
-        const mcap = q?.market_cap_b ?? q?.market_cap / 1e9 ?? COMPANY_META[ticker]?.market_cap_b_baseline ?? 0;
+        const mcap = (q?.market_cap_b) || (q?.market_cap ? q.market_cap / 1e9 : 0) || (COMPANY_META[ticker]?.market_cap_b_baseline || 0);
         return { ticker, market_cap_b: mcap, quote: q };
       })
       .filter(r => r.market_cap_b > 0)
@@ -233,7 +233,8 @@ export default async function handler(req, res) {
     const top10Tickers = top10.map(r => r.ticker);
 
     // Previous top 10 (passed as query param by client so we can diff)
-    const prevTop10 = (req.query?.prev || '').split(',').filter(Boolean);
+    const prevParam = (req.query && req.query.prev) ? req.query.prev : '';
+    const prevTop10 = prevParam.split(',').filter(Boolean);
     const entered = top10Tickers.filter(t => !prevTop10.includes(t) && prevTop10.length > 0);
     const exited  = prevTop10.filter(t => !top10Tickers.includes(t));
 
@@ -281,7 +282,7 @@ export default async function handler(req, res) {
       ranking_changed: entered.length > 0 || exited.length > 0,
       entered,   // tickers newly in top 10
       exited,    // tickers that fell out
-      full_ranking: ranked.slice(0, 20).map(r => ({ ticker: r.ticker, market_cap_b: parseFloat(r.market_cap_b.toFixed(2)), name: COMPANY_META[r.ticker]?.name || r.ticker })),
+      full_ranking: ranked.slice(0, 20).map(r => ({ ticker: r.ticker, market_cap_b: parseFloat(r.market_cap_b.toFixed(2)), name: (COMPANY_META[r.ticker] && COMPANY_META[r.ticker].name) || r.ticker })),
       // Data for top 10
       top10_companies: top10Companies,
       live_quotes: liveQuotes,
@@ -300,4 +301,4 @@ export default async function handler(req, res) {
       fetched_at: fetchedAt,
     });
   }
-}
+};

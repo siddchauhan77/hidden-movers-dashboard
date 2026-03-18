@@ -1,11 +1,5 @@
 {
   "version": 2,
-  "functions": {
-    "api/refresh.js": {
-      "runtime": "nodejs20.x",
-      "maxDuration": 30
-    }
-  },
   "routes": [
     {
       "src": "/api/(.*)",
