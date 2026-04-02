@@ -612,6 +612,78 @@ canvas { max-width: 100% !important; }
 @media (max-width: 640px) { .sec-chart-row { grid-template-columns: 1fr; } .sec-grid { grid-template-columns: 1fr 1fr; } }
 .sec-loading { text-align:center; color: var(--color-text-muted); padding: var(--space-8); font-size: var(--text-sm); }
 .sec-source-badge { display:inline-flex; align-items:center; gap:4px; font-size: var(--text-xs); color: var(--color-text-muted); background: var(--color-surface-offset); border-radius: 99px; padding: 2px 10px; border: 1px solid var(--color-border); }
+
+/* ===== COUNT SELECTOR ===== */
+.count-selector {
+  display: inline-flex; align-items: center; gap: 2px;
+  background: var(--color-surface-2); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: 3px; flex-shrink: 0;
+}
+.count-btn {
+  background: none; border: none; cursor: pointer; color: var(--color-text-muted);
+  font-size: var(--text-xs); font-weight: 600; padding: 4px 10px;
+  border-radius: calc(var(--radius-md) - 2px); transition: all var(--transition);
+  white-space: nowrap;
+}
+.count-btn.active {
+  background: var(--color-primary); color: white;
+}
+.count-btn:hover:not(.active) { color: var(--color-text); background: var(--color-surface-offset); }
+
+/* ===== LIVE CHART BUTTON ===== */
+.live-chart-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 11px; border-radius: var(--radius-sm);
+  font-size: var(--text-xs); font-weight: 600; cursor: pointer;
+  text-decoration: none; transition: all var(--transition);
+  background: rgba(79,152,163,0.1); color: var(--color-primary);
+  border: 1px solid rgba(79,152,163,0.3);
+}
+.live-chart-btn:hover {
+  background: var(--color-primary); color: white;
+  border-color: var(--color-primary);
+}
+.live-chart-btn svg { flex-shrink: 0; }
+.live-chart-btn .chart-pulse {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--color-success);
+  animation: pulse 1.8s ease-in-out infinite; flex-shrink: 0;
+}
+.chart-provider-menu {
+  position: absolute; top: calc(100% + 6px); right: 0; z-index: 100;
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  padding: 6px; min-width: 200px; display: none;
+}
+.chart-provider-menu.open { display: block; }
+.chart-provider-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px; border-radius: var(--radius-sm);
+  font-size: var(--text-xs); font-weight: 500; color: var(--color-text);
+  text-decoration: none; cursor: pointer; transition: background var(--transition);
+}
+.chart-provider-item:hover { background: var(--color-surface-2); }
+.chart-provider-item .provider-badge {
+  font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 3px;
+  background: var(--color-surface-offset); color: var(--color-text-muted); margin-left: auto;
+}
+.chart-source-wrap { position: relative; }
+
+
+/* ===== CARD CHART LINKS ===== */
+.card-chart-links {
+  display: flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-2) var(--space-4) var(--space-3);
+  border-top: 1px solid var(--color-divider); margin-top: var(--space-1);
+}
+.card-chart-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 10px; font-weight: 600; color: var(--color-text-muted);
+  text-decoration: none; padding: 3px 8px; border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border); transition: all var(--transition);
+  white-space: nowrap;
+}
+.card-chart-link:hover { color: var(--color-primary); border-color: var(--color-primary); background: rgba(79,152,163,0.07); }
+
 </style>
 </head>
 <body>
@@ -627,6 +699,10 @@ canvas { max-width: 100% !important; }
     </a>
     <nav class="nav-pills" role="navigation" aria-label="Company navigation" id="companyNav"></nav>
     <div class="topbar-actions">
+      <div class="count-selector" title="Number of companies to track">
+        <button class="count-btn active" id="countBtn10" onclick="setTopCount(10)">Top 10</button>
+        <button class="count-btn" id="countBtn15" onclick="setTopCount(15)">Top 15</button>
+      </div>
             <button class="refresh-btn" id="refreshBtn" onclick="triggerRefresh()" aria-label="Refresh live data">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
         <span class="refresh-label">Refresh</span>
@@ -648,7 +724,7 @@ canvas { max-width: 100% !important; }
   <div class="container">
     <div class="hero-label">Non-Fortune 500 · Publicly Traded · High Conviction</div>
     <h1 class="hero-title">The <span>Hidden Movers</span><br>Dashboard</h1>
-    <p class="hero-subtitle">Deep financial and operational intelligence on 10 high-growth stocks flying below mainstream radar — ideal for small-to-medium term trades.</p>
+    <p class="hero-subtitle" id="heroSubtitle">Deep financial and operational intelligence on <span id="heroCountLabel">10</span> high-growth stocks flying below mainstream radar — ideal for small-to-medium term trades.</p>
     <div class="hero-stats" id="heroStats">
       <div>
         <div class="hero-stat-value mono" id="stat-companies">10</div>
@@ -1162,6 +1238,11 @@ function renderHeroStats() {
   const totalMcap = companies.reduce((s, t) => s + (ccm.market_cap_b[t] || 0), 0);
   const growthVals = Object.values(ccm.revenue_growth_pct).filter(v => v > 0);
   const avgGrowth = growthVals.reduce((s, v) => s + v, 0) / growthVals.length;
+  const n = companies.length;
+  const statEl = document.getElementById('stat-companies');
+  if (statEl) statEl.textContent = n;
+  const heroLbl = document.getElementById('heroCountLabel');
+  if (heroLbl) heroLbl.textContent = n;
   document.getElementById('stat-total-mcap').textContent = '$' + (totalMcap / 1000).toFixed(1) + 'T';
   document.getElementById('stat-avg-growth').textContent = '+' + avgGrowth.toFixed(0) + '%';
 }
@@ -1211,6 +1292,20 @@ function renderCards() {
       </div>
       <div class="card-sparkline">
         <canvas id="spark-${c.ticker}" height="36"></canvas>
+      </div>
+      <div class="card-chart-links">
+        <a class="card-chart-link" href="https://finance.yahoo.com/chart/${c.ticker}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Yahoo Finance chart">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Yahoo
+        </a>
+        <a class="card-chart-link" href="https://www.tradingview.com/chart/?symbol=${c.ticker}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="TradingView chart">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          TradingView
+        </a>
+        <a class="card-chart-link" href="https://stockanalysis.com/stocks/${c.ticker.toLowerCase()}/chart/" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Stock Analysis chart">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Chart
+        </a>
       </div>
     </div>`;
   }).join('');
@@ -1310,6 +1405,40 @@ function renderDetailPanel(ticker) {
       <button class="detail-tab" onclick="switchTab('${ticker}','operational',this)">Operational KPIs</button>
       <button class="detail-tab" onclick="switchTab('${ticker}','stock',this)">Stock Price</button>
       <button class="detail-tab" onclick="switchTab('${ticker}','sec',this)">SEC Fundamentals</button>
+    </div><!-- end detail-tabs -->
+    <div class="chart-source-wrap" style="position:relative">
+      <button class="live-chart-btn" id="chartBtn-${ticker}" onclick="toggleChartMenu('${ticker}',event)" title="Open live chart in external provider">
+        <span class="chart-pulse"></span>
+        Live Chart
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="chart-provider-menu" id="chartMenu-${ticker}">
+        <a class="chart-provider-item" href="https://finance.yahoo.com/chart/${ticker}" target="_blank" rel="noopener" onclick="closeChartMenu('${ticker}')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Yahoo Finance
+          <span class="provider-badge">Free</span>
+        </a>
+        <a class="chart-provider-item" href="https://www.tradingview.com/chart/?symbol=${ticker}" target="_blank" rel="noopener" onclick="closeChartMenu('${ticker}')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          TradingView
+          <span class="provider-badge">Free</span>
+        </a>
+        <a class="chart-provider-item" href="https://stockanalysis.com/stocks/${ticker.toLowerCase()}/chart/" target="_blank" rel="noopener" onclick="closeChartMenu('${ticker}')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Stock Analysis
+          <span class="provider-badge">Free</span>
+        </a>
+        <a class="chart-provider-item" href="https://finviz.com/quote.ashx?t=${ticker}" target="_blank" rel="noopener" onclick="closeChartMenu('${ticker}')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Finviz
+          <span class="provider-badge">Free</span>
+        </a>
+        <a class="chart-provider-item" href="https://www.marketwatch.com/investing/stock/${ticker.toLowerCase()}" target="_blank" rel="noopener" onclick="closeChartMenu('${ticker}')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          MarketWatch
+          <span class="provider-badge">Free</span>
+        </a>
+      </div>
     </div>
     <div class="detail-body" id="detailBody-${ticker}"></div>
   `;
@@ -1699,7 +1828,7 @@ function updateMarketBanner(marketStatus) {
   }
 }
 
-// ===== CURRENT TOP 10 TRACKER =====
+// ===== CURRENT TOP N TRACKER =====
 // Tracks which tickers are currently displayed so we can detect rank changes
 let currentTop10 = Object.keys(DATA.companies);
 
@@ -1716,7 +1845,7 @@ function showSwapBanner(entered, exited) {
   if (entered.length) parts.push(entered.map(t => `<span class="swap-entry">↑ ${t} entered</span>`).join(', '));
   if (exited.length)  parts.push(exited.map(t  => `<span class="swap-exit">↓ ${t} dropped out</span>`).join(', '));
   html += parts.join(' &nbsp;|&nbsp; ');
-  html += `<span style="opacity:0.6;margin-left:12px">Ranked by live market cap across ${50} watchlist stocks</span>`;
+  html += `<span style="opacity:0.6;margin-left:12px">Top ${currentTopCount} · ranked across 50 watchlist stocks</span>`;
   banner.innerHTML = html;
   banner.classList.add('visible');
   // Auto-hide after 30s
@@ -1763,7 +1892,7 @@ async function triggerRefresh() {
   try {
     // Pass current top 10 so API can diff and report rank changes
     const prevParam = currentTop10.join(',');
-    let apiUrl = `/api/refresh?t=${Date.now()}&prev=${encodeURIComponent(prevParam)}`;
+    let apiUrl = `/api/refresh?t=${Date.now()}&prev=${encodeURIComponent(prevParam)}&count=${currentTopCount}`;
     let usedFallback = false;
 
     let res = await fetch(apiUrl);
@@ -1844,7 +1973,7 @@ async function triggerRefresh() {
 
     // ── Status label ──
     if (statusEl) {
-      const watchlistNote = fresh.watchlist_size ? ` · ranked ${fresh.watchlist_size} stocks` : '';
+      const watchlistNote = fresh.watchlist_size ? ` · top ${fresh.top_n || currentTopCount} from ${fresh.watchlist_size} stocks` : '';
       const srcLabel = usedFallback ? ' (cached)' : (fresh.sources_used ? ' via ' + fresh.sources_used[0] : '');
       statusEl.textContent = `✓ Updated just now${srcLabel}${watchlistNote}`;
       statusEl.className = 'refresh-status success';
@@ -2084,6 +2213,52 @@ function renderSecFundamentals(ticker, containerId) {
     });
   }
 }
+
+
+// ===== TOP N COUNT SELECTOR =====
+let currentTopCount = 10;  // 10 or 15
+
+function setTopCount(n) {
+  if (n === currentTopCount) return;
+  currentTopCount = n;
+
+  // Update button states
+  document.getElementById('countBtn10').classList.toggle('active', n === 10);
+  document.getElementById('countBtn15').classList.toggle('active', n === 15);
+
+  // Update the swap banner watchlist size label
+  const bannerEl = document.getElementById('swapBanner');
+  if (bannerEl) {
+    // Will naturally update on next refresh
+  }
+
+  // Update hero subtitle
+  const heroCount = document.getElementById('heroCountLabel');
+  if (heroCount) heroCount.textContent = n;
+  // Trigger refresh with new count
+  triggerRefresh();
+}
+
+// ===== LIVE CHART DROPDOWN =====
+function toggleChartMenu(ticker, e) {
+  e.stopPropagation();
+  const menu = document.getElementById('chartMenu-' + ticker);
+  if (!menu) return;
+  const isOpen = menu.classList.contains('open');
+  // Close all menus first
+  document.querySelectorAll('.chart-provider-menu.open').forEach(m => m.classList.remove('open'));
+  if (!isOpen) menu.classList.add('open');
+}
+
+function closeChartMenu(ticker) {
+  const menu = document.getElementById('chartMenu-' + ticker);
+  if (menu) menu.classList.remove('open');
+}
+
+// Close chart menus when clicking outside
+document.addEventListener('click', () => {
+  document.querySelectorAll('.chart-provider-menu.open').forEach(m => m.classList.remove('open'));
+});
 
 // ===== INIT =====
 renderHeroStats();

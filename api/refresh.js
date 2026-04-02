@@ -2,9 +2,9 @@
  * /api/refresh — Vercel Serverless Function (CommonJS)
  *
  * 1. Fetches live market caps for ALL ~50 watchlist tickers via Yahoo Finance
- * 2. Ranks by market cap → picks top 10
- * 3. Compares against previous top 10 → reports any entries/exits
- * 4. Fetches quotes + news for the live top 10
+ * 2. Ranks by market cap → picks top N (10 or 15, via ?count= param)
+ * 3. Compares against previous top N → reports any entries/exits
+ * 4. Fetches quotes + news for the live top N
  * 5. Fetches SEC EDGAR fundamentals (revenue, net income, EPS, recent filings)
  * 6. Returns full payload so the frontend can re-render the entire dashboard
  *
@@ -305,7 +305,11 @@ module.exports = async function handler(req, res) {
       stillMissing.forEach((t, i) => { if (fallbacks[i]) allQuotes[t] = fallbacks[i]; });
     }
 
-    // ── STEP 2: Rank all tickers by live market cap → pick top 10 ──────────
+    // ── STEP 2: Rank all tickers by live market cap → pick top N ───────────
+    // Accept ?count=10 or ?count=15 (default 10)
+    const requestedCount = parseInt((req.query && req.query.count) || '10', 10);
+    const TOP_N = (requestedCount === 15) ? 15 : 10;
+
     const ranked = ALL_TICKERS
       .map(ticker => {
         const q = allQuotes[ticker];
@@ -315,10 +319,10 @@ module.exports = async function handler(req, res) {
       .filter(r => r.market_cap_b > 0)
       .sort((a, b) => b.market_cap_b - a.market_cap_b);
 
-    const top10 = ranked.slice(0, 10);
+    const top10 = ranked.slice(0, TOP_N);
     const top10Tickers = top10.map(r => r.ticker);
 
-    // Previous top 10 (passed as query param by client so we can diff)
+    // Previous top N (passed as query param by client so we can diff)
     const prevParam = (req.query && req.query.prev) ? req.query.prev : '';
     const prevTop10 = prevParam.split(',').filter(Boolean);
     const entered = top10Tickers.filter(t => !prevTop10.includes(t) && prevTop10.length > 0);
@@ -385,6 +389,7 @@ module.exports = async function handler(req, res) {
       news_data: newsData,
       sec_fundamentals: secData,
       // Meta
+      top_n: TOP_N,
       watchlist_size: ALL_TICKERS.length,
       sources_used: ['Yahoo Finance v7', 'SEC EDGAR', FINNHUB_KEY ? 'Finnhub' : null].filter(Boolean),
     });
